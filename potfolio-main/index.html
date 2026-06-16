@@ -16,8 +16,7 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+  <link href="https://fonts.googleapis.com/css2?family=Shojumaru&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
     rel="stylesheet">
 
   <!-- Icon Libraries CDN -->
@@ -35,17 +34,17 @@
         extend: {
           colors: {
             primary: {
-              DEFAULT: '#0563bb',
-              hover: '#0678e3',
+              DEFAULT: '#f97316', // Orange 500
+              hover: '#ea580c',   // Orange 600
             },
-            dark: '#45505b',
-            light: '#f2f3f5',
-            textDark: '#272829',
+            dark: '#0a0a0a',      // Neutral 950
+            light: '#171717',     // Neutral 900
+            textDark: '#fafafa',  // Neutral 50
           },
           fontFamily: {
-            sans: ['"Open Sans"', 'sans-serif'],
-            title: ['Raleway', 'sans-serif'],
-            poppins: ['Poppins', 'sans-serif'],
+            sans: ['"Noto Sans JP"', 'sans-serif'],
+            title: ['Shojumaru', 'cursive'],
+            poppins: ['"Noto Sans JP"', 'sans-serif'],
           }
         }
       }
@@ -68,7 +67,8 @@
   </style>
 </head>
 
-<body class="font-sans text-textDark bg-white overflow-x-hidden">
+<body
+  class="font-sans text-neutral-300 bg-neutral-950 overflow-x-hidden selection:bg-primary/30 selection:text-primary">
 
   <!-- Mobile Navigation Toggle -->
   <button id="mobile-nav-toggle"
@@ -78,12 +78,12 @@
 
   <!-- ======= Header / Navigation ======= -->
   <header id="header"
-    class="fixed top-0 bottom-0 z-40 flex flex-col justify-center p-4 transition-all duration-300 w-64 -left-64 bg-white border-r border-gray-100 lg:left-0 lg:w-24 lg:bg-transparent lg:border-r-0">
+    class="fixed top-0 bottom-0 z-40 flex flex-col justify-center p-4 transition-all duration-300 w-64 -left-64 bg-neutral-950/80 backdrop-blur-md border-r border-neutral-800 lg:left-0 lg:w-24 lg:bg-transparent lg:border-r-0">
     <nav id="navbar" class="w-full">
       <ul class="flex flex-col space-y-4">
         <li>
           <a href="#hero"
-            class="nav-menu-item flex items-center justify-start lg:justify-center p-3 text-dark bg-light rounded-full transition-all duration-300 hover:text-white hover:bg-primary w-full lg:w-14 lg:h-14 group scrollto active">
+            class="nav-menu-item flex items-center justify-start lg:justify-center p-3 text-neutral-100 bg-neutral-900 rounded-full transition-all duration-300 hover:text-white hover:bg-primary hover:shadow-[0_0_15px_rgba(249,115,22,0.4)] w-full lg:w-14 lg:h-14 group scrollto active">
             <i class="bx bx-home text-xl lg:text-2xl"></i>
             <span
               class="ml-4 lg:hidden group-hover:block lg:group-hover:inline lg:group-hover:ml-2 text-sm font-medium">Home</span>
@@ -91,7 +91,7 @@
         </li>
         <li>
           <a href="#about"
-            class="nav-menu-item flex items-center justify-start lg:justify-center p-3 text-dark bg-light rounded-full transition-all duration-300 hover:text-white hover:bg-primary w-full lg:w-14 lg:h-14 group scrollto">
+            class="nav-menu-item flex items-center justify-start lg:justify-center p-3 text-neutral-100 bg-neutral-900 rounded-full transition-all duration-300 hover:text-white hover:bg-primary hover:shadow-[0_0_15px_rgba(249,115,22,0.4)] w-full lg:w-14 lg:h-14 group scrollto">
             <i class="bx bx-user text-xl lg:text-2xl"></i>
             <span
               class="ml-4 lg:hidden group-hover:block lg:group-hover:inline lg:group-hover:ml-2 text-sm font-medium">About</span>
@@ -99,7 +99,7 @@
         </li>
         <li>
           <a href="#resume"
-            class="nav-menu-item flex items-center justify-start lg:justify-center p-3 text-dark bg-light rounded-full transition-all duration-300 hover:text-white hover:bg-primary w-full lg:w-14 lg:h-14 group scrollto">
+            class="nav-menu-item flex items-center justify-start lg:justify-center p-3 text-neutral-100 bg-neutral-900 rounded-full transition-all duration-300 hover:text-white hover:bg-primary hover:shadow-[0_0_15px_rgba(249,115,22,0.4)] w-full lg:w-14 lg:h-14 group scrollto">
             <i class="bx bx-file-blank text-xl lg:text-2xl"></i>
             <span
               class="ml-4 lg:hidden group-hover:block lg:group-hover:inline lg:group-hover:ml-2 text-sm font-medium">Resume</span>
@@ -107,7 +107,7 @@
         </li>
         <li>
           <a href="#portfolio"
-            class="nav-menu-item flex items-center justify-start lg:justify-center p-3 text-dark bg-light rounded-full transition-all duration-300 hover:text-white hover:bg-primary w-full lg:w-14 lg:h-14 group scrollto">
+            class="nav-menu-item flex items-center justify-start lg:justify-center p-3 text-neutral-100 bg-neutral-900 rounded-full transition-all duration-300 hover:text-white hover:bg-primary hover:shadow-[0_0_15px_rgba(249,115,22,0.4)] w-full lg:w-14 lg:h-14 group scrollto">
             <i class="bx bx-book-content text-xl lg:text-2xl"></i>
             <span
               class="ml-4 lg:hidden group-hover:block lg:group-hover:inline lg:group-hover:ml-2 text-sm font-medium">Portfolio</span>
@@ -119,19 +119,19 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero"
-    class="relative w-full h-screen bg-[url('assets/img/rahulBg.png')] bg-cover bg-top lg:bg-right no-repeat flex items-center">
+    class="relative w-full h-screen bg-[url('assets/img/naruto_bg.jpg')] bg-cover bg-top lg:bg-right no-repeat flex items-center">
     <!-- Semi-transparent overlay -->
-    <div class="absolute inset-0 bg-white/80"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/70"></div>
 
     <div class="container mx-auto px-6 relative z-10 lg:pl-32" data-aos="zoom-in" data-aos-delay="100">
-      <h1 class="font-title font-bold text-4xl sm:text-6xl text-dark leading-tight">Rahul Jangir</h1>
-      <p class="font-poppins text-xl sm:text-2xl text-dark mt-4">
+      <h1 class="font-title font-bold text-4xl sm:text-6xl text-neutral-100 leading-tight">Rahul Jangir</h1>
+      <p class="font-poppins text-xl sm:text-2xl text-neutral-100 mt-4">
         I'm <span class="typed text-primary font-semibold"
           data-typed-items="DevOps Engineer, SRE, AWS Specialist, JLPT N1 Bilingual Engineer"></span>
       </p>
       <div class="flex mt-8">
         <a href="https://www.linkedin.com/in/rahul-jangir-362189204/" target="_blank" rel="noopener"
-          class="text-3xl text-dark hover:text-primary transition duration-300">
+          class="text-3xl text-neutral-400 hover:text-primary hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition duration-300">
           <i class="bx bxl-linkedin"></i>
         </a>
       </div>
@@ -147,9 +147,9 @@
 
         <div class="text-center pb-10">
           <h2
-            class="font-title font-bold text-3xl text-dark uppercase tracking-wider relative inline-block after:content-[''] after:absolute after:w-10 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 before:content-[''] before:absolute before:w-28 before:h-[1px] before:bg-gray-200 before:bottom-[-8px] before:left-1/2 before:-translate-x-1/2">
+            class="font-title font-bold text-3xl text-neutral-100 uppercase tracking-wider relative inline-block after:content-[''] after:absolute after:w-10 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 before:content-[''] before:absolute before:w-28 before:h-[1px] before:bg-neutral-800 before:bottom-[-8px] before:left-1/2 before:-translate-x-1/2">
             About Me</h2>
-          <p class="mt-8 text-gray-600 max-w-4xl mx-auto">
+          <p class="mt-8 text-neutral-400 max-w-4xl mx-auto">
             I am a skilled DevOps &amp; SRE Engineer with over three years of experience in automating cloud
             infrastructure, orchestrating containers, and setting up high-performance observability pipelines. I
             specialize in AWS, Terraform, New Relic, and Docker. Certified with JLPT N1, I operate effectively in
@@ -164,34 +164,41 @@
               alt="Rahul Jangir">
           </div>
           <div class="lg:col-span-8 flex flex-col justify-center">
-            <h3 class="font-title font-semibold text-2xl text-gray-500 mb-2">Senior DevOps &amp; SRE Engineer</h3>
+            <h3 class="font-title font-semibold text-2xl text-neutral-400 mb-2">Senior DevOps &amp; SRE Engineer</h3>
             <p class="italic text-primary font-medium mb-6">
               Expertise in AWS, Infrastructure as Code, CI/CD Pipelines &amp; Monitoring.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-neutral-300">
               <ul class="space-y-3">
                 <li class="flex items-center"><i class="bi bi-chevron-right text-primary mr-2"></i>
                   <strong>Certifications:</strong> <span class="ml-1 text-primary font-bold">JLPT N1 / AWS SAA /
-                    ITIL</span></li>
+                    ITIL</span>
+                </li>
                 <li class="flex items-center"><i class="bi bi-chevron-right text-primary mr-2"></i>
                   <strong>GitHub:</strong> <a href="https://github.com/OICjangirrahul" target="_blank" rel="noopener"
-                    class="text-primary hover:underline ml-1">https://github.com/OICjangirrahul</a></li>
+                    class="text-primary hover:underline ml-1">https://github.com/OICjangirrahul</a>
+                </li>
                 <li class="flex items-center"><i class="bi bi-chevron-right text-primary mr-2"></i>
-                  <strong>Phone:</strong> <span class="ml-1">080-7005-5953</span></li>
+                  <strong>Phone:</strong> <span class="ml-1">080-7005-5953</span>
+                </li>
                 <li class="flex items-center"><i class="bi bi-chevron-right text-primary mr-2"></i>
-                  <strong>City:</strong> <span class="ml-1">Osaka, Japan</span></li>
+                  <strong>City:</strong> <span class="ml-1">Osaka, Japan</span>
+                </li>
               </ul>
               <ul class="space-y-3">
                 <li class="flex items-center"><i class="bi bi-chevron-right text-primary mr-2"></i>
-                  <strong>Birthday:</strong> <span class="ml-1">5 Oct 1996</span></li>
+                  <strong>Birthday:</strong> <span class="ml-1">5 Oct 1996</span>
+                </li>
                 <li class="flex items-center"><i class="bi bi-chevron-right text-primary mr-2"></i>
-                  <strong>Degree:</strong> <span class="ml-1">Bca(Pursuing)</span></li>
+                  <strong>Degree:</strong> <span class="ml-1">Bca(Pursuing)</span>
+                </li>
                 <li class="flex items-center"><i class="bi bi-chevron-right text-primary mr-2"></i>
                   <strong>Email:</strong> <a href="mailto:jangirurafuru@gmail.com"
-                    class="text-primary hover:underline ml-1">jangirurafuru@gmail.com</a></li>
+                    class="text-primary hover:underline ml-1">jangirurafuru@gmail.com</a>
+                </li>
               </ul>
             </div>
-            <p class="mt-6 text-gray-600">
+            <p class="mt-6 text-neutral-400">
               I am highly dedicated to system reliability, automation, and optimizing release speeds. By introducing
               modular Terraform architectures, containerizing microservices, and configuring real-time alert filters via
               New Relic and CloudWatch, I help development teams operate at maximum efficiency while maintaining 99.9%
@@ -204,14 +211,14 @@
     </section>
 
     <!-- ======= Skills Section ======= -->
-    <section id="skills" class="py-16 bg-gray-50">
+    <section id="skills" class="py-16 bg-neutral-900/40">
       <div class="container mx-auto px-6" data-aos="fade-up">
 
         <div class="text-center pb-10">
           <h2
-            class="font-title font-bold text-3xl text-dark uppercase tracking-wider relative inline-block after:content-[''] after:absolute after:w-10 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 before:content-[''] before:absolute before:w-28 before:h-[1px] before:bg-gray-200 before:bottom-[-8px] before:left-1/2 before:-translate-x-1/2">
+            class="font-title font-bold text-3xl text-neutral-100 uppercase tracking-wider relative inline-block after:content-[''] after:absolute after:w-10 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 before:content-[''] before:absolute before:w-28 before:h-[1px] before:bg-neutral-800 before:bottom-[-8px] before:left-1/2 before:-translate-x-1/2">
             Technical Skills</h2>
-          <p class="mt-8 text-gray-600 max-w-4xl mx-auto">
+          <p class="mt-8 text-neutral-400 max-w-4xl mx-auto">
             My core technical expertise spans cloud infrastructure design, automation scripts, continuous integration
             pipelines, and observability toolsets.
           </p>
@@ -221,45 +228,53 @@
           <!-- Left Column -->
           <div class="space-y-4">
             <div>
-              <div class="flex justify-between font-poppins font-semibold text-dark text-xs uppercase mb-1">
+              <div class="flex justify-between font-poppins font-semibold text-neutral-100 text-xs uppercase mb-1">
                 <span>AWS Cloud Services</span>
                 <span>90%</span>
               </div>
-              <div class="w-full bg-gray-200 h-2">
-                <div class="progress-bar bg-primary h-2 w-0 transition-all duration-[1500ms] ease-out" data-width="90%">
+              <div class="w-full bg-neutral-800 h-2">
+                <div
+                  class="progress-bar bg-gradient-to-r from-orange-600 to-orange-400 shadow-[0_0_10px_rgba(251,146,60,0.5)] rounded-r-full h-2 w-0 transition-all duration-[1500ms] ease-out"
+                  data-width="90%">
                 </div>
               </div>
             </div>
 
             <div>
-              <div class="flex justify-between font-poppins font-semibold text-dark text-xs uppercase mb-1">
+              <div class="flex justify-between font-poppins font-semibold text-neutral-100 text-xs uppercase mb-1">
                 <span>Infrastructure as Code (Terraform / AWS CDK)</span>
                 <span>90%</span>
               </div>
-              <div class="w-full bg-gray-200 h-2">
-                <div class="progress-bar bg-primary h-2 w-0 transition-all duration-[1500ms] ease-out" data-width="90%">
+              <div class="w-full bg-neutral-800 h-2">
+                <div
+                  class="progress-bar bg-gradient-to-r from-orange-600 to-orange-400 shadow-[0_0_10px_rgba(251,146,60,0.5)] rounded-r-full h-2 w-0 transition-all duration-[1500ms] ease-out"
+                  data-width="90%">
                 </div>
               </div>
             </div>
 
             <div>
-              <div class="flex justify-between font-poppins font-semibold text-dark text-xs uppercase mb-1">
+              <div class="flex justify-between font-poppins font-semibold text-neutral-100 text-xs uppercase mb-1">
                 <span>Observability &amp; APM (New Relic / CloudWatch)</span>
                 <span>85%</span>
               </div>
-              <div class="w-full bg-gray-200 h-2">
-                <div class="progress-bar bg-primary h-2 w-0 transition-all duration-[1500ms] ease-out" data-width="85%">
+              <div class="w-full bg-neutral-800 h-2">
+                <div
+                  class="progress-bar bg-gradient-to-r from-orange-600 to-orange-400 shadow-[0_0_10px_rgba(251,146,60,0.5)] rounded-r-full h-2 w-0 transition-all duration-[1500ms] ease-out"
+                  data-width="85%">
                 </div>
               </div>
             </div>
 
             <div>
-              <div class="flex justify-between font-poppins font-semibold text-dark text-xs uppercase mb-1">
+              <div class="flex justify-between font-poppins font-semibold text-neutral-100 text-xs uppercase mb-1">
                 <span>Containerization (Docker / ECS Fargate)</span>
                 <span>85%</span>
               </div>
-              <div class="w-full bg-gray-200 h-2">
-                <div class="progress-bar bg-primary h-2 w-0 transition-all duration-[1500ms] ease-out" data-width="85%">
+              <div class="w-full bg-neutral-800 h-2">
+                <div
+                  class="progress-bar bg-gradient-to-r from-orange-600 to-orange-400 shadow-[0_0_10px_rgba(251,146,60,0.5)] rounded-r-full h-2 w-0 transition-all duration-[1500ms] ease-out"
+                  data-width="85%">
                 </div>
               </div>
             </div>
@@ -268,45 +283,53 @@
           <!-- Right Column -->
           <div class="space-y-4">
             <div>
-              <div class="flex justify-between font-poppins font-semibold text-dark text-xs uppercase mb-1">
+              <div class="flex justify-between font-poppins font-semibold text-neutral-100 text-xs uppercase mb-1">
                 <span>CI/CD Pipelines (GitHub Actions)</span>
                 <span>90%</span>
               </div>
-              <div class="w-full bg-gray-200 h-2">
-                <div class="progress-bar bg-primary h-2 w-0 transition-all duration-[1500ms] ease-out" data-width="90%">
+              <div class="w-full bg-neutral-800 h-2">
+                <div
+                  class="progress-bar bg-gradient-to-r from-orange-600 to-orange-400 shadow-[0_0_10px_rgba(251,146,60,0.5)] rounded-r-full h-2 w-0 transition-all duration-[1500ms] ease-out"
+                  data-width="90%">
                 </div>
               </div>
             </div>
 
             <div>
-              <div class="flex justify-between font-poppins font-semibold text-dark text-xs uppercase mb-1">
+              <div class="flex justify-between font-poppins font-semibold text-neutral-100 text-xs uppercase mb-1">
                 <span>Linux &amp; Automation Scripting (Bash / Python)</span>
                 <span>80%</span>
               </div>
-              <div class="w-full bg-gray-200 h-2">
-                <div class="progress-bar bg-primary h-2 w-0 transition-all duration-[1500ms] ease-out" data-width="80%">
+              <div class="w-full bg-neutral-800 h-2">
+                <div
+                  class="progress-bar bg-gradient-to-r from-orange-600 to-orange-400 shadow-[0_0_10px_rgba(251,146,60,0.5)] rounded-r-full h-2 w-0 transition-all duration-[1500ms] ease-out"
+                  data-width="80%">
                 </div>
               </div>
             </div>
 
             <div>
-              <div class="flex justify-between font-poppins font-semibold text-dark text-xs uppercase mb-1">
+              <div class="flex justify-between font-poppins font-semibold text-neutral-100 text-xs uppercase mb-1">
                 <span>Database Administration (PostgreSQL / DynamoDB / MySQL)</span>
                 <span>80%</span>
               </div>
-              <div class="w-full bg-gray-200 h-2">
-                <div class="progress-bar bg-primary h-2 w-0 transition-all duration-[1500ms] ease-out" data-width="80%">
+              <div class="w-full bg-neutral-800 h-2">
+                <div
+                  class="progress-bar bg-gradient-to-r from-orange-600 to-orange-400 shadow-[0_0_10px_rgba(251,146,60,0.5)] rounded-r-full h-2 w-0 transition-all duration-[1500ms] ease-out"
+                  data-width="80%">
                 </div>
               </div>
             </div>
 
             <div>
-              <div class="flex justify-between font-poppins font-semibold text-dark text-xs uppercase mb-1">
+              <div class="flex justify-between font-poppins font-semibold text-neutral-100 text-xs uppercase mb-1">
                 <span>Japanese Professional Communication (JLPT N1)</span>
                 <span>95%</span>
               </div>
-              <div class="w-full bg-gray-200 h-2">
-                <div class="progress-bar bg-primary h-2 w-0 transition-all duration-[1500ms] ease-out" data-width="95%">
+              <div class="w-full bg-neutral-800 h-2">
+                <div
+                  class="progress-bar bg-gradient-to-r from-orange-600 to-orange-400 shadow-[0_0_10px_rgba(251,146,60,0.5)] rounded-r-full h-2 w-0 transition-all duration-[1500ms] ease-out"
+                  data-width="95%">
                 </div>
               </div>
             </div>
@@ -322,9 +345,9 @@
 
         <div class="text-center pb-10">
           <h2
-            class="font-title font-bold text-3xl text-dark uppercase tracking-wider relative inline-block after:content-[''] after:absolute after:w-10 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 before:content-[''] before:absolute before:w-28 before:h-[1px] before:bg-gray-200 before:bottom-[-8px] before:left-1/2 before:-translate-x-1/2">
+            class="font-title font-bold text-3xl text-neutral-100 uppercase tracking-wider relative inline-block after:content-[''] after:absolute after:w-10 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 before:content-[''] before:absolute before:w-28 before:h-[1px] before:bg-neutral-800 before:bottom-[-8px] before:left-1/2 before:-translate-x-1/2">
             Resume</h2>
-          <p class="mt-8 text-gray-600 max-w-4xl mx-auto">
+          <p class="mt-8 text-neutral-400 max-w-4xl mx-auto">
             Professional milestones, education history, and industry-standard SRE &amp; cloud certifications.
           </p>
         </div>
@@ -336,7 +359,7 @@
 
             <!-- Certifications Sub-section -->
             <div>
-              <h3 class="font-title font-bold text-2xl text-dark mb-6 flex items-center">
+              <h3 class="font-title font-bold text-2xl text-neutral-100 mb-6 flex items-center">
                 <i class="bx bx-award text-primary text-3xl mr-2"></i> Professional Certifications
               </h3>
               <div class="border-l-2 border-primary pl-6 space-y-6 relative">
@@ -346,8 +369,8 @@
                   </div>
                   <h4 class="font-title font-semibold text-lg text-primary uppercase">AWS Certified Solutions Architect
                     – Associate (SAA)</h4>
-                  <p class="text-xs text-gray-500 font-semibold mt-1">Amazon Web Services</p>
-                  <p class="text-sm text-gray-600 mt-2">
+                  <p class="text-xs text-neutral-400 font-semibold mt-1">Amazon Web Services</p>
+                  <p class="text-sm text-neutral-400 mt-2">
                     Validates expertise in designing and deploying secure, robust, and cost-efficient cloud
                     architectures on AWS.
                   </p>
@@ -357,8 +380,8 @@
                   <div class="absolute -left-[31px] top-1.5 bg-white border-2 border-primary rounded-full w-4 h-4">
                   </div>
                   <h4 class="font-title font-semibold text-lg text-primary uppercase">ITIL Foundation Certification</h4>
-                  <p class="text-xs text-gray-500 font-semibold mt-1">AXELOS</p>
-                  <p class="text-sm text-gray-600 mt-2">
+                  <p class="text-xs text-neutral-400 font-semibold mt-1">AXELOS</p>
+                  <p class="text-sm text-neutral-400 mt-2">
                     Validates core concepts of IT Service Management (ITSM), incident resolution pipelines, SRE
                     operational workflows, and continuous system enhancement lifecycle.
                   </p>
@@ -369,8 +392,8 @@
                   </div>
                   <h4 class="font-title font-semibold text-lg text-primary uppercase">Japanese Language Proficiency Test
                     (JLPT) N1</h4>
-                  <p class="text-xs text-gray-500 font-semibold mt-1">JEES / The Japan Foundation</p>
-                  <p class="text-sm text-gray-600 mt-2">
+                  <p class="text-xs text-neutral-400 font-semibold mt-1">JEES / The Japan Foundation</p>
+                  <p class="text-sm text-neutral-400 mt-2">
                     Highest level of Japanese language proficiency, proving fluent professional communication capability
                     in technical business settings.
                   </p>
@@ -380,7 +403,7 @@
 
             <!-- Education Sub-section -->
             <div>
-              <h3 class="font-title font-bold text-2xl text-dark mb-6 flex items-center">
+              <h3 class="font-title font-bold text-2xl text-neutral-100 mb-6 flex items-center">
                 <i class="bx bx-book-reader text-primary text-3xl mr-2"></i> Education
               </h3>
               <div class="border-l-2 border-primary pl-6 space-y-6 relative">
@@ -390,9 +413,10 @@
                   </div>
                   <h4 class="font-title font-semibold text-lg text-primary uppercase">Bachelor of Computer Applications
                     (BCA)</h4>
-                  <h5 class="text-xs font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded inline-block mt-1">Jan 2024 - Mar 2027</h5>
-                  <p class="text-sm text-gray-500 font-semibold">Mangalayatan University, UP, India (Online)</p>
-                  <p class="text-sm text-gray-600 mt-2">
+                  <h5 class="text-xs font-semibold bg-neutral-900 text-neutral-300 px-3 py-1 rounded inline-block mt-1">
+                    Jan 2024 - Mar 2027</h5>
+                  <p class="text-sm text-neutral-400 font-semibold">Mangalayatan University, UP, India (Online)</p>
+                  <p class="text-sm text-neutral-400 mt-2">
                     Focusing on system design patterns, object-oriented concepts, structural databases, and networking
                     protocols.
                   </p>
@@ -403,11 +427,13 @@
                   </div>
                   <h4 class="font-title font-semibold text-lg text-primary uppercase">IT Technical Department Diploma
                   </h4>
-                  <h5 class="text-xs font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded inline-block mt-1">2020 -
+                  <h5 class="text-xs font-semibold bg-neutral-900 text-neutral-300 px-3 py-1 rounded inline-block mt-1">
+                    2020 -
                     2022</h5>
-                  <p class="text-sm text-gray-500 font-semibold">Osaka Information and Computer Science College, Osaka,
+                  <p class="text-sm text-neutral-400 font-semibold">Osaka Information and Computer Science College,
+                    Osaka,
                     Japan</p>
-                  <p class="text-sm text-gray-600 mt-2">
+                  <p class="text-sm text-neutral-400 mt-2">
                     Studies in systems programming, data structures, network security, database administration, and
                     algorithms.
                     Awarded a **medal for academic excellence** and received the **JASSO Scholarship** for outstanding
@@ -419,10 +445,12 @@
                   <div class="absolute -left-[31px] top-1.5 bg-white border-2 border-primary rounded-full w-4 h-4">
                   </div>
                   <h4 class="font-title font-semibold text-lg text-primary uppercase">Japanese Language Course</h4>
-                  <h5 class="text-xs font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded inline-block mt-1">2018 -
+                  <h5 class="text-xs font-semibold bg-neutral-900 text-neutral-300 px-3 py-1 rounded inline-block mt-1">
+                    2018 -
                     2020</h5>
-                  <p class="text-sm text-gray-500 font-semibold">First Study Japanese Language School, Osaka, Japan</p>
-                  <p class="text-sm text-gray-600 mt-2">
+                  <p class="text-sm text-neutral-400 font-semibold">First Study Japanese Language School, Osaka, Japan
+                  </p>
+                  <p class="text-sm text-neutral-400 mt-2">
                     Bilingual training in advanced Japanese grammar, business communications, and social etiquette.
                   </p>
                 </div>
@@ -433,19 +461,21 @@
 
           <!-- Right Column (Work Experience) -->
           <div>
-            <h3 class="font-title font-bold text-2xl text-dark mb-6 flex items-center">
+            <h3 class="font-title font-bold text-2xl text-neutral-100 mb-6 flex items-center">
               <i class="bx bx-briefcase text-primary text-3xl mr-2"></i> Professional Experience
             </h3>
             <div class="border-l-2 border-primary pl-6 space-y-8 relative">
 
               <!-- Job 1 -->
-              <div class="relative hover:bg-gray-50 p-2 -ml-2 rounded transition-colors duration-300">
+              <div
+                class="relative hover:bg-neutral-900/50 p-3 -ml-3 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(249,115,22,0.15)] border border-transparent hover:border-neutral-700/50">
                 <div class="absolute -left-[31px] top-1.5 bg-white border-2 border-primary rounded-full w-4 h-4"></div>
                 <h4 class="font-title font-semibold text-lg text-primary uppercase">DevOps & SRE</h4>
-                <h5 class="text-xs font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded inline-block mt-1">Aug 2025
+                <h5 class="text-xs font-semibold bg-neutral-900 text-neutral-300 px-3 py-1 rounded inline-block mt-1">
+                  Aug 2025
                   – Present</h5>
-                <p class="text-sm text-gray-500 font-semibold">TDI System Service Co., Ltd.</p>
-                <ul class="list-disc pl-5 mt-3 space-y-2 text-sm text-gray-600">
+                <p class="text-sm text-neutral-400 font-semibold">TDI System Service Co., Ltd.</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2 text-sm text-neutral-400">
                   <li>Designed and operated multi-cloud environments across AWS and Azure.</li>
                   <li>Implemented event-driven architectures using EventBridge, SQS, and Step Functions.</li>
                   <li>Built Terraform IaC modules for reproducible, standardized environment provisioning.</li>
@@ -457,15 +487,17 @@
               </div>
 
               <!-- Job 2 -->
-              <div class="relative hover:bg-gray-50 p-2 -ml-2 rounded transition-colors duration-300">
+              <div
+                class="relative hover:bg-neutral-900/50 p-3 -ml-3 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(249,115,22,0.15)] border border-transparent hover:border-neutral-700/50">
                 <div class="absolute -left-[31px] top-1.5 bg-white border-2 border-primary rounded-full w-4 h-4"></div>
                 <h4 class="font-title font-semibold text-lg text-primary uppercase">System Engineer (DevOps &amp; SRE)
                 </h4>
-                <h5 class="text-xs font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded inline-block mt-1">Oct 2023
+                <h5 class="text-xs font-semibold bg-neutral-900 text-neutral-300 px-3 py-1 rounded inline-block mt-1">
+                  Oct 2023
                   - Jul 2025</h5>
-                <p class="text-sm text-gray-500 font-semibold">PayStorage Co., Ltd. (Center Mobile Co., Ltd.), Osaka,
+                <p class="text-sm text-neutral-400 font-semibold">PayStorage Co., Ltd. (Center Mobile Co., Ltd.), Osaka,
                   Japan</p>
-                <ul class="list-disc pl-5 mt-3 space-y-2 text-sm text-gray-600">
+                <ul class="list-disc pl-5 mt-3 space-y-2 text-sm text-neutral-400">
                   <li>Migrated and enhanced a high-volume SIM card sales management system, improving overall
                     reliability and security.</li>
                   <li>Adopted Hexagonal Architecture using **Golang (Gin)** and **Node.js** to decouple core domain
@@ -486,13 +518,19 @@
                 <div class="absolute -left-[31px] top-1.5 bg-white border-2 border-primary rounded-full w-4 h-4"></div>
                 <h4 class="font-title font-semibold text-lg text-primary uppercase">Programmer (Backend &amp;
                   Infrastructure)</h4>
-                <h5 class="text-xs font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded inline-block mt-1">Apr 2022
+                <h5 class="text-xs font-semibold bg-neutral-900 text-neutral-300 px-3 py-1 rounded inline-block mt-1">
+                  Apr 2022
                   - Oct 2023</h5>
-                <p class="text-sm text-gray-500 font-semibold">AppTime Inc., Osaka, Japan</p>
-                <ul class="list-disc pl-5 mt-3 space-y-2 text-sm text-gray-600">
-                  <li>**Caregiving Product Recommendation App** (Jun 2023 – Oct 2023): Built secure REST APIs in Laravel, managed MySQL schemas, implemented automated PDF generation, and managed AWS infrastructure.</li>
-                  <li>**Roulette Notification System** (Oct 2022 – Dec 2022): Developed a scalable push notification system utilizing **Firebase Cloud Messaging (FCM)** and Laravel. Managed server deployment and configuration on AWS EC2.</li>
-                  <li>**Multi-Client Systems**: Managed deployment workflows to AWS (EC2, S3, CloudFront) and optimization of SQL Server and MySQL databases for multiple web products.</li>
+                <p class="text-sm text-neutral-400 font-semibold">AppTime Inc., Osaka, Japan</p>
+                <ul class="list-disc pl-5 mt-3 space-y-2 text-sm text-neutral-400">
+                  <li>**Caregiving Product Recommendation App** (Jun 2023 – Oct 2023): Built secure REST APIs in
+                    Laravel, managed MySQL schemas, implemented automated PDF generation, and managed AWS
+                    infrastructure.</li>
+                  <li>**Roulette Notification System** (Oct 2022 – Dec 2022): Developed a scalable push notification
+                    system utilizing **Firebase Cloud Messaging (FCM)** and Laravel. Managed server deployment and
+                    configuration on AWS EC2.</li>
+                  <li>**Multi-Client Systems**: Managed deployment workflows to AWS (EC2, S3, CloudFront) and
+                    optimization of SQL Server and MySQL databases for multiple web products.</li>
                 </ul>
               </div>
 
@@ -505,14 +543,14 @@
     </section>
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="py-16 bg-gray-50">
+    <section id="portfolio" class="py-16 bg-neutral-900/40">
       <div class="container mx-auto px-6" data-aos="fade-up">
 
         <div class="text-center pb-10">
           <h2
-            class="font-title font-bold text-3xl text-dark uppercase tracking-wider relative inline-block after:content-[''] after:absolute after:w-10 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 before:content-[''] before:absolute before:w-28 before:h-[1px] before:bg-gray-200 before:bottom-[-8px] before:left-1/2 before:-translate-x-1/2">
+            class="font-title font-bold text-3xl text-neutral-100 uppercase tracking-wider relative inline-block after:content-[''] after:absolute after:w-10 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 before:content-[''] before:absolute before:w-28 before:h-[1px] before:bg-neutral-800 before:bottom-[-8px] before:left-1/2 before:-translate-x-1/2">
             SRE &amp; DevOps Case Studies</h2>
-          <p class="mt-8 text-gray-600 max-w-4xl mx-auto">
+          <p class="mt-8 text-neutral-400 max-w-4xl mx-auto">
             Practical demonstrations of infrastructure as code, automated pipelines, and cloud observability solutions.
           </p>
         </div>
@@ -521,21 +559,21 @@
 
           <!-- Project 1: IaC with Terraform -->
           <div
-            class="group relative overflow-hidden bg-slate-900 rounded-lg shadow-lg aspect-[4/3] flex flex-col justify-end">
+            class="group relative overflow-hidden bg-neutral-900 rounded-xl shadow-xl ring-1 ring-white/10 aspect-[4/3] flex flex-col justify-end">
             <img src="assets/img/terraform_iac.png"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               alt="IaC with Terraform">
             <div
-              class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-6">
+              class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-6">
               <h4 class="font-title font-bold text-white text-xl">Enterprise IaC Provisioning</h4>
               <p class="text-primary font-semibold text-xs uppercase tracking-wider mt-1">Terraform &amp; AWS</p>
-              <p class="text-gray-300 text-xs mt-2 px-2">
+              <p class="text-neutral-300 text-xs mt-2 px-2">
                 Automated multi-environment AWS deployment (CloudFront, Route53, S3, IAM) utilizing modularized, dry
                 configurations and locked state files.
               </p>
               <div class="mt-4">
                 <a href="https://github.com/OICjangirrahul" target="_blank" rel="noopener"
-                  class="inline-flex items-center justify-center w-10 h-10 bg-white text-dark rounded-full hover:bg-primary hover:text-white transition duration-300">
+                  class="inline-flex items-center justify-center w-10 h-10 bg-neutral-800 text-neutral-100 rounded-full hover:bg-primary hover:text-white transition duration-300">
                   <i class="bx bx-link text-xl"></i>
                 </a>
               </div>
@@ -544,21 +582,21 @@
 
           <!-- Project 2: Observability with New Relic -->
           <div
-            class="group relative overflow-hidden bg-slate-900 rounded-lg shadow-lg aspect-[4/3] flex flex-col justify-end">
+            class="group relative overflow-hidden bg-neutral-900 rounded-xl shadow-xl ring-1 ring-white/10 aspect-[4/3] flex flex-col justify-end">
             <img src="assets/img/observability_dashboard.png"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               alt="Observability Pipeline">
             <div
-              class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-6">
+              class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-6">
               <h4 class="font-title font-bold text-white text-xl">Real-time Observability Pipeline</h4>
               <p class="text-primary font-semibold text-xs uppercase tracking-wider mt-1">New Relic &amp; CloudWatch</p>
-              <p class="text-gray-300 text-xs mt-2 px-2">
+              <p class="text-neutral-300 text-xs mt-2 px-2">
                 Configured comprehensive APM metrics, dashboard analytics, and custom alerting tunnels routed to MS
                 Teams via CloudWatch logs and AWS SQS.
               </p>
               <div class="mt-4">
                 <a href="https://github.com/OICjangirrahul" target="_blank" rel="noopener"
-                  class="inline-flex items-center justify-center w-10 h-10 bg-white text-dark rounded-full hover:bg-primary hover:text-white transition duration-300">
+                  class="inline-flex items-center justify-center w-10 h-10 bg-neutral-800 text-neutral-100 rounded-full hover:bg-primary hover:text-white transition duration-300">
                   <i class="bx bx-link text-xl"></i>
                 </a>
               </div>
@@ -567,22 +605,22 @@
 
           <!-- Project 3: Automated GitOps -->
           <div
-            class="group relative overflow-hidden bg-slate-900 rounded-lg shadow-lg aspect-[4/3] flex flex-col justify-end">
+            class="group relative overflow-hidden bg-neutral-900 rounded-xl shadow-xl ring-1 ring-white/10 aspect-[4/3] flex flex-col justify-end">
             <img src="assets/img/gitops_pipeline.png"
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               alt="Automated GitOps CI/CD">
             <div
-              class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/85 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-6">
+              class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-6">
               <h4 class="font-title font-bold text-white text-xl">Automated GitOps CI/CD</h4>
               <p class="text-primary font-semibold text-xs uppercase tracking-wider mt-1">ECS Fargate &amp; GitHub
                 Actions</p>
-              <p class="text-gray-300 text-xs mt-2 px-2">
+              <p class="text-neutral-300 text-xs mt-2 px-2">
                 Engineered automated workflows for Docker build, static code scans (Super-Linter), and secure
                 zero-downtime rolling updates to ECS.
               </p>
               <div class="mt-4">
                 <a href="https://github.com/OICjangirrahul" target="_blank" rel="noopener"
-                  class="inline-flex items-center justify-center w-10 h-10 bg-white text-dark rounded-full hover:bg-primary hover:text-white transition duration-300">
+                  class="inline-flex items-center justify-center w-10 h-10 bg-neutral-800 text-neutral-100 rounded-full hover:bg-primary hover:text-white transition duration-300">
                   <i class="bx bx-link text-xl"></i>
                 </a>
               </div>
@@ -597,10 +635,10 @@
   </main>
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="py-12 bg-gray-50 border-t border-gray-100 text-center lg:pl-24">
+  <footer id="footer" class="py-12 bg-neutral-900/40 border-t border-neutral-800/50 text-center lg:pl-24">
     <div class="container mx-auto px-6">
-      <h3 class="font-title font-bold text-3xl text-dark mb-4">Rahul Jangir</h3>
-      <p class="italic text-gray-500 max-w-2xl mx-auto mb-8 text-sm">
+      <h3 class="font-title font-bold text-3xl text-neutral-100 mb-4">Rahul Jangir</h3>
+      <p class="italic text-neutral-400 max-w-2xl mx-auto mb-8 text-sm">
         Bilingual (JLPT N1) SRE &amp; DevOps Specialist with expertise in Cloud Infrastructures, Automation Scripting,
         Observability setups, and High-Performance Deployments.
       </p>
@@ -610,8 +648,8 @@
           <i class="bx bxl-linkedin"></i>
         </a>
       </div>
-      <div class="text-xs text-gray-500">
-        &copy; Copyright <strong class="text-dark"><span>Rahul Jangir</span></strong>. All Rights Reserved
+      <div class="text-xs text-neutral-400">
+        &copy; Copyright <strong class="text-neutral-100"><span>Rahul Jangir</span></strong>. All Rights Reserved
       </div>
     </div>
   </footer>
@@ -690,10 +728,10 @@
             if (!section) return;
             if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
               navbarlink.classList.add('active', 'text-white', 'bg-primary');
-              navbarlink.classList.remove('text-dark', 'bg-light');
+              navbarlink.classList.remove('text-neutral-100', 'bg-neutral-900');
             } else {
               navbarlink.classList.remove('active', 'text-white', 'bg-primary');
-              navbarlink.classList.add('text-dark', 'bg-light');
+              navbarlink.classList.add('text-neutral-100', 'bg-neutral-900');
             }
           });
         }
