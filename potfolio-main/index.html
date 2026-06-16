@@ -12,8 +12,8 @@
     name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/shuriken_favicon.png" rel="icon">
+  <link href="assets/img/shuriken_favicon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Shojumaru&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
@@ -658,6 +658,16 @@
     class="fixed right-4 bottom-4 z-40 flex items-center justify-center w-10 h-10 bg-primary text-white rounded-full opacity-0 invisible transition-all duration-300 hover:bg-primary-hover shadow-md">
     <i class="bi bi-arrow-up-short text-xl"></i>
   </a>
+  <!-- Music Toggle Button -->
+  <button id="music-toggle"
+    class="fixed left-4 bottom-4 z-40 flex items-center justify-center w-10 h-10 bg-primary text-white rounded-full transition-all duration-300 hover:bg-primary-hover shadow-md"
+    title="Toggle Music">
+    <i class="bx bx-music text-xl"></i>
+  </button>
+  <!-- Hidden Audio Player -->
+  <audio id="bg-music" loop>
+    <source src="assets/audio/naruto_theme.m4a" type="audio/mp4">
+  </audio>
 
   <!-- ==================== JavaScript Code ==================== -->
   <!-- AOS Library JS CDN -->
@@ -666,121 +676,175 @@
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
   <script>
+      let isMusicPlaying = false;
+
+      function playMusic() {
+        const audio = document.getElementById('bg-music');
+        if (!isMusicPlaying && audio) {
+          audio.play().then(() => {
+            isMusicPlaying = true;
+            updateMusicButton();
+            // Remove listeners after first successful play
+            document.removeEventListener('click', playMusic);
+            document.removeEventListener('keydown', playMusic);
+            document.removeEventListener('touchstart', playMusic);
+          }).catch(err => {
+            console.log("Autoplay prevented or audio file missing:", err);
+          });
+        }
+      }
+
+      // Play on first interaction (browser policy workaround)
+      document.addEventListener('click', playMusic);
+      document.addEventListener('keydown', playMusic);
+      document.addEventListener('touchstart', playMusic);
+
+      const musicBtn = document.getElementById('music-toggle');
+      if (musicBtn) {
+        musicBtn.addEventListener('click', (e) => {
+          e.stopPropagation(); // prevent document click
+          const audio = document.getElementById('bg-music');
+          if (!audio) return;
+          if (isMusicPlaying) {
+            audio.pause();
+            isMusicPlaying = false;
+          } else {
+            audio.play();
+            isMusicPlaying = true;
+          }
+          updateMusicButton();
+        });
+      }
+
+      function updateMusicButton() {
+        const icon = document.querySelector('#music-toggle i');
+        if (!icon) return;
+        if (isMusicPlaying) {
+          icon.classList.remove('bx-music');
+          icon.classList.add('bx-pause');
+          document.getElementById('music-toggle').classList.add('animate-pulse');
+        } else {
+          icon.classList.remove('bx-pause');
+          icon.classList.add('bx-music');
+          document.getElementById('music-toggle').classList.remove('animate-pulse');
+        }
+      }
+
       (function () {
-        "use strict";
+      "use strict";
 
-        // Mobile Nav Toggle
-        const mobileNavToggle = document.getElementById('mobile-nav-toggle');
-        const header = document.getElementById('header');
-        const navLinks = document.querySelectorAll('#navbar a');
+      // Mobile Nav Toggle
+      const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+      const header = document.getElementById('header');
+      const navLinks = document.querySelectorAll('#navbar a');
 
-        if (mobileNavToggle && header) {
-          mobileNavToggle.addEventListener('click', function (e) {
-            header.classList.toggle('left-0');
-            header.classList.toggle('-left-64');
+      if (mobileNavToggle && header) {
+        mobileNavToggle.addEventListener('click', function (e) {
+          header.classList.toggle('left-0');
+          header.classList.toggle('-left-64');
 
-            const icon = mobileNavToggle.querySelector('i');
-            if (icon.classList.contains('bi-list')) {
-              icon.classList.remove('bi-list');
-              icon.classList.add('bi-x');
-            } else {
+          const icon = mobileNavToggle.querySelector('i');
+          if (icon.classList.contains('bi-list')) {
+            icon.classList.remove('bi-list');
+            icon.classList.add('bi-x');
+          } else {
+            icon.classList.remove('bi-x');
+            icon.classList.add('bi-list');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (header.classList.contains('left-0')) {
+              header.classList.remove('left-0');
+              header.classList.add('-left-64');
+              const icon = mobileNavToggle.querySelector('i');
               icon.classList.remove('bi-x');
               icon.classList.add('bi-list');
             }
           });
-
-          navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-              if (header.classList.contains('left-0')) {
-                header.classList.remove('left-0');
-                header.classList.add('-left-64');
-                const icon = mobileNavToggle.querySelector('i');
-                icon.classList.remove('bi-x');
-                icon.classList.add('bi-list');
-              }
-            });
-          });
-        }
-
-        // Back to top button visibility
-        const backtotop = document.getElementById('back-to-top');
-        if (backtotop) {
-          const toggleBacktotop = () => {
-            if (window.scrollY > 100) {
-              backtotop.classList.remove('opacity-0', 'invisible');
-              backtotop.classList.add('opacity-100', 'visible');
-            } else {
-              backtotop.classList.remove('opacity-100', 'visible');
-              backtotop.classList.add('opacity-0', 'invisible');
-            }
-          }
-          window.addEventListener('load', toggleBacktotop);
-          window.addEventListener('scroll', toggleBacktotop);
-        }
-
-        // Active state on scroll for navigation links
-        const navbarlinks = document.querySelectorAll('#navbar a.scrollto');
-        const navbarlinksActive = () => {
-          let position = window.scrollY + 200;
-          navbarlinks.forEach(navbarlink => {
-            if (!navbarlink.hash) return;
-            let section = document.querySelector(navbarlink.hash);
-            if (!section) return;
-            if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-              navbarlink.classList.add('active', 'text-white', 'bg-primary');
-              navbarlink.classList.remove('text-neutral-100', 'bg-neutral-900');
-            } else {
-              navbarlink.classList.remove('active', 'text-white', 'bg-primary');
-              navbarlink.classList.add('text-neutral-100', 'bg-neutral-900');
-            }
-          });
-        }
-        window.addEventListener('load', navbarlinksActive);
-        window.addEventListener('scroll', navbarlinksActive);
-
-        // Hero Typed Animation
-        const typed = document.querySelector('.typed');
-        if (typed) {
-          let typed_strings = typed.getAttribute('data-typed-items');
-          typed_strings = typed_strings.split(',');
-          new Typed('.typed', {
-            strings: typed_strings,
-            loop: true,
-            typeSpeed: 100,
-            backSpeed: 50,
-            backDelay: 2000
-          });
-        }
-
-        // Skills animation using Intersection Observer
-        const skillsSection = document.getElementById('skills');
-        const progressBars = document.querySelectorAll('.progress-bar');
-        if (skillsSection && progressBars.length > 0) {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                progressBars.forEach(bar => {
-                  const targetWidth = bar.getAttribute('data-width');
-                  bar.style.width = targetWidth;
-                });
-                observer.unobserve(entry.target);
-              }
-            });
-          }, { threshold: 0.1 });
-          observer.observe(skillsSection);
-        }
-
-        // AOS Initialization
-        window.addEventListener('load', () => {
-          AOS.init({
-            duration: 1000,
-            easing: 'ease-in-out',
-            once: true,
-            mirror: false
-          });
         });
+      }
 
-      })();
+      // Back to top button visibility
+      const backtotop = document.getElementById('back-to-top');
+      if (backtotop) {
+        const toggleBacktotop = () => {
+          if (window.scrollY > 100) {
+            backtotop.classList.remove('opacity-0', 'invisible');
+            backtotop.classList.add('opacity-100', 'visible');
+          } else {
+            backtotop.classList.remove('opacity-100', 'visible');
+            backtotop.classList.add('opacity-0', 'invisible');
+          }
+        }
+        window.addEventListener('load', toggleBacktotop);
+        window.addEventListener('scroll', toggleBacktotop);
+      }
+
+      // Active state on scroll for navigation links
+      const navbarlinks = document.querySelectorAll('#navbar a.scrollto');
+      const navbarlinksActive = () => {
+        let position = window.scrollY + 200;
+        navbarlinks.forEach(navbarlink => {
+          if (!navbarlink.hash) return;
+          let section = document.querySelector(navbarlink.hash);
+          if (!section) return;
+          if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+            navbarlink.classList.add('active', 'text-white', 'bg-primary');
+            navbarlink.classList.remove('text-neutral-100', 'bg-neutral-900');
+          } else {
+            navbarlink.classList.remove('active', 'text-white', 'bg-primary');
+            navbarlink.classList.add('text-neutral-100', 'bg-neutral-900');
+          }
+        });
+      }
+      window.addEventListener('load', navbarlinksActive);
+      window.addEventListener('scroll', navbarlinksActive);
+
+      // Hero Typed Animation
+      const typed = document.querySelector('.typed');
+      if (typed) {
+        let typed_strings = typed.getAttribute('data-typed-items');
+        typed_strings = typed_strings.split(',');
+        new Typed('.typed', {
+          strings: typed_strings,
+          loop: true,
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 2000
+        });
+      }
+
+      // Skills animation using Intersection Observer
+      const skillsSection = document.getElementById('skills');
+      const progressBars = document.querySelectorAll('.progress-bar');
+      if (skillsSection && progressBars.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              progressBars.forEach(bar => {
+                const targetWidth = bar.getAttribute('data-width');
+                bar.style.width = targetWidth;
+              });
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        observer.observe(skillsSection);
+      }
+
+      // AOS Initialization
+      window.addEventListener('load', () => {
+        AOS.init({
+          duration: 1000,
+          easing: 'ease-in-out',
+          once: true,
+          mirror: false
+        });
+      });
+
+    })();
   </script>
 </body>
 
