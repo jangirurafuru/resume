@@ -1,0 +1,2604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeganJapan — Plant-Based Travel Guide to Japan</title>
+    <meta name="description"
+        content="The ultimate vegan travel guide to Japan. Discover plant-based restaurants, temple stays, and unforgettable experiences in Kyoto, Tokyo, Nara & Kobe.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-bg: #0c0b0f;
+            --color-bg-alt: #100f14;
+            --color-bg-card: #15141b;
+            --color-surface: #1c1b24;
+            --color-border: rgba(255, 255, 255, 0.05);
+            --color-text: #f2f0f7;
+            --color-text-secondary: #a09baf;
+            --color-text-muted: #6a6578;
+            --color-accent: #e8a0bf;
+            --color-accent-deep: #c97a9f;
+            --color-accent-light: #f0c4d8;
+            --color-accent-glow: rgba(232, 160, 191, 0.12);
+            --color-green: #8bc49e;
+            --color-green-deep: #5fa87a;
+            --color-green-glow: rgba(139, 196, 158, 0.12);
+            --color-sakura: #f5c6d0;
+            --color-sakura-deep: #e0929f;
+            --color-gold: #d4a76a;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.07);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+            --font-display: 'Playfair Display', 'Noto Serif JP', Georgia, serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-jp: 'Noto Serif JP', serif;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            font-family: var(--font-body);
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--color-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-accent-deep);
+            border-radius: 3px;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heroSlow {
+            0% {
+                transform: scale(1.0);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 15px rgba(232, 160, 191, 0.1);
+            }
+
+            50% {
+                box-shadow: 0 0 35px rgba(232, 160, 191, 0.25);
+            }
+        }
+
+        @keyframes sakuraFall {
+            0% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) translateX(80px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes scrollGallery {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes gentlePulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== SAKURA PETALS ===== */
+        .sakura-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .sakura-petal {
+            position: absolute;
+            top: -5vh;
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(ellipse at center, var(--color-sakura), var(--color-sakura-deep));
+            border-radius: 50% 0 50% 50%;
+            opacity: 0.5;
+            animation: sakuraFall linear infinite;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.4s var(--transition-smooth);
+        }
+
+        .navbar.scrolled {
+            padding: 14px 60px;
+            background: rgba(12, 11, 15, 0.88);
+            backdrop-filter: blur(24px) saturate(1.6);
+            -webkit-backdrop-filter: blur(24px) saturate(1.6);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .nav-logo-jp {
+            font-family: var(--font-jp);
+            font-size: 0.75rem;
+            color: var(--color-accent);
+            letter-spacing: 0.08em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            transition: color 0.3s ease;
+            position: relative;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-text);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-nav {
+            padding: 10px 26px;
+            border-radius: 100px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .btn-nav-ghost {
+            background: transparent;
+            color: var(--color-text);
+        }
+
+        .btn-nav-ghost:hover {
+            color: var(--color-accent);
+        }
+
+        .btn-nav-primary {
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
+            color: var(--color-bg);
+        }
+
+        .btn-nav-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(232, 160, 191, 0.3);
+        }
+
+        .vegan-badge-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            background: var(--color-green-glow);
+            border: 1px solid rgba(139, 196, 158, 0.25);
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--color-green);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            padding: 5px;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--color-text);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 750px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: heroSlow 25s ease-in-out infinite alternate;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(12, 11, 15, 0.25) 0%,
+                    rgba(12, 11, 15, 0.05) 35%,
+                    rgba(12, 11, 15, 0.45) 65%,
+                    rgba(12, 11, 15, 0.97) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 24px;
+            animation: fadeInUp 1.2s var(--transition-smooth);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 22px;
+            border-radius: 100px;
+            background: var(--color-green-glow);
+            border: 1px solid rgba(139, 196, 158, 0.2);
+            backdrop-filter: blur(10px);
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--color-green);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+
+        .hero-badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--color-green);
+            animation: gentlePulse 2s ease infinite;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 6vw, 5.2rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--color-sakura);
+        }
+
+        .hero-jp-text {
+            font-family: var(--font-jp);
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--color-accent);
+            letter-spacing: 0.2em;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+            color: var(--color-text-secondary);
+            max-width: 620px;
+            margin: 0 auto 44px;
+            line-height: 1.75;
+            font-weight: 300;
+        }
+
+        /* Hero Search */
+        .hero-search {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(24px) saturate(1.5);
+            border-radius: var(--radius-xl);
+            padding: 8px;
+            max-width: 780px;
+            margin: 0 auto;
+            box-shadow: var(--glass-shadow), 0 0 80px rgba(232, 160, 191, 0.06);
+        }
+
+        .search-field {
+            flex: 1;
+            padding: 14px 22px;
+            border-radius: var(--radius-lg);
+            background: transparent;
+            transition: background 0.3s ease;
+        }
+
+        .search-field:hover {
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .search-field label {
+            display: block;
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text);
+            margin-bottom: 3px;
+        }
+
+        .search-field input,
+        .search-field select {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 0.88rem;
+            color: var(--color-text-secondary);
+            font-family: var(--font-body);
+        }
+
+        .search-field select option {
+            background: var(--color-bg-card);
+            color: var(--color-text);
+        }
+
+        .search-divider {
+            width: 1px;
+            height: 36px;
+            background: var(--glass-border);
+            flex-shrink: 0;
+        }
+
+        .search-btn {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s var(--transition-smooth);
+            color: var(--color-bg);
+            font-size: 1.2rem;
+        }
+
+        .search-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 32px rgba(232, 160, 191, 0.35);
+        }
+
+        /* Hero Stats */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 56px;
+            margin-top: 56px;
+            animation: fadeInUp 1.2s 0.5s var(--transition-smooth) both;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-sakura);
+        }
+
+        .hero-stat-label {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            margin-top: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 36px;
+            background: linear-gradient(to bottom, var(--color-accent), transparent);
+        }
+
+        /* ===== SECTION STYLES ===== */
+        section {
+            padding: 120px 60px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 72px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
+            margin-bottom: 18px;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '';
+            width: 28px;
+            height: 1px;
+            background: var(--color-accent);
+            opacity: 0.35;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            line-height: 1.75;
+            font-weight: 300;
+        }
+
+        /* ===== CITY DESTINATIONS ===== */
+        .cities {
+            background: var(--color-bg);
+        }
+
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 420px 320px;
+            gap: 18px;
+        }
+
+        .city-card {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .city-card:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .city-card:nth-child(2) {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .city-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s var(--transition-smooth);
+        }
+
+        .city-card:hover img {
+            transform: scale(1.07);
+        }
+
+        .city-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 25%, rgba(12, 11, 15, 0.88) 100%);
+            transition: background 0.4s ease;
+        }
+
+        .city-card:hover .city-overlay {
+            background: linear-gradient(180deg, transparent 10%, rgba(12, 11, 15, 0.92) 100%);
+        }
+
+        .city-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px;
+            transform: translateY(8px);
+            transition: transform 0.4s var(--transition-smooth);
+        }
+
+        .city-card:hover .city-info {
+            transform: translateY(0);
+        }
+
+        .city-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            border-radius: 100px;
+            background: rgba(139, 196, 158, 0.12);
+            border: 1px solid rgba(139, 196, 158, 0.25);
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--color-green);
+            margin-bottom: 12px;
+        }
+
+        .city-name {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .city-name-jp {
+            font-family: var(--font-jp);
+            font-size: 0.9rem;
+            color: var(--color-accent);
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+
+        .city-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.82rem;
+            color: var(--color-text-secondary);
+        }
+
+        .city-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .city-vegan-count {
+            color: var(--color-green);
+            font-weight: 600;
+        }
+
+        /* ===== VEGAN EXPERIENCES ===== */
+        .experiences {
+            background: var(--color-bg-alt);
+        }
+
+        .experiences-scroll {
+            display: flex;
+            gap: 22px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 16px;
+            scrollbar-width: none;
+        }
+
+        .experiences-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .experience-card {
+            flex: 0 0 370px;
+            scroll-snap-align: start;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            transition: all 0.4s var(--transition-smooth);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-color: rgba(232, 160, 191, 0.15);
+        }
+
+        .experience-img-wrapper {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .experience-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--transition-smooth);
+        }
+
+        .experience-card:hover .experience-img-wrapper img {
+            transform: scale(1.06);
+        }
+
+        .experience-badges {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            display: flex;
+            gap: 6px;
+        }
+
+        .exp-badge {
+            padding: 5px 12px;
+            border-radius: 100px;
+            backdrop-filter: blur(10px);
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .exp-badge-duration {
+            background: rgba(12, 11, 15, 0.65);
+            color: var(--color-text);
+        }
+
+        .exp-badge-vegan {
+            background: rgba(139, 196, 158, 0.2);
+            border: 1px solid rgba(139, 196, 158, 0.3);
+            color: var(--color-green);
+        }
+
+        .experience-fav {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(12, 11, 15, 0.5);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .experience-fav:hover {
+            background: rgba(232, 160, 191, 0.3);
+            transform: scale(1.1);
+        }
+
+        .experience-body {
+            padding: 22px;
+        }
+
+        .experience-location {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            margin-bottom: 6px;
+        }
+
+        .experience-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        .experience-rating {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .stars {
+            color: var(--color-gold);
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+        }
+
+        .rating-count {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+
+        .experience-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .experience-price-label {
+            font-size: 0.72rem;
+            color: var(--color-text-muted);
+        }
+
+        .experience-price-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-sakura);
+        }
+
+        .experience-price-value small {
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: var(--color-text-muted);
+        }
+
+        .btn-book {
+            padding: 10px 22px;
+            border-radius: 100px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
+            color: var(--color-bg);
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 160, 191, 0.3);
+        }
+
+        /* ===== VEGAN RESTAURANTS ===== */
+        .restaurants {
+            background: var(--color-bg);
+        }
+
+        .restaurants-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .restaurant-card {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            transition: all 0.4s var(--transition-smooth);
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(139, 196, 158, 0.2);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+        }
+
+        .restaurant-img {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .restaurant-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--transition-smooth);
+        }
+
+        .restaurant-card:hover .restaurant-img img {
+            transform: scale(1.06);
+        }
+
+        .restaurant-type-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            padding: 5px 14px;
+            border-radius: 100px;
+            background: rgba(139, 196, 158, 0.18);
+            border: 1px solid rgba(139, 196, 158, 0.3);
+            backdrop-filter: blur(10px);
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--color-green);
+        }
+
+        .restaurant-price-range {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            padding: 5px 12px;
+            border-radius: 100px;
+            background: rgba(12, 11, 15, 0.65);
+            backdrop-filter: blur(10px);
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--color-gold);
+        }
+
+        .restaurant-body {
+            padding: 22px;
+        }
+
+        .restaurant-city-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            margin-bottom: 6px;
+        }
+
+        .restaurant-name {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .restaurant-name-jp {
+            font-family: var(--font-jp);
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+            margin-bottom: 10px;
+        }
+
+        .restaurant-desc {
+            font-size: 0.88rem;
+            color: var(--color-text-secondary);
+            line-height: 1.65;
+            margin-bottom: 16px;
+        }
+
+        .restaurant-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .restaurant-tag-item {
+            padding: 4px 10px;
+            border-radius: 100px;
+            background: var(--color-surface);
+            font-size: 0.7rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* ===== FEATURES / WHY SECTION ===== */
+        .features {
+            background: var(--color-bg-alt);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            padding: 40px 28px;
+            border-radius: var(--radius-lg);
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            text-align: center;
+            transition: all 0.4s var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(232, 160, 191, 0.12);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            background: var(--color-accent-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 22px;
+            font-size: 1.6rem;
+        }
+
+        .feature-icon.green {
+            background: var(--color-green-glow);
+        }
+
+        .feature-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-text {
+            font-size: 0.88rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery {
+            background: var(--color-bg);
+            overflow: hidden;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 14px;
+            animation: scrollGallery 50s linear infinite;
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            width: 330px;
+            height: 430px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--transition-smooth);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(12, 11, 15, 0.8) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 22px;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-text {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            background: var(--color-bg-alt);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            padding: 36px 28px;
+            border-radius: var(--radius-lg);
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            transition: all 0.4s var(--transition-smooth);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(232, 160, 191, 0.12);
+        }
+
+        .testimonial-stars {
+            color: var(--color-gold);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            line-height: 1.75;
+            color: var(--color-text-secondary);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--color-accent-glow);
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-role {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            margin-top: 1px;
+        }
+
+        /* ===== NEWSLETTER ===== */
+        .newsletter {
+            background: var(--color-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-container {
+            max-width: 780px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .newsletter-bg-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232, 160, 191, 0.06), transparent 70%);
+            pointer-events: none;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 36px auto 0;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 22px;
+            border-radius: 100px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            font-size: 0.92rem;
+            color: var(--color-text);
+            font-family: var(--font-body);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .newsletter-input::placeholder {
+            color: var(--color-text-muted);
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--color-accent);
+        }
+
+        .newsletter-btn {
+            padding: 15px 32px;
+            border-radius: 100px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
+            color: var(--color-bg);
+            font-size: 0.88rem;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(232, 160, 191, 0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--color-bg);
+            padding: 72px 60px 36px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand-text {
+            font-size: 0.88rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-top: 14px;
+            max-width: 310px;
+        }
+
+        .footer-heading {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text);
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .footer-social-link {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--color-surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-social-link:hover {
+            background: var(--color-accent);
+            color: var(--color-bg);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 28px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-bottom-text {
+            font-size: 0.78rem;
+            color: var(--color-text-muted);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            font-size: 0.78rem;
+            color: var(--color-text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            section {
+                padding: 80px 32px;
+            }
+
+            .navbar {
+                padding: 16px 32px;
+            }
+
+            .cities-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+
+            .city-card:nth-child(1),
+            .city-card:nth-child(2) {
+                grid-column: span 1;
+                min-height: 340px;
+            }
+
+            .city-card {
+                min-height: 280px;
+            }
+
+            .restaurants-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 56px 18px;
+            }
+
+            .navbar {
+                padding: 12px 18px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .vegan-badge-nav {
+                display: none;
+            }
+
+            .hero-search {
+                flex-direction: column;
+                padding: 18px;
+                border-radius: var(--radius-lg);
+            }
+
+            .search-field {
+                padding: 10px 14px;
+            }
+
+            .search-divider {
+                width: 100%;
+                height: 1px;
+            }
+
+            .search-btn {
+                width: 100%;
+                height: 48px;
+                border-radius: 100px;
+            }
+
+            .hero-stats {
+                gap: 28px;
+            }
+
+            .cities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .city-card:nth-child(1),
+            .city-card:nth-child(2) {
+                grid-column: span 1;
+            }
+
+            .restaurants-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-card {
+                flex: 0 0 310px;
+            }
+
+            .gallery-item {
+                width: 260px;
+                height: 340px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 14px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sakura Petals -->
+    <div class="sakura-container" id="sakura-container"></div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">🌸</div>
+            <div>
+                VeganJapan
+                <div class="nav-logo-jp">ビーガン日本</div>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#cities">Cities</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#restaurants">Vegan Eats</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+        <div class="nav-actions">
+            <span class="vegan-badge-nav">🌱 100% Plant-Based</span>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=veganjapan.travel@gmail.com&su=Vegan+Japan+Travel+Inquiry&body=Hi+VeganJapan+Team%2C%0A%0AI+am+interested+in+vegan+travel+to+Japan.%0A%0ACities%3A+%5BKyoto+%2F+Tokyo+%2F+Nara+%2F+Kobe%5D%0ATravel+Dates%3A+%5B%5D%0ATravelers%3A+%5B%5D%0A%0AThank+you!"
+                target="_blank" rel="noopener" class="btn-nav btn-nav-primary">Contact Us</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1920&q=80"
+                alt="Beautiful Kyoto temple with cherry blossoms in spring" loading="eager">
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                🌱 Vegan-Friendly Travel Guide
+            </div>
+            <h1>Explore <em>Japan</em><br>The Plant-Based Way</h1>
+            <p class="hero-jp-text">日本をビーガンで旅しよう</p>
+            <p class="hero-subtitle">
+                Your complete guide to vegan travel in Japan. Discover plant-based restaurants, temple cuisine, and
+                unforgettable experiences across Kyoto, Tokyo, Nara & Kobe.
+            </p>
+
+            <div class="hero-search">
+                <div class="search-field">
+                    <label for="search-city">City</label>
+                    <select id="search-city">
+                        <option>All Cities</option>
+                        <option>Kyoto — 京都</option>
+                        <option>Tokyo — 東京</option>
+                        <option>Nara — 奈良</option>
+                        <option>Kobe — 神戸</option>
+                    </select>
+                </div>
+                <div class="search-divider"></div>
+                <div class="search-field">
+                    <label for="search-type">Experience</label>
+                    <select id="search-type">
+                        <option>All Experiences</option>
+                        <option>🍱 Vegan Dining</option>
+                        <option>⛩️ Temple Visits</option>
+                        <option>🌿 Nature & Gardens</option>
+                        <option>🎋 Cultural Tours</option>
+                    </select>
+                </div>
+                <div class="search-divider"></div>
+                <div class="search-field">
+                    <label for="search-when">When</label>
+                    <input type="date" id="search-when">
+                </div>
+                <button class="search-btn" id="search-submit" aria-label="Search">⌕</button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value" data-count="320" data-suffix="+">0</div>
+                    <div class="hero-stat-label">Vegan Spots</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value" data-count="4" data-suffix="">0</div>
+                    <div class="hero-stat-label">Cities</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value" data-count="50" data-suffix="+">0</div>
+                    <div class="hero-stat-label">Experiences</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value" data-count="99" data-suffix="%">0</div>
+                    <div class="hero-stat-label">Satisfaction</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Explore</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== CITIES ===== -->
+    <section class="cities" id="cities">
+        <div class="section-header reveal">
+            <div class="section-label">Destinations</div>
+            <h2 class="section-title">Four Iconic Cities,<br>Endless Vegan Adventures</h2>
+            <p class="section-subtitle">Each city offers a unique blend of ancient traditions and modern plant-based
+                dining.
+                Discover what makes each destination special for vegan travelers.</p>
+        </div>
+
+        <div class="cities-grid">
+            <!-- Kyoto -->
+            <div class="city-card reveal">
+                <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1000&q=80"
+                    alt="Fushimi Inari Shrine vermillion torii gates in Kyoto" loading="lazy">
+                <div class="city-overlay"></div>
+                <div class="city-info">
+                    <span class="city-tag">🌱 120+ vegan spots</span>
+                    <h3 class="city-name">Kyoto</h3>
+                    <p class="city-name-jp">京都 — 古都の美</p>
+                    <div class="city-meta">
+                        <span>⛩️ Temples & Shrines</span>
+                        <span>🍃 Shojin Ryori</span>
+                        <span class="city-vegan-count">⭐ 4.9</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tokyo -->
+            <div class="city-card reveal">
+                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1000&q=80"
+                    alt="Tokyo Tower and city skyline at night" loading="lazy">
+                <div class="city-overlay"></div>
+                <div class="city-info">
+                    <span class="city-tag">🌱 140+ vegan spots</span>
+                    <h3 class="city-name">Tokyo</h3>
+                    <p class="city-name-jp">東京 — 未来都市</p>
+                    <div class="city-meta">
+                        <span>🏙️ Modern Metropolis</span>
+                        <span>🍜 Vegan Ramen</span>
+                        <span class="city-vegan-count">⭐ 4.8</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nara -->
+            <div class="city-card reveal">
+                <img src="https://images.unsplash.com/photo-1624601573012-efb68f3f150d?w=800&q=80"
+                    alt="Friendly deer in Nara Park with autumn foliage" loading="lazy">
+                <div class="city-overlay"></div>
+                <div class="city-info">
+                    <span class="city-tag">🌱 35+ vegan spots</span>
+                    <h3 class="city-name">Nara</h3>
+                    <p class="city-name-jp">奈良 — 鹿の街</p>
+                    <div class="city-meta">
+                        <span>🦌 Sacred Deer Park</span>
+                        <span>🌿 Peaceful Nature</span>
+                        <span class="city-vegan-count">⭐ 4.9</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kobe -->
+            <div class="city-card reveal">
+                <img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?w=800&q=80"
+                    alt="Kobe port tower and harbor area at dusk" loading="lazy">
+                <div class="city-overlay"></div>
+                <div class="city-info">
+                    <span class="city-tag">🌱 25+ vegan spots</span>
+                    <h3 class="city-name">Kobe</h3>
+                    <p class="city-name-jp">神戸 — 港町</p>
+                    <div class="city-meta">
+                        <span>🌊 Harbour City</span>
+                        <span>🫕 Plant-Based Innovation</span>
+                        <span class="city-vegan-count">⭐ 4.7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VEGAN EXPERIENCES ===== -->
+    <section class="experiences" id="experiences">
+        <div class="section-header reveal">
+            <div class="section-label">Vegan Experiences</div>
+            <h2 class="section-title">Plant-Based Adventures<br>Across Japan</h2>
+            <p class="section-subtitle">From temple cooking classes to bamboo forest meditation — every experience is
+                100%
+                vegan-friendly and thoughtfully curated.</p>
+        </div>
+
+        <div class="experiences-scroll">
+            <!-- Experience 1: Shojin Ryori -->
+            <div class="experience-card">
+                <div class="experience-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1580442151529-343f2f6e0e27?w=800&q=80"
+                        alt="Traditional Japanese temple cuisine beautifully plated" loading="lazy">
+                    <div class="experience-badges">
+                        <span class="exp-badge exp-badge-duration">3 Hours</span>
+                        <span class="exp-badge exp-badge-vegan">🌱 Vegan</span>
+                    </div>
+                    <button class="experience-fav" aria-label="Add to favorites">♡</button>
+                </div>
+                <div class="experience-body">
+                    <div class="experience-location">Kyoto — 京都</div>
+                    <h3 class="experience-title">Shojin Ryori: Buddhist Temple Cooking Class</h3>
+                    <div class="experience-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(487 reviews)</span>
+                    </div>
+                    <div class="experience-footer">
+                        <div>
+                            <div class="experience-price-label">From</div>
+                            <div class="experience-price-value">¥8,500 <small>/person</small></div>
+                        </div>
+                        <button class="btn-book">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 2: Bamboo Forest -->
+            <div class="experience-card">
+                <div class="experience-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?w=800&q=80"
+                        alt="Arashiyama bamboo grove path in Kyoto" loading="lazy">
+                    <div class="experience-badges">
+                        <span class="exp-badge exp-badge-duration">Half Day</span>
+                        <span class="exp-badge exp-badge-vegan">🌱 Vegan</span>
+                    </div>
+                    <button class="experience-fav" aria-label="Add to favorites">♡</button>
+                </div>
+                <div class="experience-body">
+                    <div class="experience-location">Kyoto — 嵐山</div>
+                    <h3 class="experience-title">Bamboo Forest Walk & Vegan Matcha Ceremony</h3>
+                    <div class="experience-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(321 reviews)</span>
+                    </div>
+                    <div class="experience-footer">
+                        <div>
+                            <div class="experience-price-label">From</div>
+                            <div class="experience-price-value">¥6,200 <small>/person</small></div>
+                        </div>
+                        <button class="btn-book">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 3: Tokyo Street Food -->
+            <div class="experience-card">
+                <div class="experience-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=800&q=80"
+                        alt="Colorful Tokyo street at night with neon lights" loading="lazy">
+                    <div class="experience-badges">
+                        <span class="exp-badge exp-badge-duration">4 Hours</span>
+                        <span class="exp-badge exp-badge-vegan">🌱 Vegan</span>
+                    </div>
+                    <button class="experience-fav" aria-label="Add to favorites">♡</button>
+                </div>
+                <div class="experience-body">
+                    <div class="experience-location">Tokyo — 渋谷</div>
+                    <h3 class="experience-title">Vegan Street Food Tour: Shibuya to Shinjuku</h3>
+                    <div class="experience-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(256 reviews)</span>
+                    </div>
+                    <div class="experience-footer">
+                        <div>
+                            <div class="experience-price-label">From</div>
+                            <div class="experience-price-value">¥7,800 <small>/person</small></div>
+                        </div>
+                        <button class="btn-book">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 4: Nara Deer & Temples -->
+            <div class="experience-card">
+                <div class="experience-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80"
+                        alt="Ancient temple in Nara with peaceful garden surroundings" loading="lazy">
+                    <div class="experience-badges">
+                        <span class="exp-badge exp-badge-duration">Full Day</span>
+                        <span class="exp-badge exp-badge-vegan">🌱 Vegan</span>
+                    </div>
+                    <button class="experience-fav" aria-label="Add to favorites">♡</button>
+                </div>
+                <div class="experience-body">
+                    <div class="experience-location">Nara — 奈良</div>
+                    <h3 class="experience-title">Sacred Deer Park, Great Buddha & Vegan Lunch</h3>
+                    <div class="experience-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(198 reviews)</span>
+                    </div>
+                    <div class="experience-footer">
+                        <div>
+                            <div class="experience-price-label">From</div>
+                            <div class="experience-price-value">¥9,500 <small>/person</small></div>
+                        </div>
+                        <button class="btn-book">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 5: Kobe Harbour -->
+            <div class="experience-card">
+                <div class="experience-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&q=80"
+                        alt="Traditional Japanese garden with reflective pond" loading="lazy">
+                    <div class="experience-badges">
+                        <span class="exp-badge exp-badge-duration">Half Day</span>
+                        <span class="exp-badge exp-badge-vegan">🌱 Vegan</span>
+                    </div>
+                    <button class="experience-fav" aria-label="Add to favorites">♡</button>
+                </div>
+                <div class="experience-body">
+                    <div class="experience-location">Kobe — 神戸</div>
+                    <h3 class="experience-title">Kobe Harbour Walk & Plant-Based Kaiseki Dinner</h3>
+                    <div class="experience-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(142 reviews)</span>
+                    </div>
+                    <div class="experience-footer">
+                        <div>
+                            <div class="experience-price-label">From</div>
+                            <div class="experience-price-value">¥12,000 <small>/person</small></div>
+                        </div>
+                        <button class="btn-book">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 6: Zen Meditation -->
+            <div class="experience-card">
+                <div class="experience-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=800&q=80"
+                        alt="Peaceful zen rock garden at a Japanese temple" loading="lazy">
+                    <div class="experience-badges">
+                        <span class="exp-badge exp-badge-duration">2 Hours</span>
+                        <span class="exp-badge exp-badge-vegan">🌱 Vegan</span>
+                    </div>
+                    <button class="experience-fav" aria-label="Add to favorites">♡</button>
+                </div>
+                <div class="experience-body">
+                    <div class="experience-location">Kyoto — 京都</div>
+                    <h3 class="experience-title">Zen Meditation & Morning Temple Garden Walk</h3>
+                    <div class="experience-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-count">(374 reviews)</span>
+                    </div>
+                    <div class="experience-footer">
+                        <div>
+                            <div class="experience-price-label">From</div>
+                            <div class="experience-price-value">¥4,500 <small>/person</small></div>
+                        </div>
+                        <button class="btn-book">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VEGAN RESTAURANTS ===== -->
+    <section class="restaurants" id="restaurants">
+        <div class="section-header reveal">
+            <div class="section-label">Vegan Dining</div>
+            <h2 class="section-title">Top Plant-Based Restaurants</h2>
+            <p class="section-subtitle">From traditional Buddhist temple cuisine (精進料理) to modern vegan ramen — Japan's
+                plant-based food scene is thriving.</p>
+        </div>
+
+        <div class="restaurants-grid">
+            <!-- Restaurant 1 -->
+            <div class="restaurant-card reveal">
+                <div class="restaurant-img">
+                    <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=800&q=80"
+                        alt="Beautiful Japanese vegan ramen with toppings" loading="lazy">
+                    <span class="restaurant-type-badge">🌱 100% Vegan</span>
+                    <span class="restaurant-price-range">¥¥</span>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-city-label">Kyoto — 京都</div>
+                    <h3 class="restaurant-name">Shigetsu at Tenryū-ji</h3>
+                    <p class="restaurant-name-jp">篩月 — 天龍寺</p>
+                    <p class="restaurant-desc">Authentic shojin ryori (Buddhist temple cuisine) served in a
+                        centuries-old temple
+                        with garden views. A truly spiritual dining experience.</p>
+                    <div class="restaurant-tags">
+                        <span class="restaurant-tag-item">Shojin Ryori</span>
+                        <span class="restaurant-tag-item">Temple</span>
+                        <span class="restaurant-tag-item">Garden View</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant 2 -->
+            <div class="restaurant-card reveal">
+                <div class="restaurant-img">
+                    <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&q=80"
+                        alt="Artistic Japanese vegetable dish on ceramic plate" loading="lazy">
+                    <span class="restaurant-type-badge">🌱 100% Vegan</span>
+                    <span class="restaurant-price-range">¥¥¥</span>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-city-label">Tokyo — 東京</div>
+                    <h3 class="restaurant-name">Ain Soph Journey</h3>
+                    <p class="restaurant-name-jp">アインソフ ジャーニー</p>
+                    <p class="restaurant-desc">Tokyo's most famous vegan restaurant. Known for fluffy vegan pancakes,
+                        creative
+                        burgers, and a warm, welcoming atmosphere.</p>
+                    <div class="restaurant-tags">
+                        <span class="restaurant-tag-item">Modern Vegan</span>
+                        <span class="restaurant-tag-item">Pancakes</span>
+                        <span class="restaurant-tag-item">Shinjuku</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant 3 -->
+            <div class="restaurant-card reveal">
+                <div class="restaurant-img">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80"
+                        alt="Colorful plant-based Japanese bento box" loading="lazy">
+                    <span class="restaurant-type-badge">🌱 100% Vegan</span>
+                    <span class="restaurant-price-range">¥¥</span>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-city-label">Kobe — 神戸</div>
+                    <h3 class="restaurant-name">Modernark Pharm Café</h3>
+                    <p class="restaurant-name-jp">モダナーク ファーム カフェ</p>
+                    <p class="restaurant-desc">A cozy organic vegan café in Kobe's Kitano district. Farm-to-table
+                        seasonal menus
+                        with locally sourced produce and homemade sweets.</p>
+                    <div class="restaurant-tags">
+                        <span class="restaurant-tag-item">Organic</span>
+                        <span class="restaurant-tag-item">Farm-to-Table</span>
+                        <span class="restaurant-tag-item">Café</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant 4 -->
+            <div class="restaurant-card reveal">
+                <div class="restaurant-img">
+                    <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=800&q=80"
+                        alt="Steaming bowl of vegan Japanese curry" loading="lazy">
+                    <span class="restaurant-type-badge">🌱 Vegan Friendly</span>
+                    <span class="restaurant-price-range">¥</span>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-city-label">Nara — 奈良</div>
+                    <h3 class="restaurant-name">Café Fleur</h3>
+                    <p class="restaurant-name-jp">カフェ フルール</p>
+                    <p class="restaurant-desc">Charming café steps from Nara Park serving plant-based curries, matcha
+                        lattes with
+                        oat milk, and seasonal vegan desserts.</p>
+                    <div class="restaurant-tags">
+                        <span class="restaurant-tag-item">Curry</span>
+                        <span class="restaurant-tag-item">Near Deer Park</span>
+                        <span class="restaurant-tag-item">Matcha</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant 5 -->
+            <div class="restaurant-card reveal">
+                <div class="restaurant-img">
+                    <img src="https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=800&q=80"
+                        alt="Japanese tofu dish with seasonal vegetables" loading="lazy">
+                    <span class="restaurant-type-badge">🌱 100% Vegan</span>
+                    <span class="restaurant-price-range">¥¥¥</span>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-city-label">Kyoto — 京都</div>
+                    <h3 class="restaurant-name">Veg Out Kyoto</h3>
+                    <p class="restaurant-name-jp">ベグアウト京都</p>
+                    <p class="restaurant-desc">Modern plant-based kaiseki in a beautifully renovated machiya townhouse.
+                        Multi-course tasting menus that are works of art.</p>
+                    <div class="restaurant-tags">
+                        <span class="restaurant-tag-item">Kaiseki</span>
+                        <span class="restaurant-tag-item">Machiya</span>
+                        <span class="restaurant-tag-item">Fine Dining</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant 6 -->
+            <div class="restaurant-card reveal">
+                <div class="restaurant-img">
+                    <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=800&q=80"
+                        alt="Bowl of ramen noodles in rich broth" loading="lazy">
+                    <span class="restaurant-type-badge">🌱 100% Vegan</span>
+                    <span class="restaurant-price-range">¥</span>
+                </div>
+                <div class="restaurant-body">
+                    <div class="restaurant-city-label">Tokyo — 東京</div>
+                    <h3 class="restaurant-name">Afuri Vegan Ramen</h3>
+                    <p class="restaurant-name-jp">阿夫利 ビーガンラーメン</p>
+                    <p class="restaurant-desc">Famous yuzu shio ramen reimagined completely plant-based. Rich kelp and
+                        mushroom
+                        broth with handmade noodles. Unmissable.</p>
+                    <div class="restaurant-tags">
+                        <span class="restaurant-tag-item">Ramen</span>
+                        <span class="restaurant-tag-item">Yuzu</span>
+                        <span class="restaurant-tag-item">Ebisu</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features" id="features">
+        <div class="section-header reveal">
+            <div class="section-label">Why VeganJapan</div>
+            <h2 class="section-title">Vegan Travel, Perfected</h2>
+            <p class="section-subtitle">We've solved every challenge vegan travelers face in Japan — so you can simply
+                enjoy.
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-icon green">🌱</div>
+                <h3 class="feature-title">Verified Vegan</h3>
+                <p class="feature-text">Every restaurant & experience is personally verified. We check ingredients,
+                    cross-contamination, and hidden dashi.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🗾</div>
+                <h3 class="feature-title">Local Experts</h3>
+                <p class="feature-text">Our Japan-based vegan guides speak both Japanese and your language — no more
+                    menu
+                    confusion or awkward pointing.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon green">🍱</div>
+                <h3 class="feature-title">Allergy Card Included</h3>
+                <p class="feature-text">Get a custom Japanese allergy card that explains your dietary needs perfectly to
+                    any
+                    restaurant staff.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title">Free Cancellation</h3>
+                <p class="feature-text">Plans change. Cancel up to 48 hours before any experience for a full refund. No
+                    questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section class="gallery" id="gallery">
+        <div class="section-header reveal">
+            <div class="section-label">Japan in Focus</div>
+            <h2 class="section-title">Moments From the Journey</h2>
+            <p class="section-subtitle">Scenes that capture the magic of vegan travel through Japan — from misty temple
+                gardens to bustling neon streets.</p>
+        </div>
+
+        <div class="gallery-track">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=700&q=80"
+                    alt="Japanese temple with autumn maple leaves" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Autumn in Kyoto</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=700&q=80"
+                    alt="Mount Fuji at sunrise with cherry blossoms" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Mount Fuji, Japan</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?w=700&q=80"
+                    alt="Traditional geisha walking in Kyoto alley" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Gion District, Kyoto</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=700&q=80"
+                    alt="Tokyo Shibuya crossing at night with neon lights" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Shibuya, Tokyo</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=700&q=80"
+                    alt="Cherry blossom trees along river in Japan" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Sakura Season</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=700&q=80"
+                    alt="Peaceful zen garden with raked sand" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Zen Garden, Kyoto</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1576675784201-0e142b423952?w=700&q=80"
+                    alt="Traditional Japanese wooden bridge over garden pond" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Nara Gardens</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1551041777-ed277b8dd348?w=700&q=80"
+                    alt="Kobe port illuminated at night" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Kobe Port Tower</span></div>
+            </div>
+            <!-- Duplicated for seamless loop -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=700&q=80"
+                    alt="Japanese temple with autumn maple leaves" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Autumn in Kyoto</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=700&q=80"
+                    alt="Mount Fuji at sunrise with cherry blossoms" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Mount Fuji, Japan</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?w=700&q=80"
+                    alt="Traditional geisha walking in Kyoto alley" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Gion District, Kyoto</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=700&q=80"
+                    alt="Tokyo Shibuya crossing at night with neon lights" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Shibuya, Tokyo</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=700&q=80"
+                    alt="Cherry blossom trees along river in Japan" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Sakura Season</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=700&q=80"
+                    alt="Peaceful zen garden with raked sand" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Zen Garden, Kyoto</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1576675784201-0e142b423952?w=700&q=80"
+                    alt="Traditional Japanese wooden bridge over garden pond" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Nara Gardens</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1551041777-ed277b8dd348?w=700&q=80"
+                    alt="Kobe port illuminated at night" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-text">Kobe Port Tower</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials" id="reviews">
+        <div class="section-header reveal">
+            <div class="section-label">Traveler Stories</div>
+            <h2 class="section-title">Loved by Vegan Travelers</h2>
+            <p class="section-subtitle">Real stories from vegans who explored Japan without compromise.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"I was terrified of going to Japan as a vegan — everyone said it would be
+                    impossible. VeganJapan proved them all wrong. The shojin ryori cooking class in Kyoto was the
+                    highlight of my
+                    entire life."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+                        alt="Emma portrait" class="testimonial-avatar" loading="lazy">
+                    <div>
+                        <div class="testimonial-name">Emma Lindström</div>
+                        <div class="testimonial-role">Vegan Blogger, Stockholm</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"The allergy card they gave us was a game-changer. Every restaurant
+                    understood
+                    immediately. We ate the best food of our lives in Tokyo and Kyoto — all completely plant-based."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+                        alt="Marco portrait" class="testimonial-avatar" loading="lazy">
+                    <div>
+                        <div class="testimonial-name">Marco Benedetti</div>
+                        <div class="testimonial-role">Chef, Milan</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"The Nara deer park experience with a vegan bento lunch was magical. And the
+                    zen
+                    meditation in Kyoto gave me a peace I'm still carrying with me months later. Absolutely
+                    transformative."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80"
+                        alt="Priya portrait" class="testimonial-avatar" loading="lazy">
+                    <div>
+                        <div class="testimonial-name">Priya Sharma</div>
+                        <div class="testimonial-role">Yoga Teacher, Mumbai</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter" id="newsletter">
+        <div class="newsletter-bg-glow"></div>
+        <div class="newsletter-container reveal">
+            <div class="section-label">Stay Connected</div>
+            <h2 class="section-title">Get the Vegan Japan Guide</h2>
+            <p class="section-subtitle">Join 25,000+ vegan travelers. Receive our free weekly guide with restaurant
+                discoveries, seasonal tips, and exclusive deals.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" class="newsletter-input" id="newsletter-email" placeholder="your@email.com"
+                    required>
+                <button type="submit" class="newsletter-btn">Get Free Guide</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <a href="#" class="nav-logo">
+                    <div class="nav-logo-icon">🌸</div>
+                    <div>
+                        VeganJapan
+                        <div class="nav-logo-jp">ビーガン日本</div>
+                    </div>
+                </a>
+                <p class="footer-brand-text">
+                    The ultimate plant-based travel guide to Japan. Explore Kyoto, Tokyo, Nara & Kobe — the vegan way.
+                    🌱
+                </p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/explore/tags/veganjapan/" target="_blank" rel="noopener"
+                        class="footer-social-link" aria-label="Instagram">📷</a>
+                    <a href="https://x.com/search?q=vegan%20japan" target="_blank" rel="noopener"
+                        class="footer-social-link" aria-label="Twitter">𝕏</a>
+                    <a href="https://www.tiktok.com/search?q=vegan%20japan%20travel" target="_blank" rel="noopener"
+                        class="footer-social-link" aria-label="TikTok">♪</a>
+                    <a href="https://www.youtube.com/results?search_query=vegan+travel+japan" target="_blank"
+                        rel="noopener" class="footer-social-link" aria-label="YouTube">▶</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">Cities</h4>
+                <ul class="footer-links">
+                    <li><a href="#cities">Kyoto — 京都</a></li>
+                    <li><a href="#cities">Tokyo — 東京</a></li>
+                    <li><a href="#cities">Nara — 奈良</a></li>
+                    <li><a href="#cities">Kobe — 神戸</a></li>
+                    <li><a
+                            href="mailto:veganjapan.travel@gmail.com?subject=Osaka%20Vegan%20Travel%20Inquiry&body=Hi%2C%20I%27m%20interested%20in%20vegan%20travel%20to%20Osaka.%20Please%20notify%20me%20when%20it%27s%20available!">Osaka
+                            (Coming Soon)</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="#restaurants">Vegan Restaurants</a></li>
+                    <li><a
+                            href="mailto:veganjapan.travel@gmail.com?subject=Temple%20Stay%20Inquiry&body=Hi%20VeganJapan%2C%0A%0AI%27m%20interested%20in%20booking%20a%20vegan-friendly%20temple%20stay%20in%20Japan.%0A%0APreferred%20city%3A%20%5BKyoto%20%2F%20Nara%5D%0ADates%3A%20%5B%5D%0A%0AThank%20you!">Temple
+                            Stays</a></li>
+                    <li><a href="#experiences">Cooking Classes</a></li>
+                    <li><a href="#experiences">Nature Walks</a></li>
+                    <li><a href="#experiences">Cultural Tours</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Support</h4>
+                <ul class="footer-links">
+                    <li><a
+                            href="mailto:veganjapan.travel@gmail.com?subject=Help%20Request%20-%20VeganJapan&body=Hi%2C%20I%20need%20help%20with%3A%0A%0A%5BDescribe%20your%20question%5D">Help
+                            Center</a></li>
+                    <li><a
+                            href="mailto:veganjapan.travel@gmail.com?subject=Vegan%20FAQ%20Japan%20-%20Question&body=Hi%2C%20I%20have%20a%20question%20about%20vegan%20travel%20in%20Japan%3A%0A%0A%5BYour%20question%5D">Vegan
+                            FAQ Japan</a></li>
+                    <li><a
+                            href="mailto:veganjapan.travel@gmail.com?subject=Request%20Vegan%20Allergy%20Card%20for%20Japan&body=Hi%20VeganJapan%2C%0A%0APlease%20send%20me%20a%20printable%20Japanese%20allergy%20card%20for%20my%20trip.%0A%0AMy%20dietary%20requirements%3A%20%5BVegan%20%2F%20Gluten-free%20%2F%20Nut-free%20%2F%20Other%5D%0ATravel%20dates%3A%20%5B%5D%0A%0AThank%20you!">Allergy
+                            Cards</a></li>
+                    <li><a
+                            href="mailto:veganjapan.travel@gmail.com?subject=Contact%20VeganJapan&body=Hi%20VeganJapan%20Team%2C%0A%0A%5BYour%20message%5D">Contact
+                            Us</a></li>
+                    <li><a
+                            href="mailto:veganjapan.travel@gmail.com?subject=Accessibility%20Inquiry&body=Hi%2C%20I%20have%20an%20accessibility-related%20question%3A%0A%0A%5BYour%20question%5D">Accessibility</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span class="footer-bottom-text">© 2026 VeganJapan. Made with 🌱 for plant-powered travelers.</span>
+            <div class="footer-bottom-links">
+                <a href="mailto:veganjapan.travel@gmail.com?subject=Privacy%20Policy%20Request">Privacy Policy</a>
+                <a href="mailto:veganjapan.travel@gmail.com?subject=Terms%20of%20Service%20Request">Terms</a>
+                <a href="mailto:veganjapan.travel@gmail.com?subject=Cookie%20Settings%20Request">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // === Sakura Petals ===
+        (function createSakura() {
+            const container = document.getElementById('sakura-container');
+            const petalCount = 15;
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.classList.add('sakura-petal');
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDuration = (8 + Math.random() * 12) + 's';
+                petal.style.animationDelay = (Math.random() * 15) + 's';
+                petal.style.opacity = 0.15 + Math.random() * 0.25;
+                petal.style.width = (8 + Math.random() * 8) + 'px';
+                petal.style.height = petal.style.width;
+                container.appendChild(petal);
+            }
+        })();
+
+        // === Navbar scroll ===
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // === Scroll reveal ===
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    const parent = entry.target.closest('.cities-grid, .features-grid, .testimonials-grid, .restaurants-grid');
+                    if (parent) {
+                        const siblings = Array.from(parent.querySelectorAll('.reveal'));
+                        const idx = siblings.indexOf(entry.target);
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, idx * 120);
+                    } else {
+                        entry.target.classList.add('visible');
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // === Counter animation ===
+        function animateCounters() {
+            document.querySelectorAll('[data-count]').forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const suffix = counter.getAttribute('data-suffix') || '';
+                const duration = 2000;
+                const start = performance.now();
+
+                function update(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    counter.textContent = Math.floor(eased * target) + suffix;
+                    if (progress < 1) requestAnimationFrame(update);
+                }
+                requestAnimationFrame(update);
+            });
+        }
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const heroStats = document.querySelector('.hero-stats');
+        if (heroStats) statsObserver.observe(heroStats);
+
+        // === Smooth scroll ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // === Newsletter — opens Gmail with subscription email ===
+        const form = document.getElementById('newsletter-form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = document.getElementById('newsletter-email');
+                const userEmail = emailInput.value;
+                const btn = form.querySelector('.newsletter-btn');
+
+                // Open Gmail compose with subscription request
+                const subject = encodeURIComponent('Subscribe to VeganJapan Weekly Guide');
+                const body = encodeURIComponent(
+                    `Hi VeganJapan Team,\n\nPlease subscribe me to your free weekly Vegan Japan Guide.\n\nMy email: ${userEmail}\n\nI'm interested in:\n- Vegan restaurant discoveries\n- Seasonal travel tips\n- Exclusive deals\n\nThank you! 🌱`
+                );
+                window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=veganjapan.travel@gmail.com&su=${subject}&body=${body}`, '_blank');
+
+                btn.textContent = '✓ Opening Gmail...';
+                btn.style.background = 'linear-gradient(135deg, #8bc49e, #5fa87a)';
+                emailInput.value = '';
+                setTimeout(() => {
+                    btn.textContent = 'Get Free Guide';
+                    btn.style.background = '';
+                }, 3000);
+            });
+        }
+
+        // === Book Now buttons — open Gmail with experience details ===
+        document.querySelectorAll('.btn-book').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const card = btn.closest('.experience-card');
+                const title = card.querySelector('.experience-title')?.textContent || 'Experience';
+                const location = card.querySelector('.experience-location')?.textContent || 'Japan';
+                const price = card.querySelector('.experience-price-value')?.textContent || '';
+                const duration = card.querySelector('.exp-badge-duration')?.textContent || '';
+
+                const subject = encodeURIComponent(`Booking Request: ${title}`);
+                const body = encodeURIComponent(
+                    `Hi VeganJapan Team,\n\nI would like to book the following experience:\n\n` +
+                    `📍 Experience: ${title}\n` +
+                    `📌 Location: ${location}\n` +
+                    `⏱️ Duration: ${duration}\n` +
+                    `💰 Price: ${price}\n\n` +
+                    `My Details:\n` +
+                    `- Name: [Your name]\n` +
+                    `- Travel Date: [Your preferred date]\n` +
+                    `- Number of guests: [Number]\n` +
+                    `- Special requirements: [Allergies / accessibility needs]\n\n` +
+                    `Please confirm availability and send me the booking details.\n\nThank you! 🌱`
+                );
+                window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=veganjapan.travel@gmail.com&su=${subject}&body=${body}`, '_blank');
+            });
+        });
+
+        // === City cards — open Gmail with city travel inquiry ===
+        document.querySelectorAll('.city-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const cityName = card.querySelector('.city-name')?.textContent || 'Japan';
+                const cityJp = card.querySelector('.city-name-jp')?.textContent || '';
+
+                const subject = encodeURIComponent(`Vegan Travel Inquiry: ${cityName}`);
+                const body = encodeURIComponent(
+                    `Hi VeganJapan Team,\n\nI'm interested in planning a vegan trip to ${cityName} (${cityJp}).\n\n` +
+                    `Please send me information about:\n` +
+                    `- Best vegan restaurants in ${cityName}\n` +
+                    `- Recommended experiences & tours\n` +
+                    `- Suggested itinerary\n\n` +
+                    `My travel dates: [Your dates]\n` +
+                    `Number of travelers: [Number]\n\n` +
+                    `Thank you! 🌱`
+                );
+                window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=veganjapan.travel@gmail.com&su=${subject}&body=${body}`, '_blank');
+            });
+        });
+
+        // === Search button — open Gmail with search query ===
+        document.getElementById('search-submit').addEventListener('click', () => {
+            const city = document.getElementById('search-city').value;
+            const type = document.getElementById('search-type').value;
+            const when = document.getElementById('search-when').value;
+
+            const subject = encodeURIComponent(`Travel Search: ${city} - ${type}`);
+            const body = encodeURIComponent(
+                `Hi VeganJapan Team,\n\nI'm searching for vegan travel options:\n\n` +
+                `🏙️ City: ${city}\n` +
+                `🎯 Experience Type: ${type}\n` +
+                `📅 Date: ${when || 'Flexible'}\n\n` +
+                `Please send me matching options and recommendations.\n\nThank you! 🌱`
+            );
+            window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=veganjapan.travel@gmail.com&su=${subject}&body=${body}`, '_blank');
+        });
+
+        // === Favorites ===
+        document.querySelectorAll('.experience-fav').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (btn.textContent === '♡') {
+                    btn.textContent = '♥';
+                    btn.style.color = '#e8a0bf';
+                } else {
+                    btn.textContent = '♡';
+                    btn.style.color = '';
+                }
+            });
+        });
+
+        // === Hero parallax ===
+        const hero = document.querySelector('.hero');
+        const heroBgImg = document.querySelector('.hero-bg img');
+        if (hero && heroBgImg && window.innerWidth > 768) {
+            hero.addEventListener('mousemove', (e) => {
+                const rect = hero.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                heroBgImg.style.transform = `scale(1.1) translate(${x * -12}px, ${y * -12}px)`;
+            });
+            hero.addEventListener('mouseleave', () => {
+                heroBgImg.style.transform = 'scale(1.1)';
+            });
+        }
+
+        // === Gallery pause on hover ===
+        const galleryTrack = document.querySelector('.gallery-track');
+        if (galleryTrack) {
+            galleryTrack.addEventListener('mouseenter', () => {
+                galleryTrack.style.animationPlayState = 'paused';
+            });
+            galleryTrack.addEventListener('mouseleave', () => {
+                galleryTrack.style.animationPlayState = 'running';
+            });
+        }
+    </script>
+</body>
+
+</html>
