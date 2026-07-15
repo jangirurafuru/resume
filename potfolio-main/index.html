@@ -676,61 +676,61 @@
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
   <script>
-      let isMusicPlaying = false;
+    let isMusicPlaying = false;
 
-      function playMusic() {
-        const audio = document.getElementById('bg-music');
-        if (!isMusicPlaying && audio) {
-          audio.play().then(() => {
-            isMusicPlaying = true;
-            updateMusicButton();
-            // Remove listeners after first successful play
-            document.removeEventListener('click', playMusic);
-            document.removeEventListener('keydown', playMusic);
-            document.removeEventListener('touchstart', playMusic);
-          }).catch(err => {
-            console.log("Autoplay prevented or audio file missing:", err);
-          });
-        }
-      }
-
-      // Play on first interaction (browser policy workaround)
-      document.addEventListener('click', playMusic);
-      document.addEventListener('keydown', playMusic);
-      document.addEventListener('touchstart', playMusic);
-
-      const musicBtn = document.getElementById('music-toggle');
-      if (musicBtn) {
-        musicBtn.addEventListener('click', (e) => {
-          e.stopPropagation(); // prevent document click
-          const audio = document.getElementById('bg-music');
-          if (!audio) return;
-          if (isMusicPlaying) {
-            audio.pause();
-            isMusicPlaying = false;
-          } else {
-            audio.play();
-            isMusicPlaying = true;
-          }
+    function playMusic() {
+      const audio = document.getElementById('bg-music');
+      if (!isMusicPlaying && audio) {
+        audio.play().then(() => {
+          isMusicPlaying = true;
           updateMusicButton();
+          // Remove listeners after first successful play
+          document.removeEventListener('click', playMusic);
+          document.removeEventListener('keydown', playMusic);
+          document.removeEventListener('touchstart', playMusic);
+        }).catch(err => {
+          console.log("Autoplay prevented or audio file missing:", err);
         });
       }
+    }
 
-      function updateMusicButton() {
-        const icon = document.querySelector('#music-toggle i');
-        if (!icon) return;
+    // Play on first interaction (browser policy workaround)
+    document.addEventListener('click', playMusic);
+    document.addEventListener('keydown', playMusic);
+    document.addEventListener('touchstart', playMusic);
+
+    const musicBtn = document.getElementById('music-toggle');
+    if (musicBtn) {
+      musicBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent document click
+        const audio = document.getElementById('bg-music');
+        if (!audio) return;
         if (isMusicPlaying) {
-          icon.classList.remove('bx-music');
-          icon.classList.add('bx-pause');
-          document.getElementById('music-toggle').classList.add('animate-pulse');
+          audio.pause();
+          isMusicPlaying = false;
         } else {
-          icon.classList.remove('bx-pause');
-          icon.classList.add('bx-music');
-          document.getElementById('music-toggle').classList.remove('animate-pulse');
+          audio.play();
+          isMusicPlaying = true;
         }
-      }
+        updateMusicButton();
+      });
+    }
 
-      (function () {
+    function updateMusicButton() {
+      const icon = document.querySelector('#music-toggle i');
+      if (!icon) return;
+      if (isMusicPlaying) {
+        icon.classList.remove('bx-music');
+        icon.classList.add('bx-pause');
+        document.getElementById('music-toggle').classList.add('animate-pulse');
+      } else {
+        icon.classList.remove('bx-pause');
+        icon.classList.add('bx-music');
+        document.getElementById('music-toggle').classList.remove('animate-pulse');
+      }
+    }
+
+    (function () {
       "use strict";
 
       // Mobile Nav Toggle
