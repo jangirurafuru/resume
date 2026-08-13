@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Japan Cities — Naina & Abhishek Japan Travel</title>
-    <meta name="description" content="Explore Japan's most stunning cities: Tokyo, Kyoto, Osaka, Nara, Hiroshima & Hakone. Discover spotlight activities and hidden gems in each city.">
+    <meta name="description"
+        content="Explore Japan's most stunning cities: Tokyo, Kyoto, Osaka, Nara, Hiroshima & Hakone. Discover spotlight activities and hidden gems in each city.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
@@ -31,12 +34,60 @@
         }
     </style>
     <style>
-        ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#0c0b0f}::-webkit-scrollbar-thumb{background:#c97a9f;border-radius:3px}
-        @keyframes sakuraFall{0%{transform:translateY(-10vh) translateX(0) rotate(0deg);opacity:1}100%{transform:translateY(110vh) translateX(80px) rotate(720deg);opacity:0}}
-        .sakura-container{position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden}
-        .sakura-petal{position:absolute;top:-5vh;width:12px;height:12px;background:radial-gradient(ellipse at center,#f5c6d0,#e0929f);border-radius:50% 0 50% 50%;opacity:0.5;animation:sakuraFall linear infinite}
-        .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1)}
-        .reveal.visible{opacity:1;transform:translateY(0)}
+        ::-webkit-scrollbar {
+            width: 5px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0c0b0f
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c97a9f;
+            border-radius: 3px
+        }
+
+        @keyframes sakuraFall {
+            0% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg);
+                opacity: 1
+            }
+
+            100% {
+                transform: translateY(110vh) translateX(80px) rotate(720deg);
+                opacity: 0
+            }
+        }
+
+        .sakura-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden
+        }
+
+        .sakura-petal {
+            position: absolute;
+            top: -5vh;
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(ellipse at center, #f5c6d0, #e0929f);
+            border-radius: 50% 0 50% 50%;
+            opacity: 0.5;
+            animation: sakuraFall linear infinite
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
     </style>
 </head>
 
@@ -44,17 +95,26 @@
 
     <div class="sakura-container" id="sakura-container"></div>
 
-    <div class="fixed inset-0 z-[999] bg-jp-bg/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300" id="mobile-nav">
-        <a href="index2.html" class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Home</a>
-        <a href="tours.html" class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Tours</a>
+    <div class="fixed inset-0 z-[999] bg-jp-bg/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300"
+        id="mobile-nav">
+        <a href="index2.html"
+            class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Home</a>
+        <a href="tours.html"
+            class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Tours</a>
         <a href="cities.html" class="font-display text-2xl font-semibold text-jp-accent">Cities</a>
-        <a href="contact.html" class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Contact</a>
+        <a href="contact.html"
+            class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Contact</a>
     </div>
 
-    <nav class="fixed top-0 left-0 right-0 z-[1000] px-4 py-4 sm:px-8 lg:px-16 flex items-center justify-between transition-all duration-300" id="navbar">
+    <nav class="fixed top-0 left-0 right-0 z-[1000] px-4 py-4 sm:px-8 lg:px-16 flex items-center justify-between transition-all duration-300"
+        id="navbar">
         <a href="index2.html" class="flex items-center gap-3 font-display text-xl sm:text-2xl font-bold tracking-tight">
-            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-jp-accent to-jp-accent-deep flex items-center justify-center text-lg sm:text-xl">🌸</div>
-            <div><span class="block leading-none">NainaAbhishek</span><span class="font-jp text-[0.7rem] sm:text-xs text-jp-accent tracking-widest block mt-0.5">日本旅行ガイド</span></div>
+            <div
+                class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-jp-accent to-jp-accent-deep flex items-center justify-center text-lg sm:text-xl">
+                🌸</div>
+            <div><span class="block leading-none">NainaAbhishek</span><span
+                    class="font-jp text-[0.7rem] sm:text-xs text-jp-accent tracking-widest block mt-0.5">日本旅行ガイド</span>
+            </div>
         </a>
         <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-jp-muted">
             <li><a href="index2.html" class="hover:text-jp-text transition-colors">Home</a></li>
@@ -63,17 +123,29 @@
             <li><a href="contact.html" class="hover:text-jp-text transition-colors">Contact</a></li>
         </ul>
         <div class="flex items-center gap-3">
-            <a href="contact.html" class="hidden sm:inline-flex px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg shadow-lg hover:-translate-y-0.5 transition-all">Get In Touch</a>
-            <button class="md:hidden p-2 flex flex-col gap-1.5" id="nav-toggle" aria-label="Toggle menu"><span class="w-6 h-0.5 bg-jp-text rounded-full"></span><span class="w-6 h-0.5 bg-jp-text rounded-full"></span><span class="w-6 h-0.5 bg-jp-text rounded-full"></span></button>
+            <a href="contact.html"
+                class="hidden sm:inline-flex px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg shadow-lg hover:-translate-y-0.5 transition-all">Get
+                In Touch</a>
+            <button class="md:hidden p-2 flex flex-col gap-1.5" id="nav-toggle" aria-label="Toggle menu"><span
+                    class="w-6 h-0.5 bg-jp-text rounded-full"></span><span
+                    class="w-6 h-0.5 bg-jp-text rounded-full"></span><span
+                    class="w-6 h-0.5 bg-jp-text rounded-full"></span></button>
         </div>
     </nav>
 
     <!-- PAGE HERO -->
     <section class="relative pt-32 pb-12 px-4 sm:pt-44 sm:pb-16 sm:px-8 text-center overflow-hidden bg-jp-bg">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-jp-accent/5 blur-3xl pointer-events-none"></div>
-        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold mb-4"><span class="w-6 h-px bg-jp-accent/40"></span><span>Destinations</span><span class="w-6 h-px bg-jp-accent/40"></span></div>
-        <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4">Explore Japan's<br class="hidden sm:inline"> Most <em class="not-italic text-jp-sakura">Beautiful</em> Cities</h1>
-        <p class="text-sm sm:text-base text-jp-muted max-w-2xl mx-auto font-light leading-relaxed">From the neon-lit streets of Tokyo to the ancient temples of Kyoto — discover the spotlight activities and hidden gems that make each city unforgettable.</p>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-jp-accent/5 blur-3xl pointer-events-none">
+        </div>
+        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold mb-4">
+            <span class="w-6 h-px bg-jp-accent/40"></span><span>Destinations</span><span
+                class="w-6 h-px bg-jp-accent/40"></span></div>
+        <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4">Explore
+            Japan's<br class="hidden sm:inline"> Most <em class="not-italic text-jp-sakura">Beautiful</em> Cities</h1>
+        <p class="text-sm sm:text-base text-jp-muted max-w-2xl mx-auto font-light leading-relaxed">From the neon-lit
+            streets of Tokyo to the ancient temples of Kyoto — discover the spotlight activities and hidden gems that
+            make each city unforgettable.</p>
     </section>
 
     <!-- CITIES SHOWCASE -->
@@ -81,38 +153,117 @@
 
         <!-- ========== TOKYO ========== -->
         <div class="city-block" id="tokyo">
-            <div class="reveal group relative rounded-2xl sm:rounded-3xl overflow-hidden h-[300px] sm:h-[480px] mb-8 shadow-2xl cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80" alt="Tokyo Tower and city skyline at night" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div
+                class="reveal group relative rounded-2xl sm:rounded-3xl overflow-hidden h-[300px] sm:h-[480px] mb-8 shadow-2xl cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80"
+                    alt="Tokyo Tower and city skyline at night" loading="lazy"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-jp-bg via-jp-bg/40 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-10">
-                    <div class="inline-block px-3 py-1 rounded-full bg-jp-card/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20 mb-3">🏙️ Capital City</div>
+                    <div
+                        class="inline-block px-3 py-1 rounded-full bg-jp-card/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20 mb-3">
+                        🏙️ Capital City</div>
                     <h2 class="font-display text-2xl sm:text-4xl font-bold mb-1">Tokyo</h2>
                     <p class="font-jp text-xs sm:text-sm text-jp-accent opacity-80 mb-2">東京 — 未来都市</p>
-                    <p class="text-xs sm:text-sm text-jp-muted max-w-2xl line-clamp-2 sm:line-clamp-none mb-3 font-light">The world's most exciting metropolis. A mind-bending mix of ultra-modern technology, ancient traditions, world-class food, and endless neighborhoods to explore.</p>
+                    <p
+                        class="text-xs sm:text-sm text-jp-muted max-w-2xl line-clamp-2 sm:line-clamp-none mb-3 font-light">
+                        The world's most exciting metropolis. A mind-bending mix of ultra-modern technology, ancient
+                        traditions, world-class food, and endless neighborhoods to explore.</p>
                     <div class="flex flex-wrap gap-2 sm:gap-3 text-xs font-medium text-jp-text">
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🌸 <strong>Best:</strong> Mar–May</div>
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🍜 <strong>Try:</strong> Ramen</div>
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">✈️ <strong>Hub:</strong> Narita/Haneda</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🌸
+                            <strong>Best:</strong> Mar–May</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🍜
+                            <strong>Try:</strong> Ramen</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">✈️
+                            <strong>Hub:</strong> Narita/Haneda</div>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="reveal p-5 sm:p-7 rounded-2xl bg-jp-card border border-jp-border shadow-lg">
-                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">⭐ Spotlight Activities</h3>
+                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">⭐ Spotlight
+                        Activities</h3>
                     <div class="space-y-3">
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">⛩️</span><div><h4 class="font-semibold text-sm">Senso-ji Temple</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Tokyo's oldest temple in Asakusa with the iconic Kaminarimon gate and bustling Nakamise shopping street.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🏙️</span><div><h4 class="font-semibold text-sm">Shibuya Crossing & Harajuku</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">The world's busiest crossing, plus Harajuku's Takeshita Street for pop culture, fashion, and crepe shops.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🎮</span><div><h4 class="font-semibold text-sm">Akihabara Electric Town</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Anime, manga, gaming arcades, and maid cafés — the epicenter of Japanese pop culture.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🐟</span><div><h4 class="font-semibold text-sm">Tsukiji Outer Market</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Street food paradise with fresh seafood, tamagoyaki, and incredible vegetarian options.</p></div></div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">⛩️</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Senso-ji Temple</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Tokyo's oldest temple
+                                    in Asakusa with the iconic Kaminarimon gate and bustling Nakamise shopping street.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🏙️</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Shibuya Crossing & Harajuku</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">The world's busiest
+                                    crossing, plus Harajuku's Takeshita Street for pop culture, fashion, and crepe
+                                    shops.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🎮</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Akihabara Electric Town</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Anime, manga, gaming
+                                    arcades, and maid cafés — the epicenter of Japanese pop culture.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🐟</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Tsukiji Outer Market</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Street food paradise
+                                    with fresh seafood, tamagoyaki, and incredible vegetarian options.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="reveal p-5 sm:p-7 rounded-2xl bg-jp-card border border-jp-border shadow-lg">
-                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">💎 Hidden Gems</h3>
+                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">💎 Hidden
+                        Gems</h3>
                     <div class="space-y-3">
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🌿</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Secret Spot</span><h4 class="font-semibold text-sm">Yanaka District</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Old-town Tokyo charm with narrow lanes, vintage shops, and cat-filled streets.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🏮</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Local Favorite</span><h4 class="font-semibold text-sm">Shimokitazawa</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Bohemian neighborhood with vintage stores, indie cafés, and live music venues.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🌙</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Night Gem</span><h4 class="font-semibold text-sm">Golden Gai</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Tiny alleyways with 200+ micro-bars in Shinjuku. Each fits 6–8 people. Pure magic after dark.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🌳</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Peaceful</span><h4 class="font-semibold text-sm">Todoroki Valley</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A hidden ravine garden in the middle of Setagaya. Waterfalls, shrines, and zen silence 20 minutes from Shibuya.</p></div></div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🌿</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Secret
+                                    Spot</span>
+                                <h4 class="font-semibold text-sm">Yanaka District</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Old-town Tokyo charm
+                                    with narrow lanes, vintage shops, and cat-filled streets.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🏮</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Local
+                                    Favorite</span>
+                                <h4 class="font-semibold text-sm">Shimokitazawa</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Bohemian neighborhood
+                                    with vintage stores, indie cafés, and live music venues.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🌙</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Night
+                                    Gem</span>
+                                <h4 class="font-semibold text-sm">Golden Gai</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Tiny alleyways with
+                                    200+ micro-bars in Shinjuku. Each fits 6–8 people. Pure magic after dark.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🌳</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Peaceful</span>
+                                <h4 class="font-semibold text-sm">Todoroki Valley</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A hidden ravine garden
+                                    in the middle of Setagaya. Waterfalls, shrines, and zen silence 20 minutes from
+                                    Shibuya.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,37 +272,108 @@
 
         <!-- ========== KYOTO ========== -->
         <div class="city-block" id="kyoto">
-            <div class="reveal group relative rounded-2xl sm:rounded-3xl overflow-hidden h-[300px] sm:h-[480px] mb-8 shadow-2xl cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1200&q=80" alt="Fushimi Inari Shrine torii gates in Kyoto" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div
+                class="reveal group relative rounded-2xl sm:rounded-3xl overflow-hidden h-[300px] sm:h-[480px] mb-8 shadow-2xl cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1200&q=80"
+                    alt="Fushimi Inari Shrine torii gates in Kyoto" loading="lazy"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-jp-bg via-jp-bg/40 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-10">
-                    <div class="inline-block px-3 py-1 rounded-full bg-jp-card/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20 mb-3">⛩️ Cultural Capital</div>
+                    <div
+                        class="inline-block px-3 py-1 rounded-full bg-jp-card/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20 mb-3">
+                        ⛩️ Cultural Capital</div>
                     <h2 class="font-display text-2xl sm:text-4xl font-bold mb-1">Kyoto</h2>
                     <p class="font-jp text-xs sm:text-sm text-jp-accent opacity-80 mb-2">京都 — 古都の美</p>
-                    <p class="text-xs sm:text-sm text-jp-muted max-w-2xl line-clamp-2 sm:line-clamp-none mb-3 font-light">Japan's spiritual heart. Over 2,000 temples and shrines, traditional geisha districts, bamboo forests, and the finest temple cuisine in the world.</p>
+                    <p
+                        class="text-xs sm:text-sm text-jp-muted max-w-2xl line-clamp-2 sm:line-clamp-none mb-3 font-light">
+                        Japan's spiritual heart. Over 2,000 temples and shrines, traditional geisha districts, bamboo
+                        forests, and the finest temple cuisine in the world.</p>
                     <div class="flex flex-wrap gap-2 sm:gap-3 text-xs font-medium text-jp-text">
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🍁 <strong>Best:</strong> Oct–Nov</div>
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🍵 <strong>Try:</strong> Matcha</div>
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🚄 <strong>From Tokyo:</strong> 2h 15m</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🍁
+                            <strong>Best:</strong> Oct–Nov</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🍵
+                            <strong>Try:</strong> Matcha</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🚄
+                            <strong>From Tokyo:</strong> 2h 15m</div>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="reveal p-5 sm:p-7 rounded-2xl bg-jp-card border border-jp-border shadow-lg">
-                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">⭐ Spotlight Activities</h3>
+                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">⭐ Spotlight
+                        Activities</h3>
                     <div class="space-y-3">
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">⛩️</span><div><h4 class="font-semibold text-sm">Fushimi Inari Shrine</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Thousands of vermillion torii gates winding up the mountainside. Arrive at dawn for a magical, crowd-free experience.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🎋</span><div><h4 class="font-semibold text-sm">Arashiyama Bamboo Grove</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Walk through towering bamboo stalks. Pair it with the nearby Tenryū-ji Temple gardens.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">👘</span><div><h4 class="font-semibold text-sm">Gion Geisha District</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Stroll through Kyoto's most atmospheric neighborhood at dusk. Spot maiko along Hanami-koji.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🏯</span><div><h4 class="font-semibold text-sm">Kinkaku-ji (Golden Pavilion)</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">The iconic gold-leaf covered temple reflecting perfectly in its mirror pond. Japan's most photographed site.</p></div></div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">⛩️</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Fushimi Inari Shrine</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Thousands of vermillion
+                                    torii gates winding up the mountainside. Arrive at dawn for a magical, crowd-free
+                                    experience.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🎋</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Arashiyama Bamboo Grove</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Walk through towering
+                                    bamboo stalks. Pair it with the nearby Tenryū-ji Temple gardens.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">👘</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Gion Geisha District</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Stroll through Kyoto's
+                                    most atmospheric neighborhood at dusk. Spot maiko along Hanami-koji.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🏯</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Kinkaku-ji (Golden Pavilion)</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">The iconic gold-leaf
+                                    covered temple reflecting perfectly in its mirror pond. Japan's most photographed
+                                    site.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="reveal p-5 sm:p-7 rounded-2xl bg-jp-card border border-jp-border shadow-lg">
-                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">💎 Hidden Gems</h3>
+                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">💎 Hidden
+                        Gems</h3>
                     <div class="space-y-3">
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🍃</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Tranquil</span><h4 class="font-semibold text-sm">Ōtagi Nenbutsu-ji</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">1,200 unique stone statues in a quiet mountain temple. Each face is different. Zero crowds.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🌊</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Secret Path</span><h4 class="font-semibold text-sm">Philosopher's Path</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A 2km stone path along a canal lined with cherry trees. Best in early morning with mist rising from the water.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🍵</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Tea Experience</span><h4 class="font-semibold text-sm">Uji Tea Village</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Japan's matcha capital, 30 min from Kyoto. Visit tea farms, grind your own matcha, and taste the finest green tea on Earth.</p></div></div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🍃</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Tranquil</span>
+                                <h4 class="font-semibold text-sm">Ōtagi Nenbutsu-ji</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">1,200 unique stone
+                                    statues in a quiet mountain temple. Each face is different. Zero crowds.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🌊</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Secret
+                                    Path</span>
+                                <h4 class="font-semibold text-sm">Philosopher's Path</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A 2km stone path along
+                                    a canal lined with cherry trees. Best in early morning with mist rising from the
+                                    water.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🍵</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Tea
+                                    Experience</span>
+                                <h4 class="font-semibold text-sm">Uji Tea Village</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Japan's matcha capital,
+                                    30 min from Kyoto. Visit tea farms, grind your own matcha, and taste the finest
+                                    green tea on Earth.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -160,36 +382,99 @@
 
         <!-- ========== OSAKA ========== -->
         <div class="city-block" id="osaka">
-            <div class="reveal group relative rounded-2xl sm:rounded-3xl overflow-hidden h-[300px] sm:h-[480px] mb-8 shadow-2xl cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?w=1200&q=80" alt="Osaka Dotonbori canal with neon lights" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div
+                class="reveal group relative rounded-2xl sm:rounded-3xl overflow-hidden h-[300px] sm:h-[480px] mb-8 shadow-2xl cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?w=1200&q=80"
+                    alt="Osaka Dotonbori canal with neon lights" loading="lazy"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-jp-bg via-jp-bg/40 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-10">
-                    <div class="inline-block px-3 py-1 rounded-full bg-jp-card/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20 mb-3">🍜 Japan's Kitchen</div>
+                    <div
+                        class="inline-block px-3 py-1 rounded-full bg-jp-card/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20 mb-3">
+                        🍜 Japan's Kitchen</div>
                     <h2 class="font-display text-2xl sm:text-4xl font-bold mb-1">Osaka</h2>
                     <p class="font-jp text-xs sm:text-sm text-jp-accent opacity-80 mb-2">大阪 — 天下の台所</p>
-                    <p class="text-xs sm:text-sm text-jp-muted max-w-2xl line-clamp-2 sm:line-clamp-none mb-3 font-light">Japan's food capital. Known as "The Nation's Kitchen," Osaka is louder, funnier, and tastier than anywhere else.</p>
+                    <p
+                        class="text-xs sm:text-sm text-jp-muted max-w-2xl line-clamp-2 sm:line-clamp-none mb-3 font-light">
+                        Japan's food capital. Known as "The Nation's Kitchen," Osaka is louder, funnier, and tastier
+                        than anywhere else.</p>
                     <div class="flex flex-wrap gap-2 sm:gap-3 text-xs font-medium text-jp-text">
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🌸 <strong>Best:</strong> Mar–May</div>
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🥟 <strong>Try:</strong> Takoyaki</div>
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🚄 <strong>From Tokyo:</strong> 2h 30m</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🌸
+                            <strong>Best:</strong> Mar–May</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🥟
+                            <strong>Try:</strong> Takoyaki</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🚄
+                            <strong>From Tokyo:</strong> 2h 30m</div>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="reveal p-5 sm:p-7 rounded-2xl bg-jp-card border border-jp-border shadow-lg">
-                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">⭐ Spotlight Activities</h3>
+                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">⭐ Spotlight
+                        Activities</h3>
                     <div class="space-y-3">
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🏯</span><div><h4 class="font-semibold text-sm">Osaka Castle</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Magnificent 16th-century castle surrounded by moats and cherry trees. Stunning in every season.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🌃</span><div><h4 class="font-semibold text-sm">Dotonbori</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">The neon-lit canal district. Giant crab signs, Glico running man, and the best street food in Japan.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🐙</span><div><h4 class="font-semibold text-sm">Kuromon Market</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">"Osaka's Kitchen" — 150+ stalls serving fresh seafood, grilled meats, and incredible vegetable tempura.</p></div></div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🏯</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Osaka Castle</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Magnificent
+                                    16th-century castle surrounded by moats and cherry trees. Stunning in every season.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🌃</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Dotonbori</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">The neon-lit canal
+                                    district. Giant crab signs, Glico running man, and the best street food in Japan.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🐙</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Kuromon Market</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">"Osaka's Kitchen" —
+                                    150+ stalls serving fresh seafood, grilled meats, and incredible vegetable tempura.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="reveal p-5 sm:p-7 rounded-2xl bg-jp-card border border-jp-border shadow-lg">
-                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">💎 Hidden Gems</h3>
+                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">💎 Hidden
+                        Gems</h3>
                     <div class="space-y-3">
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🏮</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Retro Vibes</span><h4 class="font-semibold text-sm">Shinsekai</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A retro neon wonderland with cheap eats, old-school arcades, and the iconic Tsutenkaku Tower.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">📚</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Secret Spot</span><h4 class="font-semibold text-sm">Nakanoshima</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Peaceful island between two rivers with rose gardens, art museums, and riverside cafés.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🎭</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Culture</span><h4 class="font-semibold text-sm">National Bunraku Theatre</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Traditional Japanese puppet theatre — a 300-year-old art form you won't find anywhere else.</p></div></div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🏮</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Retro
+                                    Vibes</span>
+                                <h4 class="font-semibold text-sm">Shinsekai</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A retro neon wonderland
+                                    with cheap eats, old-school arcades, and the iconic Tsutenkaku Tower.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">📚</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Secret
+                                    Spot</span>
+                                <h4 class="font-semibold text-sm">Nakanoshima</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Peaceful island between
+                                    two rivers with rose gardens, art museums, and riverside cafés.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🎭</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Culture</span>
+                                <h4 class="font-semibold text-sm">National Bunraku Theatre</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Traditional Japanese
+                                    puppet theatre — a 300-year-old art form you won't find anywhere else.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -198,35 +483,91 @@
 
         <!-- ========== NARA ========== -->
         <div class="city-block" id="nara">
-            <div class="reveal group relative rounded-2xl sm:rounded-3xl overflow-hidden h-[300px] sm:h-[480px] mb-8 shadow-2xl cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1624601573012-efb68f3f150d?w=1200&q=80" alt="Friendly deer in Nara Park" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div
+                class="reveal group relative rounded-2xl sm:rounded-3xl overflow-hidden h-[300px] sm:h-[480px] mb-8 shadow-2xl cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1624601573012-efb68f3f150d?w=1200&q=80"
+                    alt="Friendly deer in Nara Park" loading="lazy"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-jp-bg via-jp-bg/40 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-10">
-                    <div class="inline-block px-3 py-1 rounded-full bg-jp-card/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20 mb-3">🦌 Ancient Capital</div>
+                    <div
+                        class="inline-block px-3 py-1 rounded-full bg-jp-card/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20 mb-3">
+                        🦌 Ancient Capital</div>
                     <h2 class="font-display text-2xl sm:text-4xl font-bold mb-1">Nara</h2>
                     <p class="font-jp text-xs sm:text-sm text-jp-accent opacity-80 mb-2">奈良 — 鹿の街</p>
-                    <p class="text-xs sm:text-sm text-jp-muted max-w-2xl line-clamp-2 sm:line-clamp-none mb-3 font-light">Japan's first permanent capital. Home to 1,200 sacred free-roaming deer, the world's largest wooden building, and a tranquility you won't find anywhere else.</p>
+                    <p
+                        class="text-xs sm:text-sm text-jp-muted max-w-2xl line-clamp-2 sm:line-clamp-none mb-3 font-light">
+                        Japan's first permanent capital. Home to 1,200 sacred free-roaming deer, the world's largest
+                        wooden building, and a tranquility you won't find anywhere else.</p>
                     <div class="flex flex-wrap gap-2 sm:gap-3 text-xs font-medium text-jp-text">
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🍁 <strong>Best:</strong> Oct–Nov</div>
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🍡 <strong>Try:</strong> Mochi</div>
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🚄 <strong>From Kyoto:</strong> 45 min</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🍁
+                            <strong>Best:</strong> Oct–Nov</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🍡
+                            <strong>Try:</strong> Mochi</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🚄
+                            <strong>From Kyoto:</strong> 45 min</div>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="reveal p-5 sm:p-7 rounded-2xl bg-jp-card border border-jp-border shadow-lg">
-                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">⭐ Spotlight Activities</h3>
+                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">⭐ Spotlight
+                        Activities</h3>
                     <div class="space-y-3">
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🦌</span><div><h4 class="font-semibold text-sm">Nara Deer Park</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Feed and interact with 1,200+ sacred deer who bow politely for crackers. One of Japan's most magical experiences.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🏛️</span><div><h4 class="font-semibold text-sm">Todai-ji Great Buddha</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">The world's largest bronze Buddha inside the world's largest wooden structure. Absolutely jaw-dropping in scale.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🏮</span><div><h4 class="font-semibold text-sm">Kasuga Grand Shrine</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">3,000 stone and bronze lanterns line the path through ancient forest. Magical during lantern festivals.</p></div></div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🦌</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Nara Deer Park</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Feed and interact with
+                                    1,200+ sacred deer who bow politely for crackers. One of Japan's most magical
+                                    experiences.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🏛️</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Todai-ji Great Buddha</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">The world's largest
+                                    bronze Buddha inside the world's largest wooden structure. Absolutely jaw-dropping
+                                    in scale.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🏮</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Kasuga Grand Shrine</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">3,000 stone and bronze
+                                    lanterns line the path through ancient forest. Magical during lantern festivals.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="reveal p-5 sm:p-7 rounded-2xl bg-jp-card border border-jp-border shadow-lg">
-                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">💎 Hidden Gems</h3>
+                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">💎 Hidden
+                        Gems</h3>
                     <div class="space-y-3">
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🌸</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Secret Garden</span><h4 class="font-semibold text-sm">Yoshiki-en Garden</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A free, stunning Japanese garden next to Isuien. Foreign visitors get free entry — most tourists walk right past it.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🏔️</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Panoramic View</span><h4 class="font-semibold text-sm">Mount Wakakusa</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A gentle 30-minute hike to panoramic views over Nara and beyond. Set ablaze during the January grass-burning festival.</p></div></div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🌸</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Secret
+                                    Garden</span>
+                                <h4 class="font-semibold text-sm">Yoshiki-en Garden</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A free, stunning
+                                    Japanese garden next to Isuien. Foreign visitors get free entry — most tourists walk
+                                    right past it.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🏔️</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Panoramic
+                                    View</span>
+                                <h4 class="font-semibold text-sm">Mount Wakakusa</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A gentle 30-minute hike
+                                    to panoramic views over Nara and beyond. Set ablaze during the January grass-burning
+                                    festival.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -235,35 +576,91 @@
 
         <!-- ========== HIROSHIMA ========== -->
         <div class="city-block" id="hiroshima">
-            <div class="reveal group relative rounded-2xl sm:rounded-3xl overflow-hidden h-[300px] sm:h-[480px] mb-8 shadow-2xl cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1576675466969-38eeae4b41f6?w=1200&q=80" alt="Hiroshima Peace Memorial and city" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div
+                class="reveal group relative rounded-2xl sm:rounded-3xl overflow-hidden h-[300px] sm:h-[480px] mb-8 shadow-2xl cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1576675466969-38eeae4b41f6?w=1200&q=80"
+                    alt="Hiroshima Peace Memorial and city" loading="lazy"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-jp-bg via-jp-bg/40 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-10">
-                    <div class="inline-block px-3 py-1 rounded-full bg-jp-card/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20 mb-3">🕊️ City of Peace</div>
+                    <div
+                        class="inline-block px-3 py-1 rounded-full bg-jp-card/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20 mb-3">
+                        🕊️ City of Peace</div>
                     <h2 class="font-display text-2xl sm:text-4xl font-bold mb-1">Hiroshima</h2>
                     <p class="font-jp text-xs sm:text-sm text-jp-accent opacity-80 mb-2">広島 — 平和の街</p>
-                    <p class="text-xs sm:text-sm text-jp-muted max-w-2xl line-clamp-2 sm:line-clamp-none mb-3 font-light">A city reborn from tragedy into a symbol of hope and peace. World-class museums, the iconic floating torii gate on Miyajima Island, and the warmest people you'll ever meet.</p>
+                    <p
+                        class="text-xs sm:text-sm text-jp-muted max-w-2xl line-clamp-2 sm:line-clamp-none mb-3 font-light">
+                        A city reborn from tragedy into a symbol of hope and peace. World-class museums, the iconic
+                        floating torii gate on Miyajima Island, and the warmest people you'll ever meet.</p>
                     <div class="flex flex-wrap gap-2 sm:gap-3 text-xs font-medium text-jp-text">
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🌸 <strong>Best:</strong> Mar–May</div>
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🥞 <strong>Try:</strong> Okonomiyaki</div>
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🚄 <strong>From Osaka:</strong> 1h 30m</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🌸
+                            <strong>Best:</strong> Mar–May</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🥞
+                            <strong>Try:</strong> Okonomiyaki</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🚄
+                            <strong>From Osaka:</strong> 1h 30m</div>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="reveal p-5 sm:p-7 rounded-2xl bg-jp-card border border-jp-border shadow-lg">
-                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">⭐ Spotlight Activities</h3>
+                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">⭐ Spotlight
+                        Activities</h3>
                     <div class="space-y-3">
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🕊️</span><div><h4 class="font-semibold text-sm">Peace Memorial Park & Museum</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A deeply moving experience. The A-Bomb Dome, museum, and eternal flame tell a story the world must never forget.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">⛩️</span><div><h4 class="font-semibold text-sm">Miyajima Island & Floating Torii</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">The iconic floating gate of Itsukushima Shrine. Visit at high tide for the floating effect, low tide to walk beneath it.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🥞</span><div><h4 class="font-semibold text-sm">Hiroshima-Style Okonomiyaki</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Layered style with noodles, cabbage, and savory sauce. Try the legendary Okonomimura building with 24 restaurants.</p></div></div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🕊️</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Peace Memorial Park & Museum</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A deeply moving
+                                    experience. The A-Bomb Dome, museum, and eternal flame tell a story the world must
+                                    never forget.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">⛩️</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Miyajima Island & Floating Torii</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">The iconic floating
+                                    gate of Itsukushima Shrine. Visit at high tide for the floating effect, low tide to
+                                    walk beneath it.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🥞</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Hiroshima-Style Okonomiyaki</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Layered style with
+                                    noodles, cabbage, and savory sauce. Try the legendary Okonomimura building with 24
+                                    restaurants.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="reveal p-5 sm:p-7 rounded-2xl bg-jp-card border border-jp-border shadow-lg">
-                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">💎 Hidden Gems</h3>
+                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">💎 Hidden
+                        Gems</h3>
                     <div class="space-y-3">
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🌊</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Island Escape</span><h4 class="font-semibold text-sm">Rabbit Island (Ōkunoshima)</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">An island overrun with hundreds of friendly wild rabbits. A surreal, utterly charming day trip from Hiroshima.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🏯</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Historic</span><h4 class="font-semibold text-sm">Shukkeien Garden</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A 400-year-old miniature landscape garden in the heart of the city. Tea houses, koi ponds, and perfect serenity.</p></div></div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🌊</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Island
+                                    Escape</span>
+                                <h4 class="font-semibold text-sm">Rabbit Island (Ōkunoshima)</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">An island overrun with
+                                    hundreds of friendly wild rabbits. A surreal, utterly charming day trip from
+                                    Hiroshima.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🏯</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Historic</span>
+                                <h4 class="font-semibold text-sm">Shukkeien Garden</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">A 400-year-old
+                                    miniature landscape garden in the heart of the city. Tea houses, koi ponds, and
+                                    perfect serenity.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -272,35 +669,91 @@
 
         <!-- ========== HAKONE ========== -->
         <div class="city-block" id="hakone">
-            <div class="reveal group relative rounded-2xl sm:rounded-3xl overflow-hidden h-[300px] sm:h-[480px] mb-8 shadow-2xl cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=1200&q=80" alt="Mount Fuji view from Hakone" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div
+                class="reveal group relative rounded-2xl sm:rounded-3xl overflow-hidden h-[300px] sm:h-[480px] mb-8 shadow-2xl cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=1200&q=80"
+                    alt="Mount Fuji view from Hakone" loading="lazy"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-jp-bg via-jp-bg/40 to-transparent"></div>
                 <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-10">
-                    <div class="inline-block px-3 py-1 rounded-full bg-jp-card/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20 mb-3">♨️ Hot Spring Town</div>
+                    <div
+                        class="inline-block px-3 py-1 rounded-full bg-jp-card/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20 mb-3">
+                        ♨️ Hot Spring Town</div>
                     <h2 class="font-display text-2xl sm:text-4xl font-bold mb-1">Hakone</h2>
                     <p class="font-jp text-xs sm:text-sm text-jp-accent opacity-80 mb-2">箱根 — 温泉の楽園</p>
-                    <p class="text-xs sm:text-sm text-jp-muted max-w-2xl line-clamp-2 sm:line-clamp-none mb-3 font-light">Japan's favorite hot spring resort town, just 90 minutes from Tokyo. Stunning Fuji views, volcanic valleys, art museums, and rejuvenating onsen experiences.</p>
+                    <p
+                        class="text-xs sm:text-sm text-jp-muted max-w-2xl line-clamp-2 sm:line-clamp-none mb-3 font-light">
+                        Japan's favorite hot spring resort town, just 90 minutes from Tokyo. Stunning Fuji views,
+                        volcanic valleys, art museums, and rejuvenating onsen experiences.</p>
                     <div class="flex flex-wrap gap-2 sm:gap-3 text-xs font-medium text-jp-text">
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🍁 <strong>Best:</strong> Oct–Nov</div>
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🥚 <strong>Try:</strong> Black Eggs</div>
-                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🚄 <strong>From Tokyo:</strong> 1h 30m</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🍁
+                            <strong>Best:</strong> Oct–Nov</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🥚
+                            <strong>Try:</strong> Black Eggs</div>
+                        <div class="px-3 py-1.5 rounded-lg bg-jp-card/60 backdrop-blur-md border border-jp-border">🚄
+                            <strong>From Tokyo:</strong> 1h 30m</div>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div class="reveal p-5 sm:p-7 rounded-2xl bg-jp-card border border-jp-border shadow-lg">
-                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">⭐ Spotlight Activities</h3>
+                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">⭐ Spotlight
+                        Activities</h3>
                     <div class="space-y-3">
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🚢</span><div><h4 class="font-semibold text-sm">Lake Ashi Pirate Ship Cruise</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Cruise across the lake with Mount Fuji as your backdrop. The pirate ship replicas are a uniquely Japanese touch.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🌋</span><div><h4 class="font-semibold text-sm">Ōwakudani Volcanic Valley</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Active volcanic vents, sulfur clouds, and famous black eggs (kuro-tamago) — said to add 7 years to your life!</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">♨️</span><div><h4 class="font-semibold text-sm">Traditional Onsen</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Soak in natural hot springs with Fuji views. Many ryokans offer private outdoor baths (rotenburo) overlooking the valley.</p></div></div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🚢</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Lake Ashi Pirate Ship Cruise</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Cruise across the lake
+                                    with Mount Fuji as your backdrop. The pirate ship replicas are a uniquely Japanese
+                                    touch.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🌋</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Ōwakudani Volcanic Valley</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Active volcanic vents,
+                                    sulfur clouds, and famous black eggs (kuro-tamago) — said to add 7 years to your
+                                    life!</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">♨️</span>
+                            <div>
+                                <h4 class="font-semibold text-sm">Traditional Onsen</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Soak in natural hot
+                                    springs with Fuji views. Many ryokans offer private outdoor baths (rotenburo)
+                                    overlooking the valley.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="reveal p-5 sm:p-7 rounded-2xl bg-jp-card border border-jp-border shadow-lg">
-                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">💎 Hidden Gems</h3>
+                    <h3 class="font-display text-lg font-bold mb-5 flex items-center gap-2 text-jp-accent">💎 Hidden
+                        Gems</h3>
                     <div class="space-y-3">
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🎨</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Art & Nature</span><h4 class="font-semibold text-sm">Hakone Open-Air Museum</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Stunning sculptures in a mountain landscape. The Picasso pavilion and stained-glass tower are must-sees.</p></div></div>
-                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50"><span class="text-xl flex-shrink-0">🚠</span><div><span class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Scenic Ride</span><h4 class="font-semibold text-sm">Hakone Ropeway</h4><p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Soar above volcanic valleys and forests on a cable car with panoramic views of Fuji and Lake Ashi.</p></div></div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🎨</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Art
+                                    & Nature</span>
+                                <h4 class="font-semibold text-sm">Hakone Open-Air Museum</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Stunning sculptures in
+                                    a mountain landscape. The Picasso pavilion and stained-glass tower are must-sees.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3 items-start p-3 rounded-xl bg-jp-surface/50 border border-jp-border/50">
+                            <span class="text-xl flex-shrink-0">🚠</span>
+                            <div><span
+                                    class="inline-block text-[0.6rem] uppercase font-bold tracking-wider text-jp-accent bg-jp-accent/10 px-2 py-0.5 rounded-full mb-1">Scenic
+                                    Ride</span>
+                                <h4 class="font-semibold text-sm">Hakone Ropeway</h4>
+                                <p class="text-xs text-jp-muted mt-1 font-light leading-relaxed">Soar above volcanic
+                                    valleys and forests on a cable car with panoramic views of Fuji and Lake Ashi.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -310,38 +763,79 @@
 
     <!-- FOOTER -->
     <footer class="bg-jp-bg border-t border-jp-border pt-16 pb-10 px-4 sm:px-8 lg:px-16 mt-16 sm:mt-24">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 text-center sm:text-left">
+        <div
+            class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 text-center sm:text-left">
             <div class="lg:col-span-2 flex flex-col items-center sm:items-start">
-                <a href="index2.html" class="flex items-center gap-3 font-display text-xl font-bold tracking-tight mx-auto sm:mx-0">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-jp-accent to-jp-accent-deep flex items-center justify-center text-lg">🌸</div>
-                    <div><span class="block leading-none">NainaAbhishek</span><span class="font-jp text-[0.7rem] text-jp-accent tracking-widest block mt-0.5">日本旅行ガイド</span></div>
+                <a href="index2.html"
+                    class="flex items-center gap-3 font-display text-xl font-bold tracking-tight mx-auto sm:mx-0">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-gradient-to-br from-jp-accent to-jp-accent-deep flex items-center justify-center text-lg">
+                        🌸</div>
+                    <div><span class="block leading-none">NainaAbhishek</span><span
+                            class="font-jp text-[0.7rem] text-jp-accent tracking-widest block mt-0.5">日本旅行ガイド</span>
+                    </div>
                 </a>
-                <p class="text-xs sm:text-sm text-jp-muted mt-4 max-w-sm leading-relaxed">Your personal Japan travel guides. Private tours, group trips, and authentic cultural experiences across Japan. 🌸</p>
+                <p class="text-xs sm:text-sm text-jp-muted mt-4 max-w-sm leading-relaxed">Your personal Japan travel
+                    guides. Private tours, group trips, and authentic cultural experiences across Japan. 🌸</p>
                 <div class="flex gap-3 mt-5 justify-center sm:justify-start">
-                    <a href="#" class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all">📷</a>
-                    <a href="#" class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all">𝕏</a>
-                    <a href="#" class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all">▶</a>
+                    <a href="#"
+                        class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all">📷</a>
+                    <a href="#"
+                        class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all">𝕏</a>
+                    <a href="#"
+                        class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all">▶</a>
                 </div>
             </div>
-            <div><h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Pages</h4><ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted"><li><a href="index2.html" class="hover:text-jp-accent transition-colors">Home</a></li><li><a href="tours.html" class="hover:text-jp-accent transition-colors">Tours</a></li><li><a href="cities.html" class="hover:text-jp-accent transition-colors">Cities</a></li><li><a href="contact.html" class="hover:text-jp-accent transition-colors">Contact Us</a></li></ul></div>
-            <div><h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Tours</h4><ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted"><li><a href="tours.html#private" class="hover:text-jp-accent transition-colors">Private Group Tours</a></li><li><a href="tours.html#common" class="hover:text-jp-accent transition-colors">Common Group Tours</a></li><li><a href="tours.html#personal" class="hover:text-jp-accent transition-colors">Personal Tours</a></li><li><a href="tours.html#daytrips" class="hover:text-jp-accent transition-colors">Day Trips</a></li></ul></div>
-            <div><h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Popular Cities</h4><ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted"><li><a href="#tokyo" class="hover:text-jp-accent transition-colors">Tokyo — 東京</a></li><li><a href="#kyoto" class="hover:text-jp-accent transition-colors">Kyoto — 京都</a></li><li><a href="#osaka" class="hover:text-jp-accent transition-colors">Osaka — 大阪</a></li><li><a href="#nara" class="hover:text-jp-accent transition-colors">Nara — 奈良</a></li><li><a href="#hiroshima" class="hover:text-jp-accent transition-colors">Hiroshima — 広島</a></li></ul></div>
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Pages</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted">
+                    <li><a href="index2.html" class="hover:text-jp-accent transition-colors">Home</a></li>
+                    <li><a href="tours.html" class="hover:text-jp-accent transition-colors">Tours</a></li>
+                    <li><a href="cities.html" class="hover:text-jp-accent transition-colors">Cities</a></li>
+                    <li><a href="contact.html" class="hover:text-jp-accent transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Tours</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted">
+                    <li><a href="tours.html#private" class="hover:text-jp-accent transition-colors">Private Group
+                            Tours</a></li>
+                    <li><a href="tours.html#common" class="hover:text-jp-accent transition-colors">Common Group
+                            Tours</a></li>
+                    <li><a href="tours.html#personal" class="hover:text-jp-accent transition-colors">Personal Tours</a>
+                    </li>
+                    <li><a href="tours.html#daytrips" class="hover:text-jp-accent transition-colors">Day Trips</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Popular Cities</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted">
+                    <li><a href="#tokyo" class="hover:text-jp-accent transition-colors">Tokyo — 東京</a></li>
+                    <li><a href="#kyoto" class="hover:text-jp-accent transition-colors">Kyoto — 京都</a></li>
+                    <li><a href="#osaka" class="hover:text-jp-accent transition-colors">Osaka — 大阪</a></li>
+                    <li><a href="#nara" class="hover:text-jp-accent transition-colors">Nara — 奈良</a></li>
+                    <li><a href="#hiroshima" class="hover:text-jp-accent transition-colors">Hiroshima — 広島</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="max-w-7xl mx-auto pt-6 border-t border-jp-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs text-jp-subtle">
+        <div
+            class="max-w-7xl mx-auto pt-6 border-t border-jp-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs text-jp-subtle">
             <span>© 2026 Naina & Abhishek Japan Tours. Made with 🌸 in Japan.</span>
-            <div class="flex gap-6"><a href="contact.html" class="hover:text-jp-accent transition-colors">Contact</a><a href="tours.html" class="hover:text-jp-accent transition-colors">Tours</a></div>
+            <div class="flex gap-6"><a href="contact.html" class="hover:text-jp-accent transition-colors">Contact</a><a
+                    href="tours.html" class="hover:text-jp-accent transition-colors">Tours</a></div>
         </div>
     </footer>
 
     <script>
-        (function(){const c=document.getElementById('sakura-container');for(let i=0;i<12;i++){const p=document.createElement('div');p.classList.add('sakura-petal');p.style.left=Math.random()*100+'vw';p.style.animationDuration=(8+Math.random()*12)+'s';p.style.animationDelay=(Math.random()*15)+'s';p.style.opacity=0.15+Math.random()*0.25;p.style.width=(8+Math.random()*8)+'px';p.style.height=p.style.width;c.appendChild(p)}})();
-        const navbar=document.getElementById('navbar');
-        window.addEventListener('scroll',()=>{if(window.scrollY>60){navbar.classList.add('bg-jp-bg/90','backdrop-blur-xl','!py-3','border-b','border-jp-border','shadow-xl');navbar.classList.remove('py-4');}else{navbar.classList.remove('bg-jp-bg/90','backdrop-blur-xl','!py-3','border-b','border-jp-border','shadow-xl');navbar.classList.add('py-4');}});
-        const navToggle=document.getElementById('nav-toggle');const mobileNav=document.getElementById('mobile-nav');
-        navToggle.addEventListener('click',()=>{mobileNav.classList.toggle('opacity-0');mobileNav.classList.toggle('pointer-events-none');});
-        mobileNav.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{mobileNav.classList.add('opacity-0','pointer-events-none');}));
-        const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-        document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+        (function () { const c = document.getElementById('sakura-container'); for (let i = 0; i < 12; i++) { const p = document.createElement('div'); p.classList.add('sakura-petal'); p.style.left = Math.random() * 100 + 'vw'; p.style.animationDuration = (8 + Math.random() * 12) + 's'; p.style.animationDelay = (Math.random() * 15) + 's'; p.style.opacity = 0.15 + Math.random() * 0.25; p.style.width = (8 + Math.random() * 8) + 'px'; p.style.height = p.style.width; c.appendChild(p) } })();
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { if (window.scrollY > 60) { navbar.classList.add('bg-jp-bg/90', 'backdrop-blur-xl', '!py-3', 'border-b', 'border-jp-border', 'shadow-xl'); navbar.classList.remove('py-4'); } else { navbar.classList.remove('bg-jp-bg/90', 'backdrop-blur-xl', '!py-3', 'border-b', 'border-jp-border', 'shadow-xl'); navbar.classList.add('py-4'); } });
+        const navToggle = document.getElementById('nav-toggle'); const mobileNav = document.getElementById('mobile-nav');
+        navToggle.addEventListener('click', () => { mobileNav.classList.toggle('opacity-0'); mobileNav.classList.toggle('pointer-events-none'); });
+        mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { mobileNav.classList.add('opacity-0', 'pointer-events-none'); }));
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target) } }) }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
+
 </html>

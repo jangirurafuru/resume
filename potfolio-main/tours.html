@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tours — Naina & Abhishek Japan Travel</title>
-    <meta name="description" content="Explore our Japan tour packages: Private Group Tours, Common Group Tours, Personal Tours with homestays & hiking, and Day Trips across Japan.">
+    <meta name="description"
+        content="Explore our Japan tour packages: Private Group Tours, Common Group Tours, Personal Tours with homestays & hiking, and Day Trips across Japan.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
@@ -31,12 +34,60 @@
         }
     </style>
     <style>
-        ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#0c0b0f}::-webkit-scrollbar-thumb{background:#c97a9f;border-radius:3px}
-        @keyframes sakuraFall{0%{transform:translateY(-10vh) translateX(0) rotate(0deg);opacity:1}100%{transform:translateY(110vh) translateX(80px) rotate(720deg);opacity:0}}
-        .sakura-container{position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden}
-        .sakura-petal{position:absolute;top:-5vh;width:12px;height:12px;background:radial-gradient(ellipse at center,#f5c6d0,#e0929f);border-radius:50% 0 50% 50%;opacity:0.5;animation:sakuraFall linear infinite}
-        .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1)}
-        .reveal.visible{opacity:1;transform:translateY(0)}
+        ::-webkit-scrollbar {
+            width: 5px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0c0b0f
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c97a9f;
+            border-radius: 3px
+        }
+
+        @keyframes sakuraFall {
+            0% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg);
+                opacity: 1
+            }
+
+            100% {
+                transform: translateY(110vh) translateX(80px) rotate(720deg);
+                opacity: 0
+            }
+        }
+
+        .sakura-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden
+        }
+
+        .sakura-petal {
+            position: absolute;
+            top: -5vh;
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(ellipse at center, #f5c6d0, #e0929f);
+            border-radius: 50% 0 50% 50%;
+            opacity: 0.5;
+            animation: sakuraFall linear infinite
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
     </style>
 </head>
 
@@ -44,17 +95,26 @@
 
     <div class="sakura-container" id="sakura-container"></div>
 
-    <div class="fixed inset-0 z-[999] bg-jp-bg/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300" id="mobile-nav">
-        <a href="index2.html" class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Home</a>
+    <div class="fixed inset-0 z-[999] bg-jp-bg/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300"
+        id="mobile-nav">
+        <a href="index2.html"
+            class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Home</a>
         <a href="tours.html" class="font-display text-2xl font-semibold text-jp-accent">Tours</a>
-        <a href="cities.html" class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Cities</a>
-        <a href="contact.html" class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Contact</a>
+        <a href="cities.html"
+            class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Cities</a>
+        <a href="contact.html"
+            class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Contact</a>
     </div>
 
-    <nav class="fixed top-0 left-0 right-0 z-[1000] px-4 py-4 sm:px-8 lg:px-16 flex items-center justify-between transition-all duration-300" id="navbar">
+    <nav class="fixed top-0 left-0 right-0 z-[1000] px-4 py-4 sm:px-8 lg:px-16 flex items-center justify-between transition-all duration-300"
+        id="navbar">
         <a href="index2.html" class="flex items-center gap-3 font-display text-xl sm:text-2xl font-bold tracking-tight">
-            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-jp-accent to-jp-accent-deep flex items-center justify-center text-lg sm:text-xl">🌸</div>
-            <div><span class="block leading-none">NainaAbhishek</span><span class="font-jp text-[0.7rem] sm:text-xs text-jp-accent tracking-widest block mt-0.5">日本旅行ガイド</span></div>
+            <div
+                class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-jp-accent to-jp-accent-deep flex items-center justify-center text-lg sm:text-xl">
+                🌸</div>
+            <div><span class="block leading-none">NainaAbhishek</span><span
+                    class="font-jp text-[0.7rem] sm:text-xs text-jp-accent tracking-widest block mt-0.5">日本旅行ガイド</span>
+            </div>
         </a>
         <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-jp-muted">
             <li><a href="index2.html" class="hover:text-jp-text transition-colors">Home</a></li>
@@ -63,57 +123,140 @@
             <li><a href="contact.html" class="hover:text-jp-text transition-colors">Contact</a></li>
         </ul>
         <div class="flex items-center gap-3">
-            <a href="contact.html" class="hidden sm:inline-flex px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg shadow-lg hover:-translate-y-0.5 transition-all">Get In Touch</a>
-            <button class="md:hidden p-2 flex flex-col gap-1.5" id="nav-toggle" aria-label="Toggle menu"><span class="w-6 h-0.5 bg-jp-text rounded-full"></span><span class="w-6 h-0.5 bg-jp-text rounded-full"></span><span class="w-6 h-0.5 bg-jp-text rounded-full"></span></button>
+            <a href="contact.html"
+                class="hidden sm:inline-flex px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg shadow-lg hover:-translate-y-0.5 transition-all">Get
+                In Touch</a>
+            <button class="md:hidden p-2 flex flex-col gap-1.5" id="nav-toggle" aria-label="Toggle menu"><span
+                    class="w-6 h-0.5 bg-jp-text rounded-full"></span><span
+                    class="w-6 h-0.5 bg-jp-text rounded-full"></span><span
+                    class="w-6 h-0.5 bg-jp-text rounded-full"></span></button>
         </div>
     </nav>
 
     <!-- PAGE HERO -->
     <section class="relative pt-32 pb-12 px-4 sm:pt-44 sm:pb-16 sm:px-8 text-center overflow-hidden bg-jp-bg">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-jp-accent/5 blur-3xl pointer-events-none"></div>
-        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold mb-4"><span class="w-6 h-px bg-jp-accent/40"></span><span>Our Tours</span><span class="w-6 h-px bg-jp-accent/40"></span></div>
-        <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4">Experience <em class="not-italic text-jp-sakura">Japan</em><br class="hidden sm:inline"> Your Way</h1>
-        <p class="text-sm sm:text-base text-jp-muted max-w-2xl mx-auto font-light leading-relaxed">From private guided journeys to fun day trips — we offer four unique ways to explore Japan. Every tour is crafted with care, personalized for your preferences.</p>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-jp-accent/5 blur-3xl pointer-events-none">
+        </div>
+        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold mb-4">
+            <span class="w-6 h-px bg-jp-accent/40"></span><span>Our Tours</span><span
+                class="w-6 h-px bg-jp-accent/40"></span></div>
+        <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4">Experience
+            <em class="not-italic text-jp-sakura">Japan</em><br class="hidden sm:inline"> Your Way</h1>
+        <p class="text-sm sm:text-base text-jp-muted max-w-2xl mx-auto font-light leading-relaxed">From private guided
+            journeys to fun day trips — we offer four unique ways to explore Japan. Every tour is crafted with care,
+            personalized for your preferences.</p>
     </section>
 
     <!-- ===== PRIVATE GROUP TOURS ===== -->
     <section class="py-12 sm:py-20 px-4 sm:px-8 lg:px-16 bg-jp-bg" id="private">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div class="reveal relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl group">
-                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=900&q=80" alt="Private group touring a temple in Kyoto" class="w-full h-64 sm:h-96 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-jp-bg/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20">🎌 Most Popular</div>
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=900&q=80"
+                    alt="Private group touring a temple in Kyoto"
+                    class="w-full h-64 sm:h-96 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
+                <div
+                    class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-jp-bg/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20">
+                    🎌 Most Popular</div>
             </div>
             <div class="reveal space-y-4">
-                <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold"><span class="w-6 h-px bg-jp-accent/40"></span>Premium Experience</div>
-                <h2 class="font-display text-2xl sm:text-4xl font-bold leading-snug"><em class="not-italic text-jp-sakura">Private</em> Group Tours</h2>
+                <div
+                    class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold">
+                    <span class="w-6 h-px bg-jp-accent/40"></span>Premium Experience</div>
+                <h2 class="font-display text-2xl sm:text-4xl font-bold leading-snug"><em
+                        class="not-italic text-jp-sakura">Private</em> Group Tours</h2>
                 <p class="font-jp text-xs sm:text-sm text-jp-accent opacity-75">プライベートグループツアー</p>
-                <p class="text-xs sm:text-sm text-jp-muted leading-relaxed font-light">Your own personal guide, your own pace, your own adventure. Private group tours are our most popular option — perfect for families, friend groups, or couples who want a tailored Japan experience without the crowds.</p>
+                <p class="text-xs sm:text-sm text-jp-muted leading-relaxed font-light">Your own personal guide, your own
+                    pace, your own adventure. Private group tours are our most popular option — perfect for families,
+                    friend groups, or couples who want a tailored Japan experience without the crowds.</p>
                 <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">👤 Personal Tour Guide</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🥬 Vegetarian/Vegan Options</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">👴 Elder Support</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🚌 Private Transport</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🏨 Hotel Pickup</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">📸 Photo Moments</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">👤
+                        Personal Tour Guide</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🥬
+                        Vegetarian/Vegan Options</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">👴
+                        Elder Support</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🚌
+                        Private Transport</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🏨
+                        Hotel Pickup</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">📸
+                        Photo Moments</span>
                 </div>
                 <!-- Sample Itinerary -->
                 <div class="pt-4 border-t border-jp-border/50">
-                    <h4 class="text-xs font-semibold uppercase tracking-wider text-jp-accent mb-3">📋 Sample 5-Day Itinerary</h4>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-jp-accent mb-3">📋 Sample 5-Day
+                        Itinerary</h4>
                     <div class="space-y-2.5">
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-[0.65rem] font-bold text-jp-accent flex-shrink-0">Day 1</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Tokyo Arrival & Welcome</span> — Airport pickup, hotel check-in, evening Shibuya & Shinjuku walking tour</div></div>
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-[0.65rem] font-bold text-jp-accent flex-shrink-0">Day 2</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Classic Tokyo</span> — Senso-ji Temple, Meiji Shrine, Harajuku, Akihabara</div></div>
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-[0.65rem] font-bold text-jp-accent flex-shrink-0">Day 3</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Bullet Train to Kyoto</span> — Shinkansen, Fushimi Inari, Gion evening walk</div></div>
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-[0.65rem] font-bold text-jp-accent flex-shrink-0">Day 4</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Kyoto Deep Dive</span> — Arashiyama Bamboo, Golden Pavilion, tea ceremony</div></div>
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-[0.65rem] font-bold text-jp-accent flex-shrink-0">Day 5</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Nara Day Trip & Departure</span> — Deer Park, Great Buddha, airport transfer</div></div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-[0.65rem] font-bold text-jp-accent flex-shrink-0">
+                                Day 1</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Tokyo
+                                    Arrival & Welcome</span> — Airport pickup, hotel check-in, evening Shibuya &
+                                Shinjuku walking tour</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-[0.65rem] font-bold text-jp-accent flex-shrink-0">
+                                Day 2</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span
+                                    class="font-semibold text-jp-text">Classic Tokyo</span> — Senso-ji Temple, Meiji
+                                Shrine, Harajuku, Akihabara</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-[0.65rem] font-bold text-jp-accent flex-shrink-0">
+                                Day 3</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span
+                                    class="font-semibold text-jp-text">Bullet Train to Kyoto</span> — Shinkansen,
+                                Fushimi Inari, Gion evening walk</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-[0.65rem] font-bold text-jp-accent flex-shrink-0">
+                                Day 4</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Kyoto
+                                    Deep Dive</span> — Arashiyama Bamboo, Golden Pavilion, tea ceremony</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-[0.65rem] font-bold text-jp-accent flex-shrink-0">
+                                Day 5</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Nara
+                                    Day Trip & Departure</span> — Deer Park, Great Buddha, airport transfer</div>
+                        </div>
                     </div>
                 </div>
                 <!-- Included / Not -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-jp-border/50 text-xs">
-                    <div><h4 class="font-semibold text-jp-green mb-2 uppercase tracking-wider text-[0.7rem]">✓ What's Included</h4><ul class="space-y-1.5 text-jp-muted"><li><span class="text-jp-green font-bold">✓</span> Personal bilingual guide</li><li><span class="text-jp-green font-bold">✓</span> All entrance fees</li><li><span class="text-jp-green font-bold">✓</span> Private transport</li><li><span class="text-jp-green font-bold">✓</span> Veg/vegan meal arrangements</li><li><span class="text-jp-green font-bold">✓</span> Hotel pickup & drop-off</li><li><span class="text-jp-green font-bold">✓</span> Elder-friendly route planning</li></ul></div>
-                    <div><h4 class="font-semibold text-jp-red mb-2 uppercase tracking-wider text-[0.7rem]">✗ Not Included</h4><ul class="space-y-1.5 text-jp-muted"><li><span class="text-jp-red font-bold">✗</span> International flights</li><li><span class="text-jp-red font-bold">✗</span> Travel insurance</li><li><span class="text-jp-red font-bold">✗</span> Personal shopping expenses</li><li><span class="text-jp-red font-bold">✗</span> Hotel accommodation</li></ul></div>
+                    <div>
+                        <h4 class="font-semibold text-jp-green mb-2 uppercase tracking-wider text-[0.7rem]">✓ What's
+                            Included</h4>
+                        <ul class="space-y-1.5 text-jp-muted">
+                            <li><span class="text-jp-green font-bold">✓</span> Personal bilingual guide</li>
+                            <li><span class="text-jp-green font-bold">✓</span> All entrance fees</li>
+                            <li><span class="text-jp-green font-bold">✓</span> Private transport</li>
+                            <li><span class="text-jp-green font-bold">✓</span> Veg/vegan meal arrangements</li>
+                            <li><span class="text-jp-green font-bold">✓</span> Hotel pickup & drop-off</li>
+                            <li><span class="text-jp-green font-bold">✓</span> Elder-friendly route planning</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-jp-red mb-2 uppercase tracking-wider text-[0.7rem]">✗ Not Included
+                        </h4>
+                        <ul class="space-y-1.5 text-jp-muted">
+                            <li><span class="text-jp-red font-bold">✗</span> International flights</li>
+                            <li><span class="text-jp-red font-bold">✗</span> Travel insurance</li>
+                            <li><span class="text-jp-red font-bold">✗</span> Personal shopping expenses</li>
+                            <li><span class="text-jp-red font-bold">✗</span> Hotel accommodation</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="pt-4 flex flex-wrap gap-3">
-                    <a href="contact.html" class="px-6 py-3 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-bold text-xs sm:text-sm shadow-lg hover:-translate-y-0.5 transition-all">Enquire Now →</a>
+                    <a href="contact.html"
+                        class="px-6 py-3 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-bold text-xs sm:text-sm shadow-lg hover:-translate-y-0.5 transition-all">Enquire
+                        Now →</a>
                 </div>
             </div>
         </div>
@@ -123,23 +266,40 @@
     <section class="py-12 sm:py-20 px-4 sm:px-8 lg:px-16 bg-jp-bg-alt" id="common">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div class="reveal lg:order-2 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl group">
-                <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80" alt="Group of travelers exploring Japan" class="w-full h-64 sm:h-96 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-jp-bg/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20">👥 Great Value</div>
+                <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80"
+                    alt="Group of travelers exploring Japan"
+                    class="w-full h-64 sm:h-96 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
+                <div
+                    class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-jp-bg/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20">
+                    👥 Great Value</div>
             </div>
             <div class="reveal lg:order-1 space-y-4">
-                <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold"><span class="w-6 h-px bg-jp-accent/40"></span>Social Experience</div>
-                <h2 class="font-display text-2xl sm:text-4xl font-bold leading-snug"><em class="not-italic text-jp-sakura">Common</em> Group Tours</h2>
+                <div
+                    class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold">
+                    <span class="w-6 h-px bg-jp-accent/40"></span>Social Experience</div>
+                <h2 class="font-display text-2xl sm:text-4xl font-bold leading-snug"><em
+                        class="not-italic text-jp-sakura">Common</em> Group Tours</h2>
                 <p class="font-jp text-xs sm:text-sm text-jp-accent opacity-75">グループツアー</p>
-                <p class="text-xs sm:text-sm text-jp-muted leading-relaxed font-light">Join fellow travelers from around the world on our scheduled group departures. A fantastic way to explore Japan, make new friends, and enjoy the experience at an affordable price. Our expert guides lead small groups of 8–15 people through Japan's greatest hits.</p>
+                <p class="text-xs sm:text-sm text-jp-muted leading-relaxed font-light">Join fellow travelers from around
+                    the world on our scheduled group departures. A fantastic way to explore Japan, make new friends, and
+                    enjoy the experience at an affordable price. Our expert guides lead small groups of 8–15 people
+                    through Japan's greatest hits.</p>
                 <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">👥 8–15 Travelers</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">📅 Fixed Departures</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">💰 Budget Friendly</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🤝 Meet New People</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🗣️ English Speaking Guide</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">👥
+                        8–15 Travelers</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">📅
+                        Fixed Departures</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">💰
+                        Budget Friendly</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🤝
+                        Meet New People</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🗣️
+                        English Speaking Guide</span>
                 </div>
                 <div class="pt-4 flex flex-wrap gap-3">
-                    <a href="contact.html" class="px-6 py-3 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-bold text-xs sm:text-sm shadow-lg hover:-translate-y-0.5 transition-all">Check Availability →</a>
+                    <a href="contact.html"
+                        class="px-6 py-3 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-bold text-xs sm:text-sm shadow-lg hover:-translate-y-0.5 transition-all">Check
+                        Availability →</a>
                 </div>
             </div>
         </div>
@@ -149,33 +309,79 @@
     <section class="py-12 sm:py-20 px-4 sm:px-8 lg:px-16 bg-jp-bg" id="personal">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div class="reveal relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl group">
-                <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=900&q=80" alt="Traditional Japanese house for homestay" class="w-full h-64 sm:h-96 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-jp-bg/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20">🏡 Authentic</div>
+                <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=900&q=80"
+                    alt="Traditional Japanese house for homestay"
+                    class="w-full h-64 sm:h-96 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
+                <div
+                    class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-jp-bg/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20">
+                    🏡 Authentic</div>
             </div>
             <div class="reveal space-y-4">
-                <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold"><span class="w-6 h-px bg-jp-accent/40"></span>Truly Personal</div>
-                <h2 class="font-display text-2xl sm:text-4xl font-bold leading-snug"><em class="not-italic text-jp-sakura">Personal</em> Tours</h2>
+                <div
+                    class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold">
+                    <span class="w-6 h-px bg-jp-accent/40"></span>Truly Personal</div>
+                <h2 class="font-display text-2xl sm:text-4xl font-bold leading-snug"><em
+                        class="not-italic text-jp-sakura">Personal</em> Tours</h2>
                 <p class="font-jp text-xs sm:text-sm text-jp-accent opacity-75">パーソナルツアー</p>
-                <p class="text-xs sm:text-sm text-jp-muted leading-relaxed font-light">Go beyond the tourist trail. Our personal tours are fully customizable experiences designed around your interests. Want a homestay in a rural village? A multi-day hiking adventure? Fun activities for kids? We make it happen.</p>
+                <p class="text-xs sm:text-sm text-jp-muted leading-relaxed font-light">Go beyond the tourist trail. Our
+                    personal tours are fully customizable experiences designed around your interests. Want a homestay in
+                    a rural village? A multi-day hiking adventure? Fun activities for kids? We make it happen.</p>
                 <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🏡 Homestay Experiences</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🥾 Hiking Adventures</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">👶 Kids Activities</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🎨 Cultural Workshops</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🏯 Off-the-Beaten-Path</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">📝 Fully Customizable</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🏡
+                        Homestay Experiences</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🥾
+                        Hiking Adventures</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">👶
+                        Kids Activities</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🎨
+                        Cultural Workshops</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🏯
+                        Off-the-Beaten-Path</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">📝
+                        Fully Customizable</span>
                 </div>
                 <div class="pt-4 border-t border-jp-border/50">
-                    <h4 class="text-xs font-semibold uppercase tracking-wider text-jp-accent mb-3">🏡 Personal Tour Highlights</h4>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-jp-accent mb-3">🏡 Personal Tour
+                        Highlights</h4>
                     <div class="space-y-2.5">
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">🏠</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Japanese Homestay</span> — Live with a local family, cook together, learn daily Japanese life & customs</div></div>
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">⛰️</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Mountain Hiking</span> — Guided hikes on Kumano Kodo, Mount Takao, or alpine trails</div></div>
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">🧒</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Kids-Friendly Activities</span> — Pokemon centers, theme parks, origami workshops & museums</div></div>
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">🎎</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Cultural Immersion</span> — Kimono wearing, calligraphy, pottery, sword-making workshops</div></div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">
+                                🏠</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span
+                                    class="font-semibold text-jp-text">Japanese Homestay</span> — Live with a local
+                                family, cook together, learn daily Japanese life & customs</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">
+                                ⛰️</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span
+                                    class="font-semibold text-jp-text">Mountain Hiking</span> — Guided hikes on Kumano
+                                Kodo, Mount Takao, or alpine trails</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">
+                                🧒</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span
+                                    class="font-semibold text-jp-text">Kids-Friendly Activities</span> — Pokemon
+                                centers, theme parks, origami workshops & museums</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">
+                                🎎</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span
+                                    class="font-semibold text-jp-text">Cultural Immersion</span> — Kimono wearing,
+                                calligraphy, pottery, sword-making workshops</div>
+                        </div>
                     </div>
                 </div>
                 <div class="pt-4 flex flex-wrap gap-3">
-                    <a href="contact.html" class="px-6 py-3 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-bold text-xs sm:text-sm shadow-lg hover:-translate-y-0.5 transition-all">Design My Tour →</a>
+                    <a href="contact.html"
+                        class="px-6 py-3 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-bold text-xs sm:text-sm shadow-lg hover:-translate-y-0.5 transition-all">Design
+                        My Tour →</a>
                 </div>
             </div>
         </div>
@@ -185,33 +391,80 @@
     <section class="py-12 sm:py-20 px-4 sm:px-8 lg:px-16 bg-jp-bg-alt" id="daytrips">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div class="reveal lg:order-2 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl group">
-                <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=900&q=80" alt="Mount Fuji day trip with cherry blossoms" class="w-full h-64 sm:h-96 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-jp-bg/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20">🌅 Quick & Fun</div>
+                <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=900&q=80"
+                    alt="Mount Fuji day trip with cherry blossoms"
+                    class="w-full h-64 sm:h-96 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
+                <div
+                    class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-jp-bg/80 backdrop-blur-md text-xs font-semibold text-jp-accent border border-jp-accent/20">
+                    🌅 Quick & Fun</div>
             </div>
             <div class="reveal lg:order-1 space-y-4">
-                <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold"><span class="w-6 h-px bg-jp-accent/40"></span>Short & Sweet</div>
-                <h2 class="font-display text-2xl sm:text-4xl font-bold leading-snug"><em class="not-italic text-jp-sakura">Day</em> Trips</h2>
+                <div
+                    class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold">
+                    <span class="w-6 h-px bg-jp-accent/40"></span>Short & Sweet</div>
+                <h2 class="font-display text-2xl sm:text-4xl font-bold leading-snug"><em
+                        class="not-italic text-jp-sakura">Day</em> Trips</h2>
                 <p class="font-jp text-xs sm:text-sm text-jp-accent opacity-75">日帰りツアー</p>
-                <p class="text-xs sm:text-sm text-jp-muted leading-relaxed font-light">Short on time? Our day trips pack the best of Japan into half-day or full-day experiences. Perfect for travelers who want to explore a specific destination without committing to a multi-day tour. Available from Tokyo, Kyoto, and Osaka.</p>
+                <p class="text-xs sm:text-sm text-jp-muted leading-relaxed font-light">Short on time? Our day trips pack
+                    the best of Japan into half-day or full-day experiences. Perfect for travelers who want to explore a
+                    specific destination without committing to a multi-day tour. Available from Tokyo, Kyoto, and Osaka.
+                </p>
                 <div class="flex flex-wrap gap-2 pt-2">
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">⏰ Half-Day & Full-Day</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🗻 Mount Fuji</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🦌 Nara Deer Park</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">♨️ Hot Springs</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🏯 Castles & Shrines</span>
-                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🚅 Bullet Train Rides</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">⏰
+                        Half-Day & Full-Day</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🗻
+                        Mount Fuji</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🦌
+                        Nara Deer Park</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">♨️
+                        Hot Springs</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🏯
+                        Castles & Shrines</span>
+                    <span class="px-3 py-1.5 rounded-full bg-jp-card border border-jp-border text-xs text-jp-muted">🚅
+                        Bullet Train Rides</span>
                 </div>
                 <div class="pt-4 border-t border-jp-border/50">
-                    <h4 class="text-xs font-semibold uppercase tracking-wider text-jp-accent mb-3">🌅 Popular Day Trips</h4>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-jp-accent mb-3">🌅 Popular Day Trips
+                    </h4>
                     <div class="space-y-2.5">
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">🗻</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Mount Fuji & Hakone</span> — Full day: Lake Ashi cruise, Hakone hot springs, Fuji viewpoints</div></div>
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">🦌</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Nara Deer Park & Temples</span> — Full day: Todai-ji Great Buddha, deer feeding, Kasuga shrine</div></div>
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">⛩️</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Fushimi Inari & Sake Tasting</span> — Half day: Thousand torii gates, local sake brewery tour</div></div>
-                        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">🏯</div><div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Osaka Castle & Street Food</span> — Full day: Castle tour, Dotonbori food walk, Shinsekai district</div></div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">
+                                🗻</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Mount
+                                    Fuji & Hakone</span> — Full day: Lake Ashi cruise, Hakone hot springs, Fuji
+                                viewpoints</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">
+                                🦌</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Nara
+                                    Deer Park & Temples</span> — Full day: Todai-ji Great Buddha, deer feeding, Kasuga
+                                shrine</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">
+                                ⛩️</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span
+                                    class="font-semibold text-jp-text">Fushimi Inari & Sake Tasting</span> — Half day:
+                                Thousand torii gates, local sake brewery tour</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-jp-accent/10 border border-jp-accent/15 flex items-center justify-center text-lg flex-shrink-0">
+                                🏯</div>
+                            <div class="text-xs sm:text-sm text-jp-muted"><span class="font-semibold text-jp-text">Osaka
+                                    Castle & Street Food</span> — Full day: Castle tour, Dotonbori food walk, Shinsekai
+                                district</div>
+                        </div>
                     </div>
                 </div>
                 <div class="pt-4 flex flex-wrap gap-3">
-                    <a href="contact.html" class="px-6 py-3 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-bold text-xs sm:text-sm shadow-lg hover:-translate-y-0.5 transition-all">Book a Day Trip →</a>
+                    <a href="contact.html"
+                        class="px-6 py-3 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-bold text-xs sm:text-sm shadow-lg hover:-translate-y-0.5 transition-all">Book
+                        a Day Trip →</a>
                 </div>
             </div>
         </div>
@@ -220,68 +473,121 @@
     <!-- ===== HIGHLIGHTS ===== -->
     <section class="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-jp-bg-alt">
         <div class="text-center max-w-[700px] mx-auto mb-14 reveal">
-            <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold mb-4"><span class="w-6 h-px bg-jp-accent/40"></span><span>Why Choose Us</span><span class="w-6 h-px bg-jp-accent/40"></span></div>
-            <h2 class="font-display text-[clamp(2rem,3.5vw,3rem)] font-bold tracking-tight mb-4">Every Tour Includes</h2>
-            <p class="text-sm text-jp-muted font-light leading-relaxed">No matter which tour you choose, these essentials come standard.</p>
+            <div
+                class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold mb-4">
+                <span class="w-6 h-px bg-jp-accent/40"></span><span>Why Choose Us</span><span
+                    class="w-6 h-px bg-jp-accent/40"></span></div>
+            <h2 class="font-display text-[clamp(2rem,3.5vw,3rem)] font-bold tracking-tight mb-4">Every Tour Includes
+            </h2>
+            <p class="text-sm text-jp-muted font-light leading-relaxed">No matter which tour you choose, these
+                essentials come standard.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto">
-            <div class="reveal p-7 rounded-2xl bg-jp-card border border-jp-border text-center hover:-translate-y-1.5 hover:border-jp-accent/15 hover:shadow-2xl transition-all">
+            <div
+                class="reveal p-7 rounded-2xl bg-jp-card border border-jp-border text-center hover:-translate-y-1.5 hover:border-jp-accent/15 hover:shadow-2xl transition-all">
                 <div class="text-3xl mb-3">🗣️</div>
                 <h3 class="font-display text-base font-semibold mb-2">Bilingual Guide</h3>
-                <p class="text-xs text-jp-muted leading-relaxed">English, Hindi & Japanese speaking guides who know Japan inside out.</p>
+                <p class="text-xs text-jp-muted leading-relaxed">English, Hindi & Japanese speaking guides who know
+                    Japan inside out.</p>
             </div>
-            <div class="reveal p-7 rounded-2xl bg-jp-card border border-jp-border text-center hover:-translate-y-1.5 hover:border-jp-accent/15 hover:shadow-2xl transition-all">
+            <div
+                class="reveal p-7 rounded-2xl bg-jp-card border border-jp-border text-center hover:-translate-y-1.5 hover:border-jp-accent/15 hover:shadow-2xl transition-all">
                 <div class="text-3xl mb-3">🍽️</div>
                 <h3 class="font-display text-base font-semibold mb-2">Food Preferences</h3>
-                <p class="text-xs text-jp-muted leading-relaxed">Vegetarian, vegan, halal — we cater to every dietary need with care.</p>
+                <p class="text-xs text-jp-muted leading-relaxed">Vegetarian, vegan, halal — we cater to every dietary
+                    need with care.</p>
             </div>
-            <div class="reveal p-7 rounded-2xl bg-jp-card border border-jp-border text-center hover:-translate-y-1.5 hover:border-jp-accent/15 hover:shadow-2xl transition-all">
+            <div
+                class="reveal p-7 rounded-2xl bg-jp-card border border-jp-border text-center hover:-translate-y-1.5 hover:border-jp-accent/15 hover:shadow-2xl transition-all">
                 <div class="text-3xl mb-3">👴</div>
                 <h3 class="font-display text-base font-semibold mb-2">Elder Friendly</h3>
-                <p class="text-xs text-jp-muted leading-relaxed">Wheelchair access, rest stops, and comfortable pacing for senior travelers.</p>
+                <p class="text-xs text-jp-muted leading-relaxed">Wheelchair access, rest stops, and comfortable pacing
+                    for senior travelers.</p>
             </div>
-            <div class="reveal p-7 rounded-2xl bg-jp-card border border-jp-border text-center hover:-translate-y-1.5 hover:border-jp-accent/15 hover:shadow-2xl transition-all">
+            <div
+                class="reveal p-7 rounded-2xl bg-jp-card border border-jp-border text-center hover:-translate-y-1.5 hover:border-jp-accent/15 hover:shadow-2xl transition-all">
                 <div class="text-3xl mb-3">📱</div>
                 <h3 class="font-display text-base font-semibold mb-2">24/7 Support</h3>
-                <p class="text-xs text-jp-muted leading-relaxed">We're always just a message away throughout your entire Japan journey.</p>
+                <p class="text-xs text-jp-muted leading-relaxed">We're always just a message away throughout your entire
+                    Japan journey.</p>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="bg-jp-bg border-t border-jp-border pt-16 pb-10 px-4 sm:px-8 lg:px-16">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 text-center sm:text-left">
+        <div
+            class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 text-center sm:text-left">
             <div class="lg:col-span-2 flex flex-col items-center sm:items-start">
-                <a href="index2.html" class="flex items-center gap-3 font-display text-xl font-bold tracking-tight mx-auto sm:mx-0">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-jp-accent to-jp-accent-deep flex items-center justify-center text-lg">🌸</div>
-                    <div><span class="block leading-none">NainaAbhishek</span><span class="font-jp text-[0.7rem] text-jp-accent tracking-widest block mt-0.5">日本旅行ガイド</span></div>
+                <a href="index2.html"
+                    class="flex items-center gap-3 font-display text-xl font-bold tracking-tight mx-auto sm:mx-0">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-gradient-to-br from-jp-accent to-jp-accent-deep flex items-center justify-center text-lg">
+                        🌸</div>
+                    <div><span class="block leading-none">NainaAbhishek</span><span
+                            class="font-jp text-[0.7rem] text-jp-accent tracking-widest block mt-0.5">日本旅行ガイド</span>
+                    </div>
                 </a>
-                <p class="text-xs sm:text-sm text-jp-muted mt-4 max-w-sm leading-relaxed">Your personal Japan travel guides. Private tours, group trips, and authentic cultural experiences across Japan. 🌸</p>
+                <p class="text-xs sm:text-sm text-jp-muted mt-4 max-w-sm leading-relaxed">Your personal Japan travel
+                    guides. Private tours, group trips, and authentic cultural experiences across Japan. 🌸</p>
                 <div class="flex gap-3 mt-5 justify-center sm:justify-start">
-                    <a href="#" class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all">📷</a>
-                    <a href="#" class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all">𝕏</a>
-                    <a href="#" class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all">▶</a>
+                    <a href="#"
+                        class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all">📷</a>
+                    <a href="#"
+                        class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all">𝕏</a>
+                    <a href="#"
+                        class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all">▶</a>
                 </div>
             </div>
-            <div><h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Pages</h4><ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted"><li><a href="index2.html" class="hover:text-jp-accent transition-colors">Home</a></li><li><a href="tours.html" class="hover:text-jp-accent transition-colors">Tours</a></li><li><a href="cities.html" class="hover:text-jp-accent transition-colors">Cities</a></li><li><a href="contact.html" class="hover:text-jp-accent transition-colors">Contact Us</a></li></ul></div>
-            <div><h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Tours</h4><ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted"><li><a href="tours.html#private" class="hover:text-jp-accent transition-colors">Private Group Tours</a></li><li><a href="tours.html#common" class="hover:text-jp-accent transition-colors">Common Group Tours</a></li><li><a href="tours.html#personal" class="hover:text-jp-accent transition-colors">Personal Tours</a></li><li><a href="tours.html#daytrips" class="hover:text-jp-accent transition-colors">Day Trips</a></li></ul></div>
-            <div><h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Popular Cities</h4><ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted"><li><a href="cities.html#tokyo" class="hover:text-jp-accent transition-colors">Tokyo — 東京</a></li><li><a href="cities.html#kyoto" class="hover:text-jp-accent transition-colors">Kyoto — 京都</a></li><li><a href="cities.html#osaka" class="hover:text-jp-accent transition-colors">Osaka — 大阪</a></li><li><a href="cities.html#nara" class="hover:text-jp-accent transition-colors">Nara — 奈良</a></li></ul></div>
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Pages</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted">
+                    <li><a href="index2.html" class="hover:text-jp-accent transition-colors">Home</a></li>
+                    <li><a href="tours.html" class="hover:text-jp-accent transition-colors">Tours</a></li>
+                    <li><a href="cities.html" class="hover:text-jp-accent transition-colors">Cities</a></li>
+                    <li><a href="contact.html" class="hover:text-jp-accent transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Tours</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted">
+                    <li><a href="tours.html#private" class="hover:text-jp-accent transition-colors">Private Group
+                            Tours</a></li>
+                    <li><a href="tours.html#common" class="hover:text-jp-accent transition-colors">Common Group
+                            Tours</a></li>
+                    <li><a href="tours.html#personal" class="hover:text-jp-accent transition-colors">Personal Tours</a>
+                    </li>
+                    <li><a href="tours.html#daytrips" class="hover:text-jp-accent transition-colors">Day Trips</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Popular Cities</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted">
+                    <li><a href="cities.html#tokyo" class="hover:text-jp-accent transition-colors">Tokyo — 東京</a></li>
+                    <li><a href="cities.html#kyoto" class="hover:text-jp-accent transition-colors">Kyoto — 京都</a></li>
+                    <li><a href="cities.html#osaka" class="hover:text-jp-accent transition-colors">Osaka — 大阪</a></li>
+                    <li><a href="cities.html#nara" class="hover:text-jp-accent transition-colors">Nara — 奈良</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="max-w-7xl mx-auto pt-6 border-t border-jp-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs text-jp-subtle">
+        <div
+            class="max-w-7xl mx-auto pt-6 border-t border-jp-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs text-jp-subtle">
             <span>© 2026 Naina & Abhishek Japan Tours. Made with 🌸 in Japan.</span>
-            <div class="flex gap-6"><a href="contact.html" class="hover:text-jp-accent transition-colors">Contact</a><a href="tours.html" class="hover:text-jp-accent transition-colors">Tours</a></div>
+            <div class="flex gap-6"><a href="contact.html" class="hover:text-jp-accent transition-colors">Contact</a><a
+                    href="tours.html" class="hover:text-jp-accent transition-colors">Tours</a></div>
         </div>
     </footer>
 
     <script>
-        (function(){const c=document.getElementById('sakura-container');for(let i=0;i<12;i++){const p=document.createElement('div');p.classList.add('sakura-petal');p.style.left=Math.random()*100+'vw';p.style.animationDuration=(8+Math.random()*12)+'s';p.style.animationDelay=(Math.random()*15)+'s';p.style.opacity=0.15+Math.random()*0.25;p.style.width=(8+Math.random()*8)+'px';p.style.height=p.style.width;c.appendChild(p)}})();
-        const navbar=document.getElementById('navbar');
-        window.addEventListener('scroll',()=>{if(window.scrollY>60){navbar.classList.add('bg-jp-bg/90','backdrop-blur-xl','!py-3','border-b','border-jp-border','shadow-xl');navbar.classList.remove('py-4');}else{navbar.classList.remove('bg-jp-bg/90','backdrop-blur-xl','!py-3','border-b','border-jp-border','shadow-xl');navbar.classList.add('py-4');}});
-        const navToggle=document.getElementById('nav-toggle');const mobileNav=document.getElementById('mobile-nav');
-        navToggle.addEventListener('click',()=>{mobileNav.classList.toggle('opacity-0');mobileNav.classList.toggle('pointer-events-none');});
-        mobileNav.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{mobileNav.classList.add('opacity-0','pointer-events-none');}));
-        const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-        document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+        (function () { const c = document.getElementById('sakura-container'); for (let i = 0; i < 12; i++) { const p = document.createElement('div'); p.classList.add('sakura-petal'); p.style.left = Math.random() * 100 + 'vw'; p.style.animationDuration = (8 + Math.random() * 12) + 's'; p.style.animationDelay = (Math.random() * 15) + 's'; p.style.opacity = 0.15 + Math.random() * 0.25; p.style.width = (8 + Math.random() * 8) + 'px'; p.style.height = p.style.width; c.appendChild(p) } })();
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => { if (window.scrollY > 60) { navbar.classList.add('bg-jp-bg/90', 'backdrop-blur-xl', '!py-3', 'border-b', 'border-jp-border', 'shadow-xl'); navbar.classList.remove('py-4'); } else { navbar.classList.remove('bg-jp-bg/90', 'backdrop-blur-xl', '!py-3', 'border-b', 'border-jp-border', 'shadow-xl'); navbar.classList.add('py-4'); } });
+        const navToggle = document.getElementById('nav-toggle'); const mobileNav = document.getElementById('mobile-nav');
+        navToggle.addEventListener('click', () => { mobileNav.classList.toggle('opacity-0'); mobileNav.classList.toggle('pointer-events-none'); });
+        mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { mobileNav.classList.add('opacity-0', 'pointer-events-none'); }));
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target) } }) }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
+
 </html>
