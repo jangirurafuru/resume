@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -9,1375 +9,161 @@
         content="Discover Japan with Naina & Abhishek. Private tours, group trips, day excursions, and authentic cultural experiences across Tokyo, Kyoto, Osaka & more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;600;700&display=swap"
-        rel="stylesheet">
-    <style>
-        /* ===== RESET & BASE ===== */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --color-bg: #0c0b0f;
-            --color-bg-alt: #100f14;
-            --color-bg-card: #15141b;
-            --color-surface: #1c1b24;
-            --color-border: rgba(255, 255, 255, 0.05);
-            --color-text: #f2f0f7;
-            --color-text-secondary: #a09baf;
-            --color-text-muted: #6a6578;
-            --color-accent: #e8a0bf;
-            --color-accent-deep: #c97a9f;
-            --color-accent-light: #f0c4d8;
-            --color-accent-glow: rgba(232, 160, 191, 0.12);
-            --color-green: #8bc49e;
-            --color-green-deep: #5fa87a;
-            --color-green-glow: rgba(139, 196, 158, 0.12);
-            --color-sakura: #f5c6d0;
-            --color-sakura-deep: #e0929f;
-            --color-gold: #d4a76a;
-            --color-red: #e07070;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.07);
-            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-jp-bg: #0c0b0f;
+            --color-jp-bg-alt: #100f14;
+            --color-jp-card: #15141b;
+            --color-jp-surface: #1c1b24;
+            --color-jp-border: rgba(255, 255, 255, 0.07);
+            --color-jp-text: #f2f0f7;
+            --color-jp-muted: #a09baf;
+            --color-jp-subtle: #6a6578;
+            --color-jp-accent: #e8a0bf;
+            --color-jp-accent-deep: #c97a9f;
+            --color-jp-sakura: #f5c6d0;
+            --color-jp-sakura-deep: #e0929f;
+            --color-jp-green: #8bc49e;
             --font-display: 'Playfair Display', 'Noto Serif JP', Georgia, serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-jp: 'Noto Serif JP', serif;
-            --radius-sm: 8px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --radius-xl: 32px;
-            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            display: block;
-            max-width: 100%;
-        }
-
-        button {
-            cursor: pointer;
-            border: none;
-            outline: none;
-            font-family: var(--font-body);
-        }
-
-        /* ===== SCROLLBAR ===== */
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--color-bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--color-accent-deep);
-            border-radius: 3px;
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes heroSlow {
-            0% {
-                transform: scale(1.0);
-            }
-
-            100% {
-                transform: scale(1.1);
-            }
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
-        }
-
-        @keyframes gentlePulse {
-
-            0%,
-            100% {
-                opacity: 0.6;
-            }
-
-            50% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes sakuraFall {
-            0% {
-                transform: translateY(-10vh) translateX(0) rotate(0deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(110vh) translateX(80px) rotate(720deg);
-                opacity: 0;
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -200% 0;
-            }
-
-            100% {
-                background-position: 200% 0;
-            }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== SAKURA PETALS ===== */
-        .sakura-container {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 9999;
-            overflow: hidden;
-        }
-
-        .sakura-petal {
-            position: absolute;
-            top: -5vh;
-            width: 12px;
-            height: 12px;
-            background: radial-gradient(ellipse at center, var(--color-sakura), var(--color-sakura-deep));
-            border-radius: 50% 0 50% 50%;
-            opacity: 0.5;
-            animation: sakuraFall linear infinite;
-        }
-
-        /* ===== NAVIGATION ===== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 20px 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: all 0.4s var(--transition-smooth);
-        }
-
-        .navbar.scrolled {
-            padding: 14px 60px;
-            background: rgba(12, 11, 15, 0.88);
-            backdrop-filter: blur(24px) saturate(1.6);
-            -webkit-backdrop-filter: blur(24px) saturate(1.6);
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-logo-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-        }
-
-        .nav-logo-jp {
-            font-family: var(--font-jp);
-            font-size: 0.75rem;
-            color: var(--color-accent);
-            letter-spacing: 0.08em;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 36px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 0.88rem;
-            font-weight: 500;
-            color: var(--color-text-secondary);
-            transition: color 0.3s ease;
-            position: relative;
-            letter-spacing: 0.02em;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--color-accent);
-            transition: width 0.3s var(--transition-smooth);
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--color-text);
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .btn-nav {
-            padding: 10px 26px;
-            border-radius: 100px;
-            font-size: 0.84rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            transition: all 0.3s var(--transition-smooth);
-        }
-
-        .btn-nav-primary {
-            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
-            color: var(--color-bg);
-        }
-
-        .btn-nav-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(232, 160, 191, 0.3);
-        }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            padding: 5px;
-        }
-
-        .nav-toggle span {
-            width: 24px;
-            height: 2px;
-            background: var(--color-text);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        /* Mobile Nav Overlay */
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 999;
-            background: rgba(12, 11, 15, 0.96);
-            backdrop-filter: blur(24px);
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 28px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-        }
-
-        .mobile-nav.open {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .mobile-nav a {
-            font-family: var(--font-display);
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: var(--color-text-secondary);
-            transition: color 0.3s ease;
-        }
-
-        .mobile-nav a:hover,
-        .mobile-nav a.active {
-            color: var(--color-accent);
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            position: relative;
-            height: 100vh;
-            min-height: 750px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            animation: heroSlow 25s ease-in-out infinite alternate;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg,
-                    rgba(12, 11, 15, 0.35) 0%,
-                    rgba(12, 11, 15, 0.1) 30%,
-                    rgba(12, 11, 15, 0.5) 65%,
-                    rgba(12, 11, 15, 0.97) 100%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 900px;
-            padding: 0 24px;
-            animation: fadeInUp 1.2s var(--transition-smooth);
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 22px;
-            border-radius: 100px;
-            background: var(--color-accent-glow);
-            border: 1px solid rgba(232, 160, 191, 0.2);
-            backdrop-filter: blur(10px);
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--color-accent);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 28px;
-        }
-
-        .hero-badge-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--color-accent);
-            animation: gentlePulse 2s ease infinite;
-        }
-
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.8rem, 6vw, 5.2rem);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            margin-bottom: 10px;
-        }
-
-        .hero h1 em {
-            font-style: italic;
-            color: var(--color-sakura);
-        }
-
-        .hero-jp-text {
-            font-family: var(--font-jp);
-            font-size: clamp(1rem, 2vw, 1.4rem);
-            color: var(--color-accent);
-            letter-spacing: 0.2em;
-            margin-bottom: 20px;
-            opacity: 0.8;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(0.95rem, 1.4vw, 1.15rem);
-            color: var(--color-text-secondary);
-            max-width: 620px;
-            margin: 0 auto 44px;
-            line-height: 1.75;
-            font-weight: 300;
-        }
-
-        .hero-cta-group {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 38px;
-            border-radius: 100px;
-            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
-            color: var(--color-bg);
-            font-size: 0.92rem;
-            font-weight: 600;
-            transition: all 0.3s var(--transition-smooth);
-            letter-spacing: 0.02em;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 36px rgba(232, 160, 191, 0.35);
-        }
-
-        .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 38px;
-            border-radius: 100px;
-            background: transparent;
-            border: 1px solid var(--glass-border);
-            color: var(--color-text);
-            font-size: 0.92rem;
-            font-weight: 600;
-            transition: all 0.3s var(--transition-smooth);
-            letter-spacing: 0.02em;
-        }
-
-        .btn-outline:hover {
-            background: var(--glass-bg);
-            border-color: var(--color-accent);
-            color: var(--color-accent);
-            transform: translateY(-3px);
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 56px;
-            margin-top: 56px;
-            animation: fadeInUp 1.2s 0.5s var(--transition-smooth) both;
-        }
-
-        .hero-stat {
-            text-align: center;
-        }
-
-        .hero-stat-value {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--color-sakura);
-        }
-
-        .hero-stat-label {
-            font-size: 0.75rem;
-            color: var(--color-text-muted);
-            margin-top: 2px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 36px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .scroll-indicator span {
-            font-size: 0.65rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--color-text-muted);
-        }
-
-        .scroll-line {
-            width: 1px;
-            height: 36px;
-            background: linear-gradient(to bottom, var(--color-accent), transparent);
-        }
-
-        /* ===== SECTION STYLES ===== */
-        section {
-            padding: 120px 60px;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 72px;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.72rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--color-accent);
-            margin-bottom: 18px;
-        }
-
-        .section-label::before,
-        .section-label::after {
-            content: '';
-            width: 28px;
-            height: 1px;
-            background: var(--color-accent);
-            opacity: 0.35;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 3.5vw, 3rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.15;
-            margin-bottom: 16px;
-        }
-
-        .section-subtitle {
-            font-size: 1rem;
-            color: var(--color-text-secondary);
-            line-height: 1.75;
-            font-weight: 300;
-        }
-
-        /* ===== MEET YOUR GUIDES ===== */
-        .guides {
-            background: var(--color-bg-alt);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .guides::before {
-            content: '';
-            position: absolute;
-            top: -200px;
-            right: -200px;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(232, 160, 191, 0.04), transparent 70%);
-            pointer-events: none;
-        }
-
-        .guides-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .guides-visual {
-            position: relative;
-        }
-
-        .guides-img-main {
-            width: 100%;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4);
-        }
-
-        .guides-img-main img {
-            width: 100%;
-            height: 480px;
-            object-fit: cover;
-        }
-
-        .guides-img-accent {
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            width: 180px;
-            height: 180px;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            border: 4px solid var(--color-bg-alt);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
-        }
-
-        .guides-img-accent img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .guides-float-badge {
-            position: absolute;
-            top: -16px;
-            left: -16px;
-            padding: 12px 20px;
-            border-radius: var(--radius-md);
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            backdrop-filter: blur(10px);
-            animation: float 4s ease-in-out infinite;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .guides-float-badge .badge-number {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-sakura);
-        }
-
-        .guides-float-badge .badge-text {
-            font-size: 0.7rem;
-            color: var(--color-text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .guides-text h2 {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 3vw, 2.8rem);
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 8px;
-        }
-
-        .guides-text h2 em {
-            color: var(--color-sakura);
-            font-style: italic;
-        }
-
-        .guides-jp {
-            font-family: var(--font-jp);
-            font-size: 0.9rem;
-            color: var(--color-accent);
-            opacity: 0.7;
-            margin-bottom: 24px;
-        }
-
-        .guides-text p {
-            font-size: 1rem;
-            color: var(--color-text-secondary);
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
-
-        .guides-highlights {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin-top: 32px;
-        }
-
-        .guide-highlight {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 18px;
-            border-radius: var(--radius-md);
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            transition: all 0.3s ease;
-        }
-
-        .guide-highlight:hover {
-            border-color: rgba(232, 160, 191, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .guide-highlight-icon {
-            font-size: 1.4rem;
-            flex-shrink: 0;
-        }
-
-        .guide-highlight-text {
-            font-size: 0.82rem;
-            font-weight: 500;
-            color: var(--color-text);
-        }
-
-        .guide-highlight-sub {
-            font-size: 0.72rem;
-            color: var(--color-text-muted);
-            margin-top: 2px;
-        }
-
-        /* ===== ABOUT JAPAN ===== */
-        .about-japan {
-            background: var(--color-bg);
-            position: relative;
-        }
-
-        .japan-features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .japan-feature-card {
-            position: relative;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            height: 440px;
-            cursor: pointer;
-        }
-
-        .japan-feature-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s var(--transition-smooth);
-        }
-
-        .japan-feature-card:hover img {
-            transform: scale(1.08);
-        }
-
-        .japan-feature-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 30%, rgba(12, 11, 15, 0.92) 100%);
-            transition: background 0.4s ease;
-        }
-
-        .japan-feature-card:hover .japan-feature-overlay {
-            background: linear-gradient(180deg, transparent 15%, rgba(12, 11, 15, 0.95) 100%);
-        }
-
-        .japan-feature-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 32px;
-            transform: translateY(10px);
-            transition: transform 0.4s var(--transition-smooth);
-        }
-
-        .japan-feature-card:hover .japan-feature-content {
-            transform: translateY(0);
-        }
-
-        .japan-feature-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .japan-feature-title {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .japan-feature-jp {
-            font-family: var(--font-jp);
-            font-size: 0.82rem;
-            color: var(--color-accent);
-            opacity: 0.7;
-            margin-bottom: 10px;
-        }
-
-        .japan-feature-text {
-            font-size: 0.88rem;
-            color: var(--color-text-secondary);
-            line-height: 1.65;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.4s 0.1s var(--transition-smooth);
-        }
-
-        .japan-feature-card:hover .japan-feature-text {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Second row — 2 wider cards */
-        .japan-features-row2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            max-width: 1200px;
-            margin: 24px auto 0;
-        }
-
-        .japan-features-row2 .japan-feature-card {
-            height: 360px;
-        }
-
-        /* ===== SEASONS RIBBON ===== */
-        .seasons {
-            background: var(--color-bg-alt);
-            overflow: hidden;
-        }
-
-        .seasons-track {
-            display: flex;
-            gap: 24px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .season-card {
-            flex: 1;
-            padding: 36px 28px;
-            border-radius: var(--radius-lg);
-            background: var(--color-bg-card);
-            border: 1px solid var(--color-border);
-            text-align: center;
-            transition: all 0.4s var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .season-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .season-card:hover::before {
-            opacity: 1;
-        }
-
-        .season-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(232, 160, 191, 0.12);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
-        }
-
-        .season-icon {
-            font-size: 2.5rem;
-            margin-bottom: 14px;
-        }
-
-        .season-name {
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .season-jp {
-            font-family: var(--font-jp);
-            font-size: 0.78rem;
-            color: var(--color-accent);
-            opacity: 0.7;
-            margin-bottom: 10px;
-        }
-
-        .season-months {
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--color-text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 10px;
-        }
-
-        .season-text {
-            font-size: 0.85rem;
-            color: var(--color-text-secondary);
-            line-height: 1.65;
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta-section {
-            background: var(--color-bg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-bg-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(232, 160, 191, 0.06), transparent 70%);
-            pointer-events: none;
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background: var(--color-bg);
-            padding: 72px 60px 36px;
-            border-top: 1px solid var(--color-border);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 48px;
-        }
-
-        .footer-brand-text {
-            font-size: 0.88rem;
-            color: var(--color-text-secondary);
-            line-height: 1.7;
-            margin-top: 14px;
-            max-width: 310px;
-        }
-
-        .footer-heading {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--color-text);
-            margin-bottom: 20px;
-        }
-
-        .footer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .footer-links a {
-            font-size: 0.85rem;
-            color: var(--color-text-secondary);
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--color-accent);
-        }
-
-        .footer-socials {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .footer-social-link {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: var(--color-surface);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .footer-social-link:hover {
-            background: var(--color-accent);
-            color: var(--color-bg);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 28px;
-            border-top: 1px solid var(--color-border);
-        }
-
-        .footer-bottom-text {
-            font-size: 0.78rem;
-            color: var(--color-text-muted);
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .footer-bottom-links a {
-            font-size: 0.78rem;
-            color: var(--color-text-muted);
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom-links a:hover {
-            color: var(--color-accent);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1200px) {
-            .japan-features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .japan-features-row2 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            section {
-                padding: 80px 32px;
-            }
-
-            .navbar {
-                padding: 16px 32px;
-            }
-
-            .guides-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .guides-visual {
-                max-width: 500px;
-                margin: 0 auto;
-            }
-
-            .guides-text {
-                text-align: center;
-            }
-
-            .guides-highlights {
-                max-width: 440px;
-                margin: 32px auto 0;
-            }
-
-            .seasons-track {
-                flex-wrap: wrap;
-            }
-
-            .season-card {
-                flex: 1 1 calc(50% - 12px);
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 36px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 56px 18px;
-            }
-
-            .navbar {
-                padding: 12px 18px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .nav-toggle {
-                display: flex;
-            }
-
-            .mobile-nav {
-                display: flex;
-            }
-
-            .hero-stats {
-                gap: 28px;
-            }
-
-            .japan-features {
-                grid-template-columns: 1fr;
-            }
-
-            .japan-features-row2 {
-                grid-template-columns: 1fr;
-            }
-
-            .japan-feature-card {
-                height: 340px;
-            }
-
-            .japan-features-row2 .japan-feature-card {
-                height: 300px;
-            }
-
-            .guides-highlights {
-                grid-template-columns: 1fr;
-            }
-
-            .seasons-track {
-                flex-direction: column;
-            }
-
-            .season-card {
-                flex: 1 1 100%;
-            }
-
-            .hero-cta-group {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 28px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 14px;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 16px;
-            }
-
-            .guides-img-accent {
-                width: 120px;
-                height: 120px;
-                bottom: -16px;
-                right: -10px;
-            }
-        }
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+    </style>
+    <style>
+        ::-webkit-scrollbar{width:5px}
+        ::-webkit-scrollbar-track{background:#0c0b0f}
+        ::-webkit-scrollbar-thumb{background:#c97a9f;border-radius:3px}
+        @keyframes heroSlow{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+        @keyframes sakuraFall{0%{transform:translateY(-10vh) translateX(0) rotate(0deg);opacity:1}100%{transform:translateY(110vh) translateX(80px) rotate(720deg);opacity:0}}
+        .sakura-container{position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden}
+        .sakura-petal{position:absolute;top:-5vh;width:12px;height:12px;background:radial-gradient(ellipse at center,#f5c6d0,#e0929f);border-radius:50% 0 50% 50%;opacity:0.5;animation:sakuraFall linear infinite}
+        .animate-hero-bg{animation:heroSlow 20s ease-in-out infinite alternate}
+        .animate-float{animation:float 4s ease-in-out infinite}
+        .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1)}
+        .reveal.visible{opacity:1;transform:translateY(0)}
     </style>
 </head>
 
-<body>
+<body class="bg-jp-bg text-jp-text font-sans antialiased overflow-x-hidden selection:bg-jp-accent selection:text-jp-bg">
 
-    <!-- Sakura Petals -->
     <div class="sakura-container" id="sakura-container"></div>
 
     <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav" id="mobile-nav">
-        <a href="index2.html" class="active">Home</a>
-        <a href="tours.html">Tours</a>
-        <a href="cities.html">Cities</a>
-        <a href="contact.html">Contact</a>
+    <div class="fixed inset-0 z-[999] bg-jp-bg/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300" id="mobile-nav">
+        <a href="index2.html" class="font-display text-2xl font-semibold text-jp-accent">Home</a>
+        <a href="tours.html" class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Tours</a>
+        <a href="cities.html" class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Cities</a>
+        <a href="contact.html" class="font-display text-2xl font-semibold text-jp-muted hover:text-jp-accent transition-colors">Contact</a>
     </div>
 
-    <!-- ===== NAVIGATION ===== -->
-    <nav class="navbar" id="navbar">
-        <a href="index2.html" class="nav-logo">
-            <div class="nav-logo-icon">🌸</div>
-            <div>
-                NainaAbhishek
-                <div class="nav-logo-jp">日本旅行ガイド</div>
-            </div>
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 left-0 right-0 z-[1000] px-4 py-4 sm:px-8 lg:px-16 flex items-center justify-between transition-all duration-300" id="navbar">
+        <a href="index2.html" class="flex items-center gap-3 font-display text-xl sm:text-2xl font-bold tracking-tight">
+            <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-jp-accent to-jp-accent-deep flex items-center justify-center text-lg sm:text-xl">🌸</div>
+            <div><span class="block leading-none">NainaAbhishek</span><span class="font-jp text-[0.7rem] sm:text-xs text-jp-accent tracking-widest block mt-0.5">日本旅行ガイド</span></div>
         </a>
-        <ul class="nav-links">
-            <li><a href="index2.html" class="active">Home</a></li>
-            <li><a href="tours.html">Tours</a></li>
-            <li><a href="cities.html">Cities</a></li>
-            <li><a href="contact.html">Contact</a></li>
+        <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-jp-muted">
+            <li><a href="index2.html" class="text-jp-accent font-semibold">Home</a></li>
+            <li><a href="tours.html" class="hover:text-jp-text transition-colors">Tours</a></li>
+            <li><a href="cities.html" class="hover:text-jp-text transition-colors">Cities</a></li>
+            <li><a href="contact.html" class="hover:text-jp-text transition-colors">Contact</a></li>
         </ul>
-        <div class="nav-actions">
-            <a href="contact.html" class="btn-nav btn-nav-primary">Get In Touch</a>
+        <div class="flex items-center gap-3">
+            <a href="contact.html" class="hidden sm:inline-flex px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg shadow-lg hover:shadow-jp-accent/30 hover:-translate-y-0.5 transition-all">Get In Touch</a>
+            <button class="md:hidden p-2 flex flex-col gap-1.5" id="nav-toggle" aria-label="Toggle menu">
+                <span class="w-6 h-0.5 bg-jp-text rounded-full"></span><span class="w-6 h-0.5 bg-jp-text rounded-full"></span><span class="w-6 h-0.5 bg-jp-text rounded-full"></span>
+            </button>
         </div>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-        </button>
     </nav>
 
     <!-- ===== HERO ===== -->
-    <section class="hero" id="hero">
-        <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1920&q=80"
-                alt="Beautiful Kyoto temple with cherry blossoms in spring" loading="eager">
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1920&q=80" alt="Beautiful Kyoto temple with cherry blossoms in spring" class="w-full h-full object-cover animate-hero-bg">
         </div>
-        <div class="hero-overlay"></div>
+        <div class="absolute inset-0 z-[1] bg-gradient-to-b from-jp-bg/35 via-jp-bg/50 to-jp-bg/97"></div>
 
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
+        <div class="relative z-[2] text-center max-w-[900px] px-5 sm:px-6">
+            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-jp-accent/10 border border-jp-accent/20 backdrop-blur-md text-xs font-semibold text-jp-accent tracking-widest uppercase mb-7">
+                <span class="w-2 h-2 rounded-full bg-jp-accent animate-pulse"></span>
                 🇯🇵 Your Personal Japan Experience
             </div>
-            <h1>Discover <em>Japan</em><br>Like Never Before</h1>
-            <p class="hero-jp-text">日本を一緒に旅しよう</p>
-            <p class="hero-subtitle">
-                Private tours, authentic cultural experiences, and hidden gems across Japan — guided by
-                Naina & Abhishek, your personal Japan travel experts.
+            <h1 class="font-display text-[clamp(2.4rem,6vw,5.2rem)] font-bold leading-[1.1] tracking-tight mb-3">
+                Discover Japan With<br><em class="italic text-jp-sakura">Naina & Abhishek</em>
+            </h1>
+            <p class="font-jp text-[clamp(1rem,2vw,1.4rem)] text-jp-accent tracking-[0.2em] mb-5 opacity-80">
+                私たちがご案内する、忘れられない日本の旅
             </p>
-
-            <div class="hero-cta-group">
-                <a href="tours.html" class="btn-primary">Explore Our Tours →</a>
-                <a href="#guides" class="btn-outline">Meet Your Guides</a>
+            <p class="text-[clamp(0.95rem,1.4vw,1.15rem)] text-jp-muted max-w-[620px] mx-auto mb-10 leading-relaxed font-light">
+                Experience the magic of Japan with personal local guides. Custom private tours, group trips, vegetarian food tours, and off-the-beaten-path adventures.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tours.html" class="px-8 py-4 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-semibold text-sm shadow-xl hover:shadow-jp-accent/30 hover:-translate-y-1 transition-all">Explore Tours →</a>
+                <a href="contact.html" class="px-8 py-4 rounded-full border border-white/10 text-jp-text font-semibold text-sm hover:bg-white/5 hover:border-jp-accent hover:text-jp-accent hover:-translate-y-1 transition-all">Plan Your Trip</a>
             </div>
-
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="hero-stat-value" data-count="500" data-suffix="+">0</div>
-                    <div class="hero-stat-label">Happy Travelers</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value" data-count="8" data-suffix="">0</div>
-                    <div class="hero-stat-label">Cities Covered</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value" data-count="4" data-suffix="">0</div>
-                    <div class="hero-stat-label">Tour Types</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-value" data-count="100" data-suffix="%">0</div>
-                    <div class="hero-stat-label">Satisfaction</div>
-                </div>
+            <div class="flex justify-center gap-8 sm:gap-14 mt-14">
+                <div class="text-center"><div class="font-display text-2xl font-bold text-jp-sakura">100%</div><div class="text-[0.7rem] text-jp-subtle uppercase tracking-wider mt-1">Personalized</div></div>
+                <div class="text-center"><div class="font-display text-2xl font-bold text-jp-sakura">6+</div><div class="text-[0.7rem] text-jp-subtle uppercase tracking-wider mt-1">Cities Covered</div></div>
+                <div class="text-center"><div class="font-display text-2xl font-bold text-jp-sakura">🌱</div><div class="text-[0.7rem] text-jp-subtle uppercase tracking-wider mt-1">Veg Friendly</div></div>
+                <div class="text-center"><div class="font-display text-2xl font-bold text-jp-sakura">24h</div><div class="text-[0.7rem] text-jp-subtle uppercase tracking-wider mt-1">Fast Response</div></div>
             </div>
         </div>
 
-        <div class="scroll-indicator">
-            <span>Explore</span>
-            <div class="scroll-line"></div>
+        <div class="absolute bottom-9 left-1/2 -translate-x-1/2 z-[2] flex flex-col items-center gap-2 animate-float">
+            <span class="text-[0.65rem] tracking-widest uppercase text-jp-subtle">Scroll</span>
+            <div class="w-px h-9 bg-gradient-to-b from-jp-accent to-transparent"></div>
         </div>
     </section>
 
     <!-- ===== MEET YOUR GUIDES ===== -->
-    <section class="guides" id="guides">
-        <div class="guides-container">
-            <div class="guides-visual reveal">
-                <div class="guides-img-main">
-                    <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=900&q=80"
-                        alt="Naina and Abhishek exploring Japan temple">
+    <section class="py-16 sm:py-28 px-4 sm:px-8 lg:px-16 bg-jp-bg-alt relative overflow-hidden">
+        <div class="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] rounded-full bg-jp-accent/5 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="reveal relative max-w-md mx-auto lg:max-w-none">
+                <div class="rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80" alt="Naina & Abhishek guiding travelers in Japan" class="w-full h-72 sm:h-[480px] object-cover">
                 </div>
-                <div class="guides-img-accent">
-                    <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?w=400&q=80"
-                        alt="Traditional Japanese street scene">
+                <div class="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-8 w-32 h-32 sm:w-44 sm:h-44 rounded-xl overflow-hidden border-4 border-jp-bg-alt shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=400&q=80" alt="Japan travel moment" class="w-full h-full object-cover">
                 </div>
-                <div class="guides-float-badge">
-                    <div class="badge-number">5+</div>
-                    <div class="badge-text">Years in Japan</div>
+                <div class="absolute -top-4 -left-4 sm:-top-4 sm:-left-4 p-3 sm:p-4 rounded-xl bg-jp-card border border-jp-border backdrop-blur-md shadow-lg animate-float">
+                    <div class="font-display text-xl sm:text-2xl font-bold text-jp-sakura">Japan</div>
+                    <div class="text-[0.65rem] sm:text-[0.7rem] text-jp-subtle uppercase tracking-wider">Based Guides</div>
                 </div>
             </div>
-
-            <div class="guides-text reveal">
-                <div class="section-label">Meet Your Guides</div>
-                <h2>We're <em>Naina & Abhishek</em></h2>
-                <p class="guides-jp">あなたの日本旅行パートナー</p>
-                <p>
-                    We fell in love with Japan — its ancient temples, buzzing cities, serene countryside,
-                    and the most incredible food scene in the world. After years of exploring every hidden
-                    corner of this magical country, we decided to share that passion with travelers like you.
+            <div class="reveal space-y-5">
+                <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold">
+                    <span class="w-6 h-px bg-jp-accent/40"></span><span>Your Local Hosts</span><span class="w-6 h-px bg-jp-accent/40"></span>
+                </div>
+                <h2 class="font-display text-[clamp(2rem,3vw,2.8rem)] font-bold leading-tight">
+                    Hi, We're <em class="italic text-jp-sakura">Naina & Abhishek</em>
+                </h2>
+                <p class="font-jp text-sm text-jp-accent opacity-70">日本在住のパーソナルガイド</p>
+                <p class="text-sm sm:text-base text-jp-muted leading-relaxed font-light">
+                    We live in Japan and love showing travelers the authentic side of this beautiful country. Whether you're looking for iconic sights, hidden alleyway ramen joints, vegetarian food solutions, or family-friendly itineraries — we take care of every detail so you can just enjoy.
                 </p>
-                <p>
-                    Whether you're a solo adventurer, a family with kids, or a group of friends, we design
-                    every tour to be personal, authentic, and unforgettable. From vegetarian-friendly dining
-                    to elder-accessible routes, we make Japan easy for everyone.
+                <p class="text-sm sm:text-base text-jp-muted leading-relaxed font-light">
+                    With fluency in English, Hindi, and Japanese, we bridge cultures and make sure you feel at home in Japan.
                 </p>
-
-                <div class="guides-highlights">
-                    <div class="guide-highlight">
-                        <span class="guide-highlight-icon">🗣️</span>
-                        <div>
-                            <div class="guide-highlight-text">Multilingual</div>
-                            <div class="guide-highlight-sub">English, Hindi & Japanese</div>
-                        </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
+                    <div class="flex items-center gap-3 p-3.5 rounded-xl bg-jp-card border border-jp-border hover:border-jp-accent/15 hover:-translate-y-0.5 transition-all">
+                        <span class="text-xl flex-shrink-0">🗣️</span>
+                        <div><div class="text-xs font-semibold">3 Languages</div><div class="text-[0.7rem] text-jp-subtle">English, Hindi, Japanese</div></div>
                     </div>
-                    <div class="guide-highlight">
-                        <span class="guide-highlight-icon">🍽️</span>
-                        <div>
-                            <div class="guide-highlight-text">Food Experts</div>
-                            <div class="guide-highlight-sub">Veg & vegan friendly</div>
-                        </div>
+                    <div class="flex items-center gap-3 p-3.5 rounded-xl bg-jp-card border border-jp-border hover:border-jp-accent/15 hover:-translate-y-0.5 transition-all">
+                        <span class="text-xl flex-shrink-0">🍱</span>
+                        <div><div class="text-xs font-semibold">Dietary Experts</div><div class="text-[0.7rem] text-jp-subtle">Veg & Vegan Friendly</div></div>
                     </div>
-                    <div class="guide-highlight">
-                        <span class="guide-highlight-icon">👶</span>
-                        <div>
-                            <div class="guide-highlight-text">Family Friendly</div>
-                            <div class="guide-highlight-sub">Kids activities included</div>
-                        </div>
+                    <div class="flex items-center gap-3 p-3.5 rounded-xl bg-jp-card border border-jp-border hover:border-jp-accent/15 hover:-translate-y-0.5 transition-all">
+                        <span class="text-xl flex-shrink-0">👴</span>
+                        <div><div class="text-xs font-semibold">Elder Support</div><div class="text-[0.7rem] text-jp-subtle">Accessible Routes</div></div>
                     </div>
-                    <div class="guide-highlight">
-                        <span class="guide-highlight-icon">♿</span>
-                        <div>
-                            <div class="guide-highlight-text">Elder Support</div>
-                            <div class="guide-highlight-sub">Accessible routes</div>
-                        </div>
+                    <div class="flex items-center gap-3 p-3.5 rounded-xl bg-jp-card border border-jp-border hover:border-jp-accent/15 hover:-translate-y-0.5 transition-all">
+                        <span class="text-xl flex-shrink-0">📸</span>
+                        <div><div class="text-xs font-semibold">Photo Guide</div><div class="text-[0.7rem] text-jp-subtle">Best Insta Spots</div></div>
                     </div>
                 </div>
             </div>
@@ -1385,329 +171,209 @@
     </section>
 
     <!-- ===== ABOUT JAPAN ===== -->
-    <section class="about-japan" id="about-japan">
-        <div class="section-header reveal">
-            <div class="section-label">Why Japan</div>
-            <h2 class="section-title">A Land of Endless Wonder</h2>
-            <p class="section-subtitle">From neon-lit megacities to mist-wrapped mountain temples — Japan is a
-                journey for every sense. Here's what awaits you.</p>
+    <section class="py-16 sm:py-28 px-4 sm:px-8 lg:px-16 bg-jp-bg relative" id="about-japan">
+        <div class="text-center max-w-[700px] mx-auto mb-14 sm:mb-18 reveal">
+            <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold mb-4">
+                <span class="w-6 h-px bg-jp-accent/40"></span><span>Why Japan?</span><span class="w-6 h-px bg-jp-accent/40"></span>
+            </div>
+            <h2 class="font-display text-[clamp(2rem,3.5vw,3rem)] font-bold tracking-tight leading-tight mb-4">About Japan</h2>
+            <p class="text-sm sm:text-base text-jp-muted font-light leading-relaxed">A land where ancient traditions meet cutting-edge innovation. Here's what makes Japan truly unforgettable.</p>
         </div>
 
-        <div class="japan-features">
-            <div class="japan-feature-card reveal">
-                <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80"
-                    alt="Fushimi Inari Shrine torii gates in Kyoto">
-                <div class="japan-feature-overlay"></div>
-                <div class="japan-feature-content">
-                    <div class="japan-feature-icon">⛩️</div>
-                    <h3 class="japan-feature-title">Ancient Culture</h3>
-                    <p class="japan-feature-jp">文化 — Bunka</p>
-                    <p class="japan-feature-text">Thousands of shrines, temples, and traditions kept alive for
-                        centuries. Experience tea ceremonies, kimono walks, and zen meditation.</p>
+        <!-- 3-column features row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto">
+            <div class="reveal group relative rounded-2xl overflow-hidden h-[300px] sm:h-[440px] cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80" alt="Ancient temple in Kyoto" class="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-jp-bg/92 via-transparent to-transparent group-hover:from-jp-bg/95 transition-all"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                    <div class="text-2xl mb-2">⛩️</div>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1">Ancient Temples</h3>
+                    <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">寺院 — Jiin</p>
+                    <p class="text-xs sm:text-sm text-jp-muted leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">Over 75,000 temples and shrines across Japan. From serene Zen gardens to golden pavilions — every visit is a journey through centuries of history.</p>
                 </div>
             </div>
-
-            <div class="japan-feature-card reveal">
-                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80"
-                    alt="Tokyo Tower and city skyline at night">
-                <div class="japan-feature-overlay"></div>
-                <div class="japan-feature-content">
-                    <div class="japan-feature-icon">🏙️</div>
-                    <h3 class="japan-feature-title">Modern Marvels</h3>
-                    <p class="japan-feature-jp">都市 — Toshi</p>
-                    <p class="japan-feature-text">Bullet trains, robot restaurants, and the world's most efficient
-                        cities. Tokyo and Osaka are playgrounds of innovation.</p>
+            <div class="reveal group relative rounded-2xl overflow-hidden h-[300px] sm:h-[440px] cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80" alt="Modern Tokyo cityscape" class="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-jp-bg/92 via-transparent to-transparent group-hover:from-jp-bg/95 transition-all"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                    <div class="text-2xl mb-2">🏙️</div>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1">Modern Cities</h3>
+                    <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">都市 — Toshi</p>
+                    <p class="text-xs sm:text-sm text-jp-muted leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">Neon-lit streets, robot restaurants, world-class shopping — Japan's cities are a mind-blowing fusion of the future and tradition.</p>
                 </div>
             </div>
-
-            <div class="japan-feature-card reveal">
-                <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=800&q=80"
-                    alt="Mount Fuji at sunrise">
-                <div class="japan-feature-overlay"></div>
-                <div class="japan-feature-content">
-                    <div class="japan-feature-icon">🗻</div>
-                    <h3 class="japan-feature-title">Breathtaking Nature</h3>
-                    <p class="japan-feature-jp">自然 — Shizen</p>
-                    <p class="japan-feature-text">From the iconic Mount Fuji to bamboo forests and hot spring valleys —
-                        Japan's landscapes will take your breath away.</p>
+            <div class="reveal group relative rounded-2xl overflow-hidden h-[300px] sm:h-[440px] cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=800&q=80" alt="Mount Fuji at sunrise" class="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-jp-bg/92 via-transparent to-transparent group-hover:from-jp-bg/95 transition-all"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                    <div class="text-2xl mb-2">🗻</div>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1">Breathtaking Nature</h3>
+                    <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">自然 — Shizen</p>
+                    <p class="text-xs sm:text-sm text-jp-muted leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">From the iconic Mount Fuji to bamboo forests and hot spring valleys — Japan's landscapes will take your breath away.</p>
                 </div>
             </div>
         </div>
 
-        <div class="japan-features-row2">
-            <div class="japan-feature-card reveal">
-                <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=800&q=80"
-                    alt="Japanese cuisine beautifully plated">
-                <div class="japan-feature-overlay"></div>
-                <div class="japan-feature-content">
-                    <div class="japan-feature-icon">🍱</div>
-                    <h3 class="japan-feature-title">Incredible Food</h3>
-                    <p class="japan-feature-jp">食事 — Shokuji</p>
-                    <p class="japan-feature-text">Ramen, sushi, tempura, matcha — and amazing vegetarian & vegan
-                        options. Japan's food scene is a universe of flavors waiting to be explored.</p>
+        <!-- 2-column features row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-7xl mx-auto mt-5">
+            <div class="reveal group relative rounded-2xl overflow-hidden h-[260px] sm:h-[360px] cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=800&q=80" alt="Japanese cuisine beautifully plated" class="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-jp-bg/92 via-transparent to-transparent group-hover:from-jp-bg/95 transition-all"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                    <div class="text-2xl mb-2">🍱</div>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1">Incredible Food</h3>
+                    <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">食事 — Shokuji</p>
+                    <p class="text-xs sm:text-sm text-jp-muted leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">Ramen, sushi, tempura, matcha — and amazing vegetarian & vegan options. Japan's food scene is a universe of flavors waiting to be explored.</p>
                 </div>
             </div>
-
-            <div class="japan-feature-card reveal">
-                <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80"
-                    alt="Cherry blossom trees along river">
-                <div class="japan-feature-overlay"></div>
-                <div class="japan-feature-content">
-                    <div class="japan-feature-icon">🌸</div>
-                    <h3 class="japan-feature-title">Four Magical Seasons</h3>
-                    <p class="japan-feature-jp">四季 — Shiki</p>
-                    <p class="japan-feature-text">Cherry blossoms in spring, festivals in summer, fiery autumn foliage,
-                        and snow-dusted temples in winter. Every season is a new Japan.</p>
+            <div class="reveal group relative rounded-2xl overflow-hidden h-[260px] sm:h-[360px] cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=800&q=80" alt="Cherry blossom trees along river" class="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-jp-bg/92 via-transparent to-transparent group-hover:from-jp-bg/95 transition-all"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                    <div class="text-2xl mb-2">🌸</div>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1">Four Magical Seasons</h3>
+                    <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">四季 — Shiki</p>
+                    <p class="text-xs sm:text-sm text-jp-muted leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">Cherry blossoms in spring, festivals in summer, fiery autumn foliage, and snow-dusted temples in winter. Every season is a new Japan.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== SEASONS ===== -->
-    <section class="seasons" id="seasons">
-        <div class="section-header reveal">
-            <div class="section-label">Best Time to Visit</div>
-            <h2 class="section-title">Japan's Four Seasons</h2>
-            <p class="section-subtitle">Every season transforms Japan into a new experience. We'll help you pick the
-                perfect time for your trip.</p>
+    <section class="py-16 sm:py-28 px-4 sm:px-8 lg:px-16 bg-jp-bg-alt overflow-hidden" id="seasons">
+        <div class="text-center max-w-[700px] mx-auto mb-14 sm:mb-18 reveal">
+            <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold mb-4">
+                <span class="w-6 h-px bg-jp-accent/40"></span><span>Best Time to Visit</span><span class="w-6 h-px bg-jp-accent/40"></span>
+            </div>
+            <h2 class="font-display text-[clamp(2rem,3.5vw,3rem)] font-bold tracking-tight leading-tight mb-4">Japan's Four Seasons</h2>
+            <p class="text-sm sm:text-base text-jp-muted font-light leading-relaxed">Every season transforms Japan into a new experience. We'll help you pick the perfect time for your trip.</p>
         </div>
 
-        <div class="seasons-track">
-            <div class="season-card reveal">
-                <div class="season-icon">🌸</div>
-                <h3 class="season-name">Spring</h3>
-                <p class="season-jp">春 — Haru</p>
-                <p class="season-months">March – May</p>
-                <p class="season-text">Cherry blossom season. Mild weather, hanami picnics, and the most iconic Japan
-                    experience. The best time for first-time visitors.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto">
+            <div class="reveal p-7 sm:p-9 rounded-2xl bg-jp-card border border-jp-border text-center hover:-translate-y-1.5 hover:border-jp-accent/15 hover:shadow-2xl transition-all relative overflow-hidden group">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[70%] h-0.5 bg-gradient-to-r from-transparent via-jp-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="text-4xl mb-3">🌸</div>
+                <h3 class="font-display text-lg font-bold mb-1">Spring</h3>
+                <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">春 — Haru</p>
+                <p class="text-xs font-semibold text-jp-subtle uppercase tracking-wider mb-3">March – May</p>
+                <p class="text-xs sm:text-sm text-jp-muted leading-relaxed">Cherry blossom season. Mild weather, hanami picnics, and the most iconic Japan experience. The best time for first-time visitors.</p>
             </div>
-            <div class="season-card reveal">
-                <div class="season-icon">🎆</div>
-                <h3 class="season-name">Summer</h3>
-                <p class="season-jp">夏 — Natsu</p>
-                <p class="season-months">June – August</p>
-                <p class="season-text">Vibrant festivals, fireworks, mountain hiking, and coastal adventures. Hot and
-                    humid but packed with energy and traditions.</p>
+            <div class="reveal p-7 sm:p-9 rounded-2xl bg-jp-card border border-jp-border text-center hover:-translate-y-1.5 hover:border-jp-accent/15 hover:shadow-2xl transition-all relative overflow-hidden group">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[70%] h-0.5 bg-gradient-to-r from-transparent via-jp-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="text-4xl mb-3">🎆</div>
+                <h3 class="font-display text-lg font-bold mb-1">Summer</h3>
+                <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">夏 — Natsu</p>
+                <p class="text-xs font-semibold text-jp-subtle uppercase tracking-wider mb-3">June – August</p>
+                <p class="text-xs sm:text-sm text-jp-muted leading-relaxed">Vibrant festivals, fireworks, mountain hiking, and coastal adventures. Hot and humid but packed with energy and traditions.</p>
             </div>
-            <div class="season-card reveal">
-                <div class="season-icon">🍁</div>
-                <h3 class="season-name">Autumn</h3>
-                <p class="season-jp">秋 — Aki</p>
-                <p class="season-months">September – November</p>
-                <p class="season-text">Fiery red and golden foliage paints every temple and garden. Perfect weather for
-                    hiking and exploring without the summer crowds.</p>
+            <div class="reveal p-7 sm:p-9 rounded-2xl bg-jp-card border border-jp-border text-center hover:-translate-y-1.5 hover:border-jp-accent/15 hover:shadow-2xl transition-all relative overflow-hidden group">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[70%] h-0.5 bg-gradient-to-r from-transparent via-jp-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="text-4xl mb-3">🍁</div>
+                <h3 class="font-display text-lg font-bold mb-1">Autumn</h3>
+                <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">秋 — Aki</p>
+                <p class="text-xs font-semibold text-jp-subtle uppercase tracking-wider mb-3">September – November</p>
+                <p class="text-xs sm:text-sm text-jp-muted leading-relaxed">Fiery red and golden foliage paints every temple and garden. Perfect weather for hiking and exploring without the summer crowds.</p>
             </div>
-            <div class="season-card reveal">
-                <div class="season-icon">❄️</div>
-                <h3 class="season-name">Winter</h3>
-                <p class="season-jp">冬 — Fuyu</p>
-                <p class="season-months">December – February</p>
-                <p class="season-text">Snow monkeys, ski resorts, illumination festivals, and the magic of snow-covered
-                    temples. Fewer tourists and cozy onsen experiences.</p>
+            <div class="reveal p-7 sm:p-9 rounded-2xl bg-jp-card border border-jp-border text-center hover:-translate-y-1.5 hover:border-jp-accent/15 hover:shadow-2xl transition-all relative overflow-hidden group">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[70%] h-0.5 bg-gradient-to-r from-transparent via-jp-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="text-4xl mb-3">❄️</div>
+                <h3 class="font-display text-lg font-bold mb-1">Winter</h3>
+                <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">冬 — Fuyu</p>
+                <p class="text-xs font-semibold text-jp-subtle uppercase tracking-wider mb-3">December – February</p>
+                <p class="text-xs sm:text-sm text-jp-muted leading-relaxed">Snow monkeys, ski resorts, illumination festivals, and the magic of snow-covered temples. Fewer tourists and cozy onsen experiences.</p>
             </div>
         </div>
     </section>
 
     <!-- ===== CTA ===== -->
-    <section class="cta-section">
-        <div class="cta-bg-glow"></div>
-        <div class="cta-container reveal">
-            <div class="section-label">Ready to Go?</div>
-            <h2 class="section-title">Start Your Japan Journey</h2>
-            <p class="section-subtitle">Tell us your dream trip and we'll craft a personalized itinerary just for
-                you. Private groups, families, solo travelers — everyone is welcome.</p>
-            <div class="hero-cta-group" style="margin-top: 36px;">
-                <a href="tours.html" class="btn-primary">Browse Tours →</a>
-                <a href="contact.html" class="btn-outline">Contact Us</a>
+    <section class="py-16 sm:py-28 px-4 sm:px-8 lg:px-16 bg-jp-bg relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-jp-accent/5 pointer-events-none"></div>
+        <div class="max-w-[800px] mx-auto text-center relative z-10 reveal">
+            <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold mb-4">
+                <span class="w-6 h-px bg-jp-accent/40"></span><span>Ready to Go?</span><span class="w-6 h-px bg-jp-accent/40"></span>
+            </div>
+            <h2 class="font-display text-[clamp(2rem,3.5vw,3rem)] font-bold tracking-tight leading-tight mb-4">Start Your Japan Journey</h2>
+            <p class="text-sm sm:text-base text-jp-muted font-light leading-relaxed mb-9">Tell us your dream trip and we'll craft a personalized itinerary just for you. Private groups, families, solo travelers — everyone is welcome.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tours.html" class="px-8 py-4 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-semibold text-sm shadow-xl hover:shadow-jp-accent/30 hover:-translate-y-1 transition-all">Browse Tours →</a>
+                <a href="contact.html" class="px-8 py-4 rounded-full border border-white/10 text-jp-text font-semibold text-sm hover:bg-white/5 hover:border-jp-accent hover:text-jp-accent hover:-translate-y-1 transition-all">Contact Us</a>
             </div>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="footer-grid">
-            <div>
-                <a href="index2.html" class="nav-logo">
-                    <div class="nav-logo-icon">🌸</div>
-                    <div>
-                        NainaAbhishek
-                        <div class="nav-logo-jp">日本旅行ガイド</div>
-                    </div>
+    <footer class="bg-jp-bg border-t border-jp-border pt-16 pb-10 px-4 sm:px-8 lg:px-16">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 text-center sm:text-left">
+            <div class="lg:col-span-2 flex flex-col items-center sm:items-start">
+                <a href="index2.html" class="flex items-center gap-3 font-display text-xl font-bold tracking-tight mx-auto sm:mx-0">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-jp-accent to-jp-accent-deep flex items-center justify-center text-lg">🌸</div>
+                    <div><span class="block leading-none">NainaAbhishek</span><span class="font-jp text-[0.7rem] text-jp-accent tracking-widest block mt-0.5">日本旅行ガイド</span></div>
                 </a>
-                <p class="footer-brand-text">
-                    Your personal Japan travel guides. Private tours, group trips, and authentic
-                    cultural experiences across Japan. 🌸
-                </p>
-                <div class="footer-socials">
-                    <a href="#" class="footer-social-link" aria-label="Instagram">📷</a>
-                    <a href="#" class="footer-social-link" aria-label="Twitter">𝕏</a>
-                    <a href="#" class="footer-social-link" aria-label="YouTube">▶</a>
+                <p class="text-xs sm:text-sm text-jp-muted mt-4 max-w-sm leading-relaxed">Your personal Japan travel guides. Private tours, group trips, and authentic cultural experiences across Japan. 🌸</p>
+                <div class="flex gap-3 mt-5 justify-center sm:justify-start">
+                    <a href="#" class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all" aria-label="Instagram">📷</a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all" aria-label="Twitter">𝕏</a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-jp-surface flex items-center justify-center text-sm hover:bg-jp-accent hover:text-jp-bg hover:-translate-y-1 transition-all" aria-label="YouTube">▶</a>
                 </div>
             </div>
             <div>
-                <h4 class="footer-heading">Pages</h4>
-                <ul class="footer-links">
-                    <li><a href="index2.html">Home</a></li>
-                    <li><a href="tours.html">Tours</a></li>
-                    <li><a href="cities.html">Cities</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                <h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Pages</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted">
+                    <li><a href="index2.html" class="hover:text-jp-accent transition-colors">Home</a></li>
+                    <li><a href="tours.html" class="hover:text-jp-accent transition-colors">Tours</a></li>
+                    <li><a href="cities.html" class="hover:text-jp-accent transition-colors">Cities</a></li>
+                    <li><a href="contact.html" class="hover:text-jp-accent transition-colors">Contact Us</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="footer-heading">Tours</h4>
-                <ul class="footer-links">
-                    <li><a href="tours.html#private">Private Group Tours</a></li>
-                    <li><a href="tours.html#common">Common Group Tours</a></li>
-                    <li><a href="tours.html#personal">Personal Tours</a></li>
-                    <li><a href="tours.html#daytrips">Day Trips</a></li>
+                <h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Tours</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted">
+                    <li><a href="tours.html#private" class="hover:text-jp-accent transition-colors">Private Group Tours</a></li>
+                    <li><a href="tours.html#common" class="hover:text-jp-accent transition-colors">Common Group Tours</a></li>
+                    <li><a href="tours.html#personal" class="hover:text-jp-accent transition-colors">Personal Tours</a></li>
+                    <li><a href="tours.html#daytrips" class="hover:text-jp-accent transition-colors">Day Trips</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="footer-heading">Popular Cities</h4>
-                <ul class="footer-links">
-                    <li><a href="cities.html">Tokyo — 東京</a></li>
-                    <li><a href="cities.html">Kyoto — 京都</a></li>
-                    <li><a href="cities.html">Osaka — 大阪</a></li>
-                    <li><a href="cities.html">Nara — 奈良</a></li>
-                    <li><a href="cities.html">Hiroshima — 広島</a></li>
+                <h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Popular Cities</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted">
+                    <li><a href="cities.html#tokyo" class="hover:text-jp-accent transition-colors">Tokyo — 東京</a></li>
+                    <li><a href="cities.html#kyoto" class="hover:text-jp-accent transition-colors">Kyoto — 京都</a></li>
+                    <li><a href="cities.html#osaka" class="hover:text-jp-accent transition-colors">Osaka — 大阪</a></li>
+                    <li><a href="cities.html#nara" class="hover:text-jp-accent transition-colors">Nara — 奈良</a></li>
+                    <li><a href="cities.html#hiroshima" class="hover:text-jp-accent transition-colors">Hiroshima — 広島</a></li>
                 </ul>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <span class="footer-bottom-text">© 2026 Naina & Abhishek Japan Tours. Made with 🌸 in Japan.</span>
-            <div class="footer-bottom-links">
-                <a href="contact.html">Contact</a>
-                <a href="tours.html">Tours</a>
+        <div class="max-w-7xl mx-auto pt-6 border-t border-jp-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs text-jp-subtle">
+            <span>© 2026 Naina & Abhishek Japan Tours. Made with 🌸 in Japan.</span>
+            <div class="flex gap-6">
+                <a href="contact.html" class="hover:text-jp-accent transition-colors">Contact</a>
+                <a href="tours.html" class="hover:text-jp-accent transition-colors">Tours</a>
             </div>
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // === Sakura Petals ===
-        (function createSakura() {
-            const container = document.getElementById('sakura-container');
-            const petalCount = 15;
-            for (let i = 0; i < petalCount; i++) {
-                const petal = document.createElement('div');
-                petal.classList.add('sakura-petal');
-                petal.style.left = Math.random() * 100 + 'vw';
-                petal.style.animationDuration = (8 + Math.random() * 12) + 's';
-                petal.style.animationDelay = (Math.random() * 15) + 's';
-                petal.style.opacity = 0.15 + Math.random() * 0.25;
-                petal.style.width = (8 + Math.random() * 8) + 'px';
-                petal.style.height = petal.style.width;
-                container.appendChild(petal);
-            }
-        })();
+        // Sakura
+        (function(){const c=document.getElementById('sakura-container');for(let i=0;i<12;i++){const p=document.createElement('div');p.classList.add('sakura-petal');p.style.left=Math.random()*100+'vw';p.style.animationDuration=(8+Math.random()*12)+'s';p.style.animationDelay=(Math.random()*15)+'s';p.style.opacity=0.15+Math.random()*0.25;p.style.width=(8+Math.random()*8)+'px';p.style.height=p.style.width;c.appendChild(p)}})();
 
-        // === Navbar scroll ===
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 60) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+        // Navbar scroll
+        const navbar=document.getElementById('navbar');
+        window.addEventListener('scroll',()=>{
+            if(window.scrollY>60){navbar.classList.add('bg-jp-bg/90','backdrop-blur-xl','!py-3','border-b','border-jp-border','shadow-xl');navbar.classList.remove('py-4');}
+            else{navbar.classList.remove('bg-jp-bg/90','backdrop-blur-xl','!py-3','border-b','border-jp-border','shadow-xl');navbar.classList.add('py-4');}
         });
 
-        // === Mobile nav toggle ===
-        const navToggle = document.getElementById('nav-toggle');
-        const mobileNav = document.getElementById('mobile-nav');
-        navToggle.addEventListener('click', () => {
-            mobileNav.classList.toggle('open');
-        });
+        // Mobile nav
+        const navToggle=document.getElementById('nav-toggle');
+        const mobileNav=document.getElementById('mobile-nav');
+        navToggle.addEventListener('click',()=>{mobileNav.classList.toggle('opacity-0');mobileNav.classList.toggle('pointer-events-none');});
+        mobileNav.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{mobileNav.classList.add('opacity-0','pointer-events-none');}));
 
-        // Close mobile nav on link click
-        mobileNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('open');
-            });
-        });
-
-        // === Scroll reveal ===
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const parent = entry.target.closest('.japan-features, .japan-features-row2, .seasons-track, .guides-container');
-                    if (parent) {
-                        const siblings = Array.from(parent.querySelectorAll('.reveal'));
-                        const idx = siblings.indexOf(entry.target);
-                        setTimeout(() => {
-                            entry.target.classList.add('visible');
-                        }, idx * 120);
-                    } else {
-                        entry.target.classList.add('visible');
-                    }
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // === Counter animation ===
-        function animateCounters() {
-            document.querySelectorAll('[data-count]').forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-count'));
-                const suffix = counter.getAttribute('data-suffix') || '';
-                const duration = 2000;
-                const start = performance.now();
-
-                function update(now) {
-                    const elapsed = now - start;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const eased = 1 - Math.pow(1 - progress, 3);
-                    counter.textContent = Math.floor(eased * target) + suffix;
-                    if (progress < 1) requestAnimationFrame(update);
-                }
-                requestAnimationFrame(update);
-            });
-        }
-
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const heroStats = document.querySelector('.hero-stats');
-        if (heroStats) statsObserver.observe(heroStats);
-
-        // === Smooth scroll for anchor links ===
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href === '#') {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    return;
-                }
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        // === Hero parallax ===
-        const hero = document.querySelector('.hero');
-        const heroBgImg = document.querySelector('.hero-bg img');
-        if (hero && heroBgImg && window.innerWidth > 768) {
-            hero.addEventListener('mousemove', (e) => {
-                const rect = hero.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
-                heroBgImg.style.transform = `scale(1.1) translate(${x * -12}px, ${y * -12}px)`;
-            });
-            hero.addEventListener('mouseleave', () => {
-                heroBgImg.style.transform = 'scale(1.1)';
-            });
-        }
+        // Scroll reveal
+        const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+        document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
     </script>
 </body>
-
 </html>
