@@ -120,11 +120,12 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero"
-    class="relative w-full h-screen bg-[url('assets/img/naruto_bg.jpg')] bg-cover bg-top lg:bg-right no-repeat flex items-center">
-    <!-- Semi-transparent overlay -->
-    <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+    class="relative w-full h-screen bg-[url('assets/img/naruto_bg.jpg')] bg-cover bg-center sm:bg-right no-repeat flex items-center">
+    <!-- Subtle overlay to keep Naruto clearly visible while ensuring text readability -->
+    <div class="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-neutral-950/25 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent opacity-70"></div>
 
-    <div class="container mx-auto px-6 relative z-10 lg:pl-32" data-aos="zoom-in" data-aos-delay="100">
+    <div class="container mx-auto px-6 relative z-10 lg:pl-32 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]" data-aos="zoom-in" data-aos-delay="100">
       <h1 class="font-title font-bold text-4xl sm:text-6xl text-neutral-100 leading-tight">Rahul Jangir</h1>
       <p class="font-poppins text-xl sm:text-2xl text-neutral-100 mt-4">
         I'm <span class="typed text-primary font-semibold"
@@ -132,7 +133,7 @@
       </p>
       <div class="flex mt-8">
         <a href="https://www.linkedin.com/in/rahul-jangir-362189204/" target="_blank" rel="noopener"
-          class="text-3xl text-neutral-400 hover:text-primary hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition duration-300">
+          class="text-3xl text-neutral-300 hover:text-primary hover:drop-shadow-[0_0_8px_rgba(249,115,22,0.8)] transition duration-300">
           <i class="bx bxl-linkedin"></i>
         </a>
       </div>
@@ -717,41 +718,23 @@
   <script>
     let isMusicPlaying = false;
 
-    function playMusic() {
-      const audio = document.getElementById('bg-music');
-      if (!isMusicPlaying && audio) {
-        audio.play().then(() => {
-          isMusicPlaying = true;
-          updateMusicButton();
-          // Remove listeners after first successful play
-          document.removeEventListener('click', playMusic);
-          document.removeEventListener('keydown', playMusic);
-          document.removeEventListener('touchstart', playMusic);
-        }).catch(err => {
-          console.log("Autoplay prevented or audio file missing:", err);
-        });
-      }
-    }
-
-    // Play on first interaction (browser policy workaround)
-    document.addEventListener('click', playMusic);
-    document.addEventListener('keydown', playMusic);
-    document.addEventListener('touchstart', playMusic);
-
     const musicBtn = document.getElementById('music-toggle');
     if (musicBtn) {
-      musicBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // prevent document click
+      musicBtn.addEventListener('click', () => {
         const audio = document.getElementById('bg-music');
         if (!audio) return;
         if (isMusicPlaying) {
           audio.pause();
           isMusicPlaying = false;
+          updateMusicButton();
         } else {
-          audio.play();
-          isMusicPlaying = true;
+          audio.play().then(() => {
+            isMusicPlaying = true;
+            updateMusicButton();
+          }).catch(err => {
+            console.log("Audio play failed:", err);
+          });
         }
-        updateMusicButton();
       });
     }
 
