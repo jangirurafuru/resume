@@ -23,27 +23,27 @@
         }
 
         :root {
-            --color-bg: #0c0b0f;
-            --color-bg-alt: #100f14;
-            --color-bg-card: #15141b;
-            --color-surface: #1c1b24;
-            --color-border: rgba(255, 255, 255, 0.05);
-            --color-text: #f2f0f7;
-            --color-text-secondary: #a09baf;
-            --color-text-muted: #6a6578;
-            --color-accent: #e8a0bf;
-            --color-accent-deep: #c97a9f;
-            --color-accent-light: #f0c4d8;
-            --color-accent-glow: rgba(232, 160, 191, 0.12);
-            --color-green: #8bc49e;
-            --color-green-deep: #5fa87a;
-            --color-green-glow: rgba(139, 196, 158, 0.12);
-            --color-sakura: #f5c6d0;
-            --color-sakura-deep: #e0929f;
-            --color-gold: #d4a76a;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.07);
-            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+            --color-bg: #f8fafc;
+            --color-bg-alt: #f1f5f9;
+            --color-bg-card: #ffffff;
+            --color-surface: #e2e8f0;
+            --color-border: #cbd5e1;
+            --color-text: #0f172a;
+            --color-text-secondary: #1e293b;
+            --color-text-muted: #334155;
+            --color-accent: #0284c7;
+            --color-accent-deep: #1d4ed8;
+            --color-accent-light: #0369a1;
+            --color-accent-glow: rgba(2, 132, 199, 0.12);
+            --color-green: #047857;
+            --color-green-deep: #065f46;
+            --color-green-glow: rgba(4, 120, 87, 0.12);
+            --color-sakura: #0284c7;
+            --color-sakura-deep: #1d4ed8;
+            --color-gold: #b45309;
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --glass-border: #cbd5e1;
+            --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             --font-display: 'Playfair Display', 'Noto Serif JP', Georgia, serif;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-jp: 'Noto Serif JP', serif;
@@ -95,7 +95,7 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--color-accent-deep);
+            background: linear-gradient(180deg, #06b6d4, #a855f7);
             border-radius: 3px;
         }
 
@@ -146,17 +146,7 @@
             }
         }
 
-        @keyframes sakuraFall {
-            0% {
-                transform: translateY(-10vh) translateX(0) rotate(0deg);
-                opacity: 1;
-            }
 
-            100% {
-                transform: translateY(110vh) translateX(80px) rotate(720deg);
-                opacity: 0;
-            }
-        }
 
         @keyframes scrollGallery {
             0% {
@@ -191,25 +181,7 @@
             transform: translateY(0);
         }
 
-        /* ===== SAKURA PETALS ===== */
-        .sakura-container {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 9999;
-            overflow: hidden;
-        }
 
-        .sakura-petal {
-            position: absolute;
-            top: -5vh;
-            width: 12px;
-            height: 12px;
-            background: radial-gradient(ellipse at center, var(--color-sakura), var(--color-sakura-deep));
-            border-radius: 50% 0 50% 50%;
-            opacity: 0.5;
-            animation: sakuraFall linear infinite;
-        }
 
         /* ===== NAVIGATION ===== */
         .navbar {
@@ -389,10 +361,9 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(180deg,
-                    rgba(12, 11, 15, 0.25) 0%,
-                    rgba(12, 11, 15, 0.05) 35%,
-                    rgba(12, 11, 15, 0.45) 65%,
-                    rgba(12, 11, 15, 0.97) 100%);
+                    rgba(0, 0, 0, 0.4) 0%,
+                    rgba(0, 0, 0, 0.2) 40%,
+                    rgba(0, 0, 0, 0.6) 100%);
             z-index: 1;
         }
 
@@ -411,12 +382,12 @@
             gap: 10px;
             padding: 8px 22px;
             border-radius: 100px;
-            background: var(--color-green-glow);
-            border: 1px solid rgba(139, 196, 158, 0.2);
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(10px);
             font-size: 0.78rem;
             font-weight: 600;
-            color: var(--color-green);
+            color: #ffffff;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             margin-bottom: 28px;
@@ -426,7 +397,7 @@
             width: 7px;
             height: 7px;
             border-radius: 50%;
-            background: var(--color-green);
+            background: #34d399;
             animation: gentlePulse 2s ease infinite;
         }
 
@@ -437,29 +408,30 @@
             line-height: 1.1;
             letter-spacing: -0.03em;
             margin-bottom: 10px;
+            color: #ffffff;
         }
 
         .hero h1 em {
             font-style: italic;
-            color: var(--color-sakura);
+            color: #7dd3fc;
         }
 
         .hero-jp-text {
             font-family: var(--font-jp);
             font-size: clamp(1rem, 2vw, 1.4rem);
-            color: var(--color-accent);
+            color: #bae6fd;
             letter-spacing: 0.2em;
             margin-bottom: 20px;
-            opacity: 0.8;
+            font-weight: 600;
         }
 
         .hero-subtitle {
             font-size: clamp(0.95rem, 1.4vw, 1.15rem);
-            color: var(--color-text-secondary);
+            color: #f1f5f9;
             max-width: 620px;
             margin: 0 auto 44px;
             line-height: 1.75;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         /* Hero Search */
@@ -558,7 +530,7 @@
             font-family: var(--font-display);
             font-size: 2rem;
             font-weight: 700;
-            color: var(--color-sakura);
+            color: var(--color-accent);
         }
 
         .hero-stat-label {
@@ -913,7 +885,7 @@
         .experience-price-value {
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--color-sakura);
+            color: var(--color-accent);
         }
 
         .experience-price-value small {
@@ -1566,13 +1538,12 @@
 
 <body>
 
-    <!-- Sakura Petals -->
-    <div class="sakura-container" id="sakura-container"></div>
+
 
     <!-- ===== NAVIGATION ===== -->
     <nav class="navbar" id="navbar">
         <a href="#" class="nav-logo">
-            <div class="nav-logo-icon">🌸</div>
+            <div class="nav-logo-icon">⛩️</div>
             <div>
                 VeganJapan
                 <div class="nav-logo-jp">ビーガン日本</div>
@@ -1712,15 +1683,15 @@
 
             <!-- Nara -->
             <div class="city-card reveal">
-                <img src="https://images.unsplash.com/photo-1624601573012-efb68f3f150d?w=800&q=80"
+                <img src="potfolio-main/assets/img/nara.jpg"
                     alt="Friendly deer in Nara Park with autumn foliage" loading="lazy">
                 <div class="city-overlay"></div>
                 <div class="city-info">
-                    <span class="city-tag">🌱 35+ vegan spots</span>
+                    <span class="city-tag">🦌 Sacred Shika Deer (神鹿)</span>
                     <h3 class="city-name">Nara</h3>
-                    <p class="city-name-jp">奈良 — 鹿の街</p>
+                    <p class="city-name-jp">奈良 — 神鹿 (Shika) の街</p>
                     <div class="city-meta">
-                        <span>🦌 Sacred Deer Park</span>
+                        <span>🦌 Sacred Shika Deer</span>
                         <span>🌿 Peaceful Nature</span>
                         <span class="city-vegan-count">⭐ 4.9</span>
                     </div>
@@ -2368,23 +2339,6 @@
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // === Sakura Petals ===
-        (function createSakura() {
-            const container = document.getElementById('sakura-container');
-            const petalCount = 15;
-            for (let i = 0; i < petalCount; i++) {
-                const petal = document.createElement('div');
-                petal.classList.add('sakura-petal');
-                petal.style.left = Math.random() * 100 + 'vw';
-                petal.style.animationDuration = (8 + Math.random() * 12) + 's';
-                petal.style.animationDelay = (Math.random() * 15) + 's';
-                petal.style.opacity = 0.15 + Math.random() * 0.25;
-                petal.style.width = (8 + Math.random() * 8) + 'px';
-                petal.style.height = petal.style.width;
-                container.appendChild(petal);
-            }
-        })();
-
         // === Navbar scroll ===
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {

@@ -15,19 +15,19 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
-            --color-jp-bg: #0c0b0f;
-            --color-jp-bg-alt: #100f14;
-            --color-jp-card: #15141b;
-            --color-jp-surface: #1c1b24;
-            --color-jp-border: rgba(255, 255, 255, 0.07);
-            --color-jp-text: #f2f0f7;
-            --color-jp-muted: #a09baf;
-            --color-jp-subtle: #6a6578;
-            --color-jp-accent: #e8a0bf;
-            --color-jp-accent-deep: #c97a9f;
-            --color-jp-sakura: #f5c6d0;
-            --color-jp-sakura-deep: #e0929f;
-            --color-jp-green: #8bc49e;
+            --color-jp-bg: #f8fafc;
+            --color-jp-bg-alt: #f1f5f9;
+            --color-jp-card: #ffffff;
+            --color-jp-surface: #e2e8f0;
+            --color-jp-border: #cbd5e1;
+            --color-jp-text: #0f172a;
+            --color-jp-muted: #1e293b;
+            --color-jp-subtle: #334155;
+            --color-jp-accent: #0284c7;
+            --color-jp-accent-deep: #1d4ed8;
+            --color-jp-purple: #6d28d9;
+            --color-jp-green: #047857;
+            --color-jp-gold: #b45309;
             --font-display: 'Playfair Display', 'Noto Serif JP', Georgia, serif;
             --font-jp: 'Noto Serif JP', serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -35,60 +35,19 @@
     </style>
     <style>
         ::-webkit-scrollbar {
-            width: 5px;
+            width: 6px;
         }
 
         ::-webkit-scrollbar-track {
-            background: #0c0b0f;
+            background: #f8fafc;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #c97a9f;
+            background: linear-gradient(180deg, #0284c7, #7c3aed);
             border-radius: 3px;
         }
 
-        @keyframes sakuraFall {
-            0% {
-                transform: translateY(-10vh) translateX(0) rotate(0deg);
-                opacity: 1;
-            }
 
-            100% {
-                transform: translateY(110vh) translateX(80px) rotate(720deg);
-                opacity: 0;
-            }
-        }
-
-        @keyframes pulseGlow {
-
-            0%,
-            100% {
-                box-shadow: 0 0 15px rgba(232, 160, 191, 0.1);
-            }
-
-            50% {
-                box-shadow: 0 0 35px rgba(232, 160, 191, 0.25);
-            }
-        }
-
-        .sakura-container {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 9999;
-            overflow: hidden;
-        }
-
-        .sakura-petal {
-            position: absolute;
-            top: -5vh;
-            width: 12px;
-            height: 12px;
-            background: radial-gradient(ellipse at center, #f5c6d0, #e0929f);
-            border-radius: 50% 0 50% 50%;
-            opacity: 0.5;
-            animation: sakuraFall linear infinite;
-        }
 
         .reveal {
             opacity: 0;
@@ -121,8 +80,7 @@
 
 <body class="bg-jp-bg text-jp-text font-sans antialiased overflow-x-hidden selection:bg-jp-accent selection:text-jp-bg">
 
-    <!-- Sakura Petals -->
-    <div class="sakura-container" id="sakura-container"></div>
+
 
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-nav fixed inset-0 z-[999] bg-jp-bg/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300"
@@ -141,8 +99,8 @@
         id="navbar">
         <a href="index2.html" class="flex items-center gap-3 font-display text-xl sm:text-2xl font-bold tracking-tight">
             <div
-                class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-jp-accent to-jp-accent-deep flex items-center justify-center text-lg sm:text-xl shadow-md">
-                🌸</div>
+                class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center text-lg sm:text-xl shadow-[0_4px_12px_rgba(2,132,199,0.25)] text-white">
+                ⛩️</div>
             <div>
                 <span class="block leading-none">NainaAbhishek</span>
                 <span
@@ -157,7 +115,7 @@
         </ul>
         <div class="flex items-center gap-3">
             <a href="contact.html"
-                class="hidden sm:inline-flex px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg shadow-lg hover:shadow-jp-accent/30 hover:-translate-y-0.5 transition-all">Get
+                class="hidden sm:inline-flex px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-jp-accent to-jp-accent-deep text-white shadow-lg hover:shadow-jp-accent/30 hover:-translate-y-0.5 transition-all">Get
                 In Touch</a>
             <button class="nav-toggle md:hidden p-2 text-jp-text flex flex-col gap-1.5 focus:outline-none"
                 id="nav-toggle" aria-label="Toggle menu">
@@ -179,7 +137,7 @@
             <span class="w-6 h-px bg-jp-accent/40"></span>
         </div>
         <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-4">
-            Start Your <em class="not-italic text-jp-sakura">Japan</em><br class="hidden sm:inline"> Adventure Today
+            Start Your <em class="not-italic text-jp-accent">Japan</em><br class="hidden sm:inline"> Adventure Today
         </h1>
         <p class="text-sm sm:text-base lg:text-lg text-jp-muted max-w-xl mx-auto font-light leading-relaxed">
             Tell us about your dream trip and we'll craft a personalized experience just for you. We typically reply
@@ -195,7 +153,7 @@
             <div
                 class="reveal bg-jp-card border border-jp-border rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 relative overflow-hidden shadow-2xl">
                 <div
-                    class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-jp-accent via-jp-sakura to-jp-accent-deep">
+                    class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-jp-accent via-jp-accent to-jp-accent-deep">
                 </div>
                 <h2 class="font-display text-xl sm:text-2xl font-bold mb-2">Send Us a Message</h2>
                 <p class="text-xs sm:text-sm text-jp-muted mb-6 sm:mb-8">Fill in the form below and we'll get back to
@@ -280,7 +238,7 @@
                     </div>
 
                     <button type="submit" id="submit-btn"
-                        class="w-full py-4 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-bold text-sm tracking-wide shadow-lg hover:shadow-jp-accent/30 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer border-none">
+                        class="w-full py-4 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-white font-bold text-sm tracking-wide shadow-lg hover:shadow-jp-accent/30 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer border-none">
                         Send Message via Gmail ✉️
                     </button>
                 </form>
@@ -537,9 +495,6 @@
     </footer>
 
     <script>
-        // Sakura Petals
-        (function () { const c = document.getElementById('sakura-container'); for (let i = 0; i < 12; i++) { const p = document.createElement('div'); p.classList.add('sakura-petal'); p.style.left = Math.random() * 100 + 'vw'; p.style.animationDuration = (8 + Math.random() * 12) + 's'; p.style.animationDelay = (Math.random() * 15) + 's'; p.style.opacity = 0.15 + Math.random() * 0.25; p.style.width = (8 + Math.random() * 8) + 'px'; p.style.height = p.style.width; c.appendChild(p) } })();
-
         // Navbar scroll behavior
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {

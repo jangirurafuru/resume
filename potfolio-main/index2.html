@@ -15,19 +15,19 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
-            --color-jp-bg: #0c0b0f;
-            --color-jp-bg-alt: #100f14;
-            --color-jp-card: #15141b;
-            --color-jp-surface: #1c1b24;
-            --color-jp-border: rgba(255, 255, 255, 0.07);
-            --color-jp-text: #f2f0f7;
-            --color-jp-muted: #a09baf;
-            --color-jp-subtle: #6a6578;
-            --color-jp-accent: #e8a0bf;
-            --color-jp-accent-deep: #c97a9f;
-            --color-jp-sakura: #f5c6d0;
-            --color-jp-sakura-deep: #e0929f;
-            --color-jp-green: #8bc49e;
+            --color-jp-bg: #f8fafc;
+            --color-jp-bg-alt: #f1f5f9;
+            --color-jp-card: #ffffff;
+            --color-jp-surface: #e2e8f0;
+            --color-jp-border: #cbd5e1;
+            --color-jp-text: #0f172a;
+            --color-jp-muted: #1e293b;
+            --color-jp-subtle: #334155;
+            --color-jp-accent: #0284c7;
+            --color-jp-accent-deep: #1d4ed8;
+            --color-jp-purple: #6d28d9;
+            --color-jp-green: #047857;
+            --color-jp-gold: #b45309;
             --font-display: 'Playfair Display', 'Noto Serif JP', Georgia, serif;
             --font-jp: 'Noto Serif JP', serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -35,15 +35,15 @@
     </style>
     <style>
         ::-webkit-scrollbar {
-            width: 5px
+            width: 6px
         }
 
         ::-webkit-scrollbar-track {
-            background: #0c0b0f
+            background: #f8fafc
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #c97a9f;
+            background: linear-gradient(180deg, #0284c7, #7c3aed);
             border-radius: 3px
         }
 
@@ -69,36 +69,7 @@
             }
         }
 
-        @keyframes sakuraFall {
-            0% {
-                transform: translateY(-10vh) translateX(0) rotate(0deg);
-                opacity: 1
-            }
 
-            100% {
-                transform: translateY(110vh) translateX(80px) rotate(720deg);
-                opacity: 0
-            }
-        }
-
-        .sakura-container {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 9999;
-            overflow: hidden
-        }
-
-        .sakura-petal {
-            position: absolute;
-            top: -5vh;
-            width: 12px;
-            height: 12px;
-            background: radial-gradient(ellipse at center, #f5c6d0, #e0929f);
-            border-radius: 50% 0 50% 50%;
-            opacity: 0.5;
-            animation: sakuraFall linear infinite
-        }
 
         .animate-hero-bg {
             animation: heroSlow 20s ease-in-out infinite alternate
@@ -123,7 +94,7 @@
 
 <body class="bg-jp-bg text-jp-text font-sans antialiased overflow-x-hidden selection:bg-jp-accent selection:text-jp-bg">
 
-    <div class="sakura-container" id="sakura-container"></div>
+
 
     <!-- Mobile Nav Overlay -->
     <div class="fixed inset-0 z-[999] bg-jp-bg/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300"
@@ -138,13 +109,13 @@
     </div>
 
     <!-- NAVIGATION -->
-    <nav class="fixed top-0 left-0 right-0 z-[1000] px-4 py-4 sm:px-8 lg:px-16 flex items-center justify-between transition-all duration-300"
+    <nav class="fixed top-0 left-0 right-0 z-[1000] px-4 py-3.5 sm:px-8 lg:px-16 flex items-center justify-between bg-white/95 backdrop-blur-xl border-b border-jp-border shadow-sm transition-all duration-300"
         id="navbar">
         <a href="index2.html" class="flex items-center gap-3 font-display text-xl sm:text-2xl font-bold tracking-tight">
             <div
-                class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-jp-accent to-jp-accent-deep flex items-center justify-center text-lg sm:text-xl">
-                🌸</div>
-            <div><span class="block leading-none">NainaAbhishek</span><span
+                class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center text-lg sm:text-xl shadow-[0_4px_12px_rgba(2,132,199,0.25)] text-white">
+                ⛩️</div>
+            <div><span class="block leading-none text-jp-text">NainaAbhishek</span><span
                     class="font-jp text-[0.7rem] sm:text-xs text-jp-accent tracking-widest block mt-0.5">日本旅行ガイド</span>
             </div>
         </a>
@@ -156,7 +127,7 @@
         </ul>
         <div class="flex items-center gap-3">
             <a href="contact.html"
-                class="hidden sm:inline-flex px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg shadow-lg hover:shadow-jp-accent/30 hover:-translate-y-0.5 transition-all">Get
+                class="hidden sm:inline-flex px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-jp-accent to-jp-accent-deep text-white shadow-lg hover:shadow-jp-accent/30 hover:-translate-y-0.5 transition-all">Get
                 In Touch</a>
             <button class="md:hidden p-2 flex flex-col gap-1.5" id="nav-toggle" aria-label="Toggle menu">
                 <span class="w-6 h-0.5 bg-jp-text rounded-full"></span><span
@@ -173,133 +144,205 @@
                 alt="Beautiful Kyoto temple with cherry blossoms in spring"
                 class="w-full h-full object-cover animate-hero-bg">
         </div>
-        <div class="absolute inset-0 z-[1] bg-gradient-to-b from-jp-bg/35 via-jp-bg/50 to-jp-bg/97"></div>
+        <div class="absolute inset-0 z-[1] bg-gradient-to-b from-black/60 via-black/25 to-black/70"></div>
 
-        <div class="relative z-[2] text-center max-w-[900px] px-5 sm:px-6">
+        <div class="relative z-[2] text-center max-w-[900px] px-5 sm:px-6 my-20">
             <div
-                class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-jp-accent/10 border border-jp-accent/20 backdrop-blur-md text-xs font-semibold text-jp-accent tracking-widest uppercase mb-7">
-                <span class="w-2 h-2 rounded-full bg-jp-accent animate-pulse"></span>
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black/40 border border-white/30 backdrop-blur-md text-xs font-bold text-white tracking-widest uppercase mb-7 shadow-lg">
+                <span class="w-2.5 h-2.5 rounded-full bg-sky-400 animate-pulse"></span>
                 🇯🇵 Your Personal Japan Experience
             </div>
-            <h1 class="font-display text-[clamp(2.4rem,6vw,5.2rem)] font-bold leading-[1.1] tracking-tight mb-3">
-                Discover Japan With<br><em class="italic text-jp-sakura">Naina & Abhishek</em>
+            <h1
+                class="font-display text-[clamp(2.4rem,6vw,5.2rem)] font-bold leading-[1.1] tracking-tight mb-4 text-white drop-shadow-lg">
+                Discover Japan With<br><em class="italic text-sky-300">Naina & Abhishek</em>
             </h1>
-            <p class="font-jp text-[clamp(1rem,2vw,1.4rem)] text-jp-accent tracking-[0.2em] mb-5 opacity-80">
+            <p
+                class="font-jp text-[clamp(1rem,2vw,1.4rem)] text-sky-200 font-semibold tracking-[0.2em] mb-6 drop-shadow">
                 私たちがご案内する、忘れられない日本の旅
             </p>
             <p
-                class="text-[clamp(0.95rem,1.4vw,1.15rem)] text-jp-muted max-w-[620px] mx-auto mb-10 leading-relaxed font-light">
+                class="text-[clamp(0.95rem,1.4vw,1.15rem)] text-slate-100 max-w-[640px] mx-auto mb-10 leading-relaxed font-normal drop-shadow">
                 Experience the magic of Japan with personal local guides. Custom private tours, group trips, vegetarian
                 food tours, and off-the-beaten-path adventures.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tours.html"
-                    class="px-8 py-4 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-semibold text-sm shadow-xl hover:shadow-jp-accent/30 hover:-translate-y-1 transition-all">Explore
+                    class="px-8 py-4 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold text-sm shadow-2xl hover:shadow-sky-500/50 hover:-translate-y-1 transition-all">Explore
                     Tours →</a>
                 <a href="contact.html"
-                    class="px-8 py-4 rounded-full border border-white/10 text-jp-text font-semibold text-sm hover:bg-white/5 hover:border-jp-accent hover:text-jp-accent hover:-translate-y-1 transition-all">Plan
+                    class="px-8 py-4 rounded-full bg-white/20 border border-white/40 backdrop-blur-md text-white font-bold text-sm hover:bg-white/30 hover:-translate-y-1 transition-all shadow-lg">Plan
                     Your Trip</a>
             </div>
-            <div class="flex justify-center gap-8 sm:gap-14 mt-14">
+            <div
+                class="flex justify-center gap-8 sm:gap-14 mt-14 py-4 px-6 rounded-2xl bg-black/40 backdrop-blur-md border border-white/20 max-w-2xl mx-auto shadow-xl">
                 <div class="text-center">
-                    <div class="font-display text-2xl font-bold text-jp-sakura">100%</div>
-                    <div class="text-[0.7rem] text-jp-subtle uppercase tracking-wider mt-1">Personalized</div>
+                    <div class="font-display text-2xl font-bold text-sky-300">100%</div>
+                    <div class="text-[0.7rem] text-slate-200 uppercase tracking-wider mt-1 font-medium">Personalized
+                    </div>
                 </div>
                 <div class="text-center">
-                    <div class="font-display text-2xl font-bold text-jp-sakura">6+</div>
-                    <div class="text-[0.7rem] text-jp-subtle uppercase tracking-wider mt-1">Cities Covered</div>
+                    <div class="font-display text-2xl font-bold text-sky-300">6+</div>
+                    <div class="text-[0.7rem] text-slate-200 uppercase tracking-wider mt-1 font-medium">Cities Covered
+                    </div>
                 </div>
                 <div class="text-center">
-                    <div class="font-display text-2xl font-bold text-jp-sakura">🌱</div>
-                    <div class="text-[0.7rem] text-jp-subtle uppercase tracking-wider mt-1">Veg Friendly</div>
+                    <div class="font-display text-2xl font-bold text-sky-300">🌱</div>
+                    <div class="text-[0.7rem] text-slate-200 uppercase tracking-wider mt-1 font-medium">Veg Friendly
+                    </div>
                 </div>
                 <div class="text-center">
-                    <div class="font-display text-2xl font-bold text-jp-sakura">24h</div>
-                    <div class="text-[0.7rem] text-jp-subtle uppercase tracking-wider mt-1">Fast Response</div>
+                    <div class="font-display text-2xl font-bold text-sky-300">24h</div>
+                    <div class="text-[0.7rem] text-slate-200 uppercase tracking-wider mt-1 font-medium">Fast Response
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="absolute bottom-9 left-1/2 -translate-x-1/2 z-[2] flex flex-col items-center gap-2 animate-float">
-            <span class="text-[0.65rem] tracking-widest uppercase text-jp-subtle">Scroll</span>
-            <div class="w-px h-9 bg-gradient-to-b from-jp-accent to-transparent"></div>
+            <span class="text-[0.65rem] tracking-widest uppercase text-white/80 font-bold drop-shadow">Scroll</span>
+            <div class="w-px h-9 bg-gradient-to-b from-white to-transparent"></div>
         </div>
     </section>
 
-    <!-- ===== MEET YOUR GUIDES ===== -->
-    <section class="py-16 sm:py-28 px-4 sm:px-8 lg:px-16 bg-jp-bg-alt relative overflow-hidden">
+    <!-- ===== ABOUT US ===== -->
+    <section class="py-16 sm:py-28 px-4 sm:px-8 lg:px-16 bg-jp-bg-alt relative overflow-hidden" id="about">
         <div
             class="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] rounded-full bg-jp-accent/5 pointer-events-none">
         </div>
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div class="reveal relative max-w-md mx-auto lg:max-w-none">
-                <div class="rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <!-- Visual Column (sticky on lg) -->
+            <div class="reveal lg:col-span-5 relative max-w-md mx-auto lg:max-w-none lg:sticky lg:top-28">
+                <div class="rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl relative">
                     <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80"
-                        alt="Naina & Abhishek guiding travelers in Japan" class="w-full h-72 sm:h-[480px] object-cover">
-                </div>
-                <div
-                    class="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-8 w-32 h-32 sm:w-44 sm:h-44 rounded-xl overflow-hidden border-4 border-jp-bg-alt shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=400&q=80"
-                        alt="Japan travel moment" class="w-full h-full object-cover">
-                </div>
-                <div
-                    class="absolute -top-4 -left-4 sm:-top-4 sm:-left-4 p-3 sm:p-4 rounded-xl bg-jp-card border border-jp-border backdrop-blur-md shadow-lg animate-float">
-                    <div class="font-display text-xl sm:text-2xl font-bold text-jp-sakura">Japan</div>
-                    <div class="text-[0.65rem] sm:text-[0.7rem] text-jp-subtle uppercase tracking-wider">Based Guides
+                        alt="Naina & Abhishek exploring authentic Japan" class="w-full h-80 sm:h-[500px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-5 left-5 right-5 text-white">
+                        <p class="font-display text-lg font-bold">Naina & Abhishek</p>
+                        <p class="text-xs text-sky-200">Discovering Japan since 2005</p>
                     </div>
+                </div>
+                <div
+                    class="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 w-36 h-36 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-4 border-jp-bg-alt shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=400&q=80"
+                        alt="Quiet hidden Tokyo alleyway" class="w-full h-full object-cover">
+                </div>
+                <div
+                    class="absolute -top-4 -left-4 p-3.5 sm:p-4 rounded-xl bg-jp-card border border-jp-border backdrop-blur-md shadow-lg animate-float">
+                    <div class="font-display text-xl sm:text-2xl font-bold text-jp-accent">Since 2005</div>
+                    <div class="text-[0.65rem] sm:text-[0.7rem] text-jp-subtle uppercase tracking-wider">20+ Years in
+                        Japan</div>
                 </div>
             </div>
-            <div class="reveal space-y-5">
-                <div
-                    class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-jp-accent font-semibold">
-                    <span class="w-6 h-px bg-jp-accent/40"></span><span>Your Local Hosts</span><span
-                        class="w-6 h-px bg-jp-accent/40"></span>
+
+            <!-- Content Column -->
+            <div class="reveal lg:col-span-7 space-y-6">
+                <div>
+
+                    <h2 class="font-display text-[clamp(1.85rem,2.8vw,2.6rem)] font-bold leading-tight text-jp-text">
+                        We’ve Been Discovering Japan Since 2005. <br class="hidden sm:inline"><em
+                            class="italic text-jp-accent">Now We’d Love to Share It With You.</em>
+                    </h2>
+                    <p class="font-jp text-xs sm:text-sm text-jp-accent/80 font-medium mt-1">2005年から始まった私たちの日本探訪 —
+                        あなただけの旅を</p>
                 </div>
-                <h2 class="font-display text-[clamp(2rem,3vw,2.8rem)] font-bold leading-tight">
-                    Hi, We're <em class="italic text-jp-sakura">Naina & Abhishek</em>
-                </h2>
-                <p class="font-jp text-sm text-jp-accent opacity-70">日本在住のパーソナルガイド</p>
-                <p class="text-sm sm:text-base text-jp-muted leading-relaxed font-light">
-                    We live in Japan and love showing travelers the authentic side of this beautiful country. Whether
-                    you're looking for iconic sights, hidden alleyway ramen joints, vegetarian food solutions, or
-                    family-friendly itineraries — we take care of every detail so you can just enjoy.
-                </p>
-                <p class="text-sm sm:text-base text-jp-muted leading-relaxed font-light">
-                    With fluency in English, Hindi, and Japanese, we bridge cultures and make sure you feel at home in
-                    Japan.
-                </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
+
+                <div class="space-y-4 text-sm sm:text-base text-jp-muted leading-relaxed font-light">
+                    <p>
+                        Japan has been part of our lives since 2005. What started as a journey to discover a new country
+                        slowly became something much more personal. Over the years, we’ve travelled its cities and
+                        countryside, wandered through quiet neighbourhoods, found little places that never make it into
+                        guidebooks, experienced local traditions, and most importantly fallen in love with the everyday
+                        Japan that exists beyond the famous sights.
+                    </p>
+
                     <div
-                        class="flex items-center gap-3 p-3.5 rounded-xl bg-jp-card border border-jp-border hover:border-jp-accent/15 hover:-translate-y-0.5 transition-all">
-                        <span class="text-xl flex-shrink-0">🗣️</span>
+                        class="p-4 sm:p-5 rounded-2xl bg-sky-500/10 border-l-4 border-jp-accent text-jp-text font-medium text-sm sm:text-base italic">
+                        “We’re not here simply to show you Japan’s most popular places. We want you to experience the
+                        Japan that made us fall in love with it.”
+                    </div>
+
+                    <p>
+                        It might be a little street you would otherwise walk past, a family run restaurant tucked away
+                        in a quiet neighbourhood, a beautiful temple without a crowd or a local tradition you didn’t
+                        know about. These simple discoveries often become the memories people take home with them.
+                    </p>
+
+                    <p>
+                        As vegetarians ourselves, food has always been an important part of how we experience Japan.
+                        Over the years, we’ve searched, tasted, explored, and discovered places where vegan
+                        /vegetarian food isn’t simply an afterthought. We know the restaurants worth travelling for,
+                        the hidden gems worth finding, and the experiences that can make a meal one of your favourite
+                        memories of Japan.
+                    </p>
+
+                    <p>
+                        Because every traveller experiences Japan differently, we believe your journey should feel
+                        personal from the very beginning. Before planning your trip, we take the time to understand you
+                        and your interests, your pace, the food you enjoy and what you’re hoping to experience. Then we
+                        bring those details together to create a journey that feels right for you, rather than following
+                        a standard itinerary.
+                    </p>
+
+                    <p>
+                        This company is built from something we have personally experienced for more than two decades
+                        rather than from a guidebook or a list of tourist attractions.
+                    </p>
+
+                    <p>
+                        We know that choosing a travel company is about trust. You’re giving us a part of something very
+                        special: your time, your holiday, and your memories of Japan. And, We don’t take that lightly.
+                    </p>
+
+                    <p>
+                        Whether you’re visiting Japan for the first time or returning to see a different side of the
+                        country, we’d love to help you create a journey that feels personal, meaningful and full of
+                        discoveries. Come and explore Japan with us not just as a visitor, but through the Japan we know
+                        and love.
+                    </p>
+                </div>
+
+                <!-- Call to Action Box -->
+                <div class="pt-2">
+                    <div
+                        class="p-6 rounded-2xl bg-gradient-to-r from-sky-600 to-blue-700 text-white shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <div>
-                            <div class="text-xs font-semibold">3 Languages</div>
-                            <div class="text-[0.7rem] text-jp-subtle">English, Hindi, Japanese</div>
+                            <div class="text-base sm:text-lg font-bold font-display">Tell us what you’re hoping to
+                                experience</div>
+                            <div class="text-xs sm:text-sm text-sky-100 mt-0.5">Let’s start planning your Japan
+                                together.</div>
                         </div>
+                        <a href="contact.html"
+                            class="px-6 py-3 rounded-full bg-white text-jp-accent font-bold text-xs sm:text-sm shadow-md hover:bg-sky-50 hover:shadow-lg transition-all flex-shrink-0">
+                            Plan Your Trip →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Feature Highlights Badges -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                    <div
+                        class="p-3.5 rounded-xl bg-jp-card border border-jp-border text-center hover:border-jp-accent/30 transition-all">
+                        <div class="text-xl">⛩️</div>
+                        <div class="text-xs font-semibold mt-1">Since 2005</div>
+                        <div class="text-[0.7rem] text-jp-subtle">20+ Years in Japan</div>
                     </div>
                     <div
-                        class="flex items-center gap-3 p-3.5 rounded-xl bg-jp-card border border-jp-border hover:border-jp-accent/15 hover:-translate-y-0.5 transition-all">
-                        <span class="text-xl flex-shrink-0">🍱</span>
-                        <div>
-                            <div class="text-xs font-semibold">Dietary Experts</div>
-                            <div class="text-[0.7rem] text-jp-subtle">Veg & Vegan Friendly</div>
-                        </div>
+                        class="p-3.5 rounded-xl bg-jp-card border border-jp-border text-center hover:border-jp-accent/30 transition-all">
+                        <div class="text-xl">✨</div>
+                        <div class="text-xs font-semibold mt-1">Personalized</div>
+                        <div class="text-[0.7rem] text-jp-subtle">Tailor-Made Routes</div>
                     </div>
                     <div
-                        class="flex items-center gap-3 p-3.5 rounded-xl bg-jp-card border border-jp-border hover:border-jp-accent/15 hover:-translate-y-0.5 transition-all">
-                        <span class="text-xl flex-shrink-0">👴</span>
-                        <div>
-                            <div class="text-xs font-semibold">Elder Support</div>
-                            <div class="text-[0.7rem] text-jp-subtle">Accessible Routes</div>
-                        </div>
+                        class="p-3.5 rounded-xl bg-jp-card border border-jp-border text-center hover:border-jp-accent/30 transition-all">
+                        <div class="text-xl">🌱</div>
+                        <div class="text-xs font-semibold mt-1">Veg Experts</div>
+                        <div class="text-[0.7rem] text-jp-subtle">Vegan & Veg Friendly</div>
                     </div>
                     <div
-                        class="flex items-center gap-3 p-3.5 rounded-xl bg-jp-card border border-jp-border hover:border-jp-accent/15 hover:-translate-y-0.5 transition-all">
-                        <span class="text-xl flex-shrink-0">📸</span>
-                        <div>
-                            <div class="text-xs font-semibold">Photo Guide</div>
-                            <div class="text-[0.7rem] text-jp-subtle">Best Insta Spots</div>
-                        </div>
+                        class="p-3.5 rounded-xl bg-jp-card border border-jp-border text-center hover:border-jp-accent/30 transition-all">
+                        <div class="text-xl">🤝</div>
+                        <div class="text-xs font-semibold mt-1">Built on Trust</div>
+                        <div class="text-[0.7rem] text-jp-subtle">Your Memory First</div>
                     </div>
                 </div>
             </div>
@@ -327,14 +370,14 @@
                     alt="Ancient temple in Kyoto"
                     class="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700">
                 <div
-                    class="absolute inset-0 bg-gradient-to-t from-jp-bg/92 via-transparent to-transparent group-hover:from-jp-bg/95 transition-all">
+                    class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent group-hover:from-slate-950/95 transition-all">
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
                     <div class="text-2xl mb-2">⛩️</div>
-                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1">Ancient Temples</h3>
-                    <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">寺院 — Jiin</p>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1 text-white">Ancient Temples</h3>
+                    <p class="font-jp text-xs text-sky-300 font-semibold mb-2">寺院 — Jiin</p>
                     <p
-                        class="text-xs sm:text-sm text-jp-muted leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        class="text-xs sm:text-sm text-slate-200 leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         Over 75,000 temples and shrines across Japan. From serene Zen gardens to golden pavilions —
                         every visit is a journey through centuries of history.</p>
                 </div>
@@ -344,14 +387,14 @@
                     alt="Modern Tokyo cityscape"
                     class="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700">
                 <div
-                    class="absolute inset-0 bg-gradient-to-t from-jp-bg/92 via-transparent to-transparent group-hover:from-jp-bg/95 transition-all">
+                    class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent group-hover:from-slate-950/95 transition-all">
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
                     <div class="text-2xl mb-2">🏙️</div>
-                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1">Modern Cities</h3>
-                    <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">都市 — Toshi</p>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1 text-white">Modern Cities</h3>
+                    <p class="font-jp text-xs text-sky-300 font-semibold mb-2">都市 — Toshi</p>
                     <p
-                        class="text-xs sm:text-sm text-jp-muted leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        class="text-xs sm:text-sm text-slate-200 leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         Neon-lit streets, robot restaurants, world-class shopping — Japan's cities are a mind-blowing
                         fusion of the future and tradition.</p>
                 </div>
@@ -361,14 +404,14 @@
                     alt="Mount Fuji at sunrise"
                     class="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700">
                 <div
-                    class="absolute inset-0 bg-gradient-to-t from-jp-bg/92 via-transparent to-transparent group-hover:from-jp-bg/95 transition-all">
+                    class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent group-hover:from-slate-950/95 transition-all">
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
                     <div class="text-2xl mb-2">🗻</div>
-                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1">Breathtaking Nature</h3>
-                    <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">自然 — Shizen</p>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1 text-white">Breathtaking Nature</h3>
+                    <p class="font-jp text-xs text-sky-300 font-semibold mb-2">自然 — Shizen</p>
                     <p
-                        class="text-xs sm:text-sm text-jp-muted leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        class="text-xs sm:text-sm text-slate-200 leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         From the iconic Mount Fuji to bamboo forests and hot spring valleys — Japan's landscapes will
                         take your breath away.</p>
                 </div>
@@ -382,14 +425,14 @@
                     alt="Japanese cuisine beautifully plated"
                     class="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700">
                 <div
-                    class="absolute inset-0 bg-gradient-to-t from-jp-bg/92 via-transparent to-transparent group-hover:from-jp-bg/95 transition-all">
+                    class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent group-hover:from-slate-950/95 transition-all">
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
                     <div class="text-2xl mb-2">🍱</div>
-                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1">Incredible Food</h3>
-                    <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">食事 — Shokuji</p>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1 text-white">Incredible Food</h3>
+                    <p class="font-jp text-xs text-sky-300 font-semibold mb-2">食事 — Shokuji</p>
                     <p
-                        class="text-xs sm:text-sm text-jp-muted leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        class="text-xs sm:text-sm text-slate-200 leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         Ramen, sushi, tempura, matcha — and amazing vegetarian & vegan options. Japan's food scene is a
                         universe of flavors waiting to be explored.</p>
                 </div>
@@ -399,14 +442,14 @@
                     alt="Cherry blossom trees along river"
                     class="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700">
                 <div
-                    class="absolute inset-0 bg-gradient-to-t from-jp-bg/92 via-transparent to-transparent group-hover:from-jp-bg/95 transition-all">
+                    class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent group-hover:from-slate-950/95 transition-all">
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
                     <div class="text-2xl mb-2">🌸</div>
-                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1">Four Magical Seasons</h3>
-                    <p class="font-jp text-xs text-jp-accent opacity-70 mb-2">四季 — Shiki</p>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold mb-1 text-white">Four Magical Seasons</h3>
+                    <p class="font-jp text-xs text-sky-300 font-semibold mb-2">四季 — Shiki</p>
                     <p
-                        class="text-xs sm:text-sm text-jp-muted leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        class="text-xs sm:text-sm text-slate-200 leading-relaxed opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         Cherry blossoms in spring, festivals in summer, fiery autumn foliage, and snow-dusted temples in
                         winter. Every season is a new Japan.</p>
                 </div>
@@ -498,10 +541,10 @@
                 is welcome.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tours.html"
-                    class="px-8 py-4 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-jp-bg font-semibold text-sm shadow-xl hover:shadow-jp-accent/30 hover:-translate-y-1 transition-all">Browse
+                    class="px-8 py-4 rounded-full bg-gradient-to-r from-jp-accent to-jp-accent-deep text-white font-semibold text-sm shadow-xl hover:shadow-jp-accent/30 hover:-translate-y-1 transition-all">Browse
                     Tours →</a>
                 <a href="contact.html"
-                    class="px-8 py-4 rounded-full border border-white/10 text-jp-text font-semibold text-sm hover:bg-white/5 hover:border-jp-accent hover:text-jp-accent hover:-translate-y-1 transition-all">Contact
+                    class="px-8 py-4 rounded-full border border-jp-accent/30 text-jp-text font-semibold text-sm hover:bg-jp-accent/10 hover:border-jp-accent hover:text-jp-accent hover:-translate-y-1 transition-all">Contact
                     Us</a>
             </div>
         </div>
@@ -539,6 +582,7 @@
                 <h4 class="text-xs font-semibold uppercase tracking-widest mb-4">Pages</h4>
                 <ul class="space-y-2.5 text-xs sm:text-sm text-jp-muted">
                     <li><a href="index2.html" class="hover:text-jp-accent transition-colors">Home</a></li>
+                    <li><a href="index2.html#about" class="hover:text-jp-accent transition-colors">About Us</a></li>
                     <li><a href="tours.html" class="hover:text-jp-accent transition-colors">Tours</a></li>
                     <li><a href="cities.html" class="hover:text-jp-accent transition-colors">Cities</a></li>
                     <li><a href="contact.html" class="hover:text-jp-accent transition-colors">Contact Us</a></li>
@@ -579,14 +623,14 @@
     </footer>
 
     <script>
-        // Sakura
-        (function () { const c = document.getElementById('sakura-container'); for (let i = 0; i < 12; i++) { const p = document.createElement('div'); p.classList.add('sakura-petal'); p.style.left = Math.random() * 100 + 'vw'; p.style.animationDuration = (8 + Math.random() * 12) + 's'; p.style.animationDelay = (Math.random() * 15) + 's'; p.style.opacity = 0.15 + Math.random() * 0.25; p.style.width = (8 + Math.random() * 8) + 'px'; p.style.height = p.style.width; c.appendChild(p) } })();
-
         // Navbar scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 60) { navbar.classList.add('bg-jp-bg/90', 'backdrop-blur-xl', '!py-3', 'border-b', 'border-jp-border', 'shadow-xl'); navbar.classList.remove('py-4'); }
-            else { navbar.classList.remove('bg-jp-bg/90', 'backdrop-blur-xl', '!py-3', 'border-b', 'border-jp-border', 'shadow-xl'); navbar.classList.add('py-4'); }
+            if (window.scrollY > 40) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
         });
 
         // Mobile nav
